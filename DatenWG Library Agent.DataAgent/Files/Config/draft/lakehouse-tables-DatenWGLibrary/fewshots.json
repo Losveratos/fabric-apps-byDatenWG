@@ -1,0 +1,45 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/dataAgent/definition/fewShots/1.0.0/schema.json",
+  "fewShots": [
+    {
+      "id": "f173065d-03c2-4241-b4ae-641332671365",
+      "question": "Wie viele Kernaussagen gibt es und wie genau sitzen die Sprungmarken?",
+      "query": "SELECT [precision], COUNT(*) AS anzahl FROM n_claim GROUP BY [precision];"
+    },
+    {
+      "id": "90f979d9-b86e-40fc-b924-f49486eefae4",
+      "question": "Was wurde zu Direct Lake gesagt?",
+      "query": "SELECT TOP 20 d.title AS folge, d.published AS datum, k.[text] AS aussage, k.kind AS art, CAST(ROUND(k.start_s, 0) AS int) AS sekunde, k.[precision] AS genauigkeit, d.url + '&t=' + CAST(CAST(ROUND(k.start_s, 0) AS int) AS varchar(10)) + 's' AS sprungmarke FROM e_about a JOIN n_claim k ON k.id = a.src JOIN n_document d ON d.id = k.doc_id WHERE a.dst = 'tool:direct-lake' ORDER BY d.published DESC;"
+    },
+    {
+      "id": "3ed55c13-40b6-4b4f-a923-14057e527eb6",
+      "question": "Welche Folgen behandeln das Sternschema am ausfuehrlichsten?",
+      "query": "SELECT TOP 10 d.title AS folge, d.published AS datum, m.segments AS stellen, m.share AS anteil FROM e_mentions m JOIN n_document d ON d.id = m.src WHERE m.dst = 'topic:sternschema' ORDER BY m.segments * (0.3 + m.share) DESC;"
+    },
+    {
+      "id": "31772122-0d6d-4ae6-ac9f-c5057c96fdfd",
+      "question": "Wer spricht in den meisten Folgen mit?",
+      "query": "SELECT p.name AS person, COUNT(*) AS folgen, SUM(CASE WHEN s.role = 'host' THEN 1 ELSE 0 END) AS als_host FROM e_speaks_in s JOIN n_person p ON p.id = s.src GROUP BY p.name ORDER BY folgen DESC;"
+    },
+    {
+      "id": "58628535-1f6d-4fd8-89da-b60302a47a0f",
+      "question": "In welchen Folgen faellt das Wort Data Vault woertlich?",
+      "query": "SELECT TOP 20 d.title AS folge, d.published AS datum, CAST(ROUND(s.start_s, 0) AS int) AS sekunde, s.[text] AS stelle FROM segments s JOIN n_document d ON d.id = s.doc_id WHERE s.[text] LIKE '%Data Vault%' ORDER BY d.published DESC;"
+    },
+    {
+      "id": "8a388f64-594c-4c9f-b8cf-3fc437566071",
+      "question": "Welche Themen haben viele Dokumente, aber keine Kernaussagen?",
+      "query": "SELECT TOP 20 c.name AS thema, c.doc_count AS dokumente FROM n_concept c LEFT JOIN (SELECT DISTINCT dst FROM e_about) a ON a.dst = c.id WHERE a.dst IS NULL ORDER BY c.doc_count DESC;"
+    },
+    {
+      "id": "db46c8b1-34c4-4cd9-b8bd-4b2f758d4c2b",
+      "question": "Welche Folgen sind die neuesten mit Kernaussagen?",
+      "query": "SELECT TOP 10 title AS folge, published AS datum, n_claims AS kernaussagen, url FROM n_document WHERE source = 'youtube' AND n_claims > 0 ORDER BY published DESC;"
+    },
+    {
+      "id": "fc4a2716-ebd2-4fa4-b8b7-d70f13027db4",
+      "question": "Was steckt hinter der Abkuerzung RLS?",
+      "query": "SELECT id, name, kind, aliases, doc_count FROM n_concept WHERE aliases LIKE '%RLS%' OR name LIKE '%RLS%';"
+    }
+  ]
+}

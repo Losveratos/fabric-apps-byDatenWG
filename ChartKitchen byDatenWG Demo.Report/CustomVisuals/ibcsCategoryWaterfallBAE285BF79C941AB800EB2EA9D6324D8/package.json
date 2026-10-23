@@ -1,0 +1,29 @@
+{
+  "version": "2.0.0.0",
+  "author": {
+    "name": "Michael Tenner",
+    "email": "michael.tenner84@gmail.com"
+  },
+  "resources": [
+    {
+      "resourceId": "rId0",
+      "sourceType": 5,
+      "file": "resources/ibcsCategoryWaterfallBAE285BF79C941AB800EB2EA9D6324D8.pbiviz.json"
+    }
+  ],
+  "visual": {
+    "guid": "ibcsCategoryWaterfallBAE285BF79C941AB800EB2EA9D6324D8",
+    "name": "ibcsCategoryWaterfall",
+    "displayName": "IBCS Kategorie-Brücke (Test)",
+    "version": "2.0.0.0",
+    "description": "IBCS-konformer Kategorie-Wasserfall/Brücke (AC vs. PY/PL) mit Sortierung, ΔPY/ΔPL-Referenzumschalter, Hover-Tooltip, Aufbau-Animation, größter-Treiber-Notiz und Crossfilter-Selektion je Kategorie — v2, portiert aus Waterfall Chart v2.dc.html.",
+    "supportUrl": "https://github.com/",
+    "gitHubUrl": "",
+    "visualClassName": "Visual"
+  },
+  "metadata": {
+    "pbivizjson": {
+      "resourceId": "rId0"
+    }
+  }
+}

@@ -1,0 +1,233 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "bed8ee4253277e8834a4",
+  "position": {
+    "x": 43,
+    "y": 416,
+    "width": 851,
+    "height": 616,
+    "z": 3000,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "ibcsInspiredChartDeckE73997CF4C7D44978F8112A4E5FA0B4D",
+    "query": {
+      "queryState": {
+        "actual": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Sales Demo"
+                    }
+                  },
+                  "Property": "AC"
+                }
+              },
+              "queryRef": "Sales Demo.AC",
+              "nativeQueryRef": "AC"
+            }
+          ]
+        },
+        "previousYear": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Sales Demo"
+                    }
+                  },
+                  "Property": "PY"
+                }
+              },
+              "queryRef": "Sales Demo.PY",
+              "nativeQueryRef": "PY"
+            }
+          ]
+        },
+        "category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Calender"
+                    }
+                  },
+                  "Property": "Month Name Short"
+                }
+              },
+              "queryRef": "Calender.Month Name Short",
+              "nativeQueryRef": "Month Name Short",
+              "active": true
+            }
+          ]
+        },
+        "plan": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Sales Demo"
+                    }
+                  },
+                  "Property": "PL"
+                }
+              },
+              "queryRef": "Sales Demo.PL",
+              "nativeQueryRef": "PL"
+            }
+          ]
+        },
+        "forecast": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Sales Demo"
+                    }
+                  },
+                  "Property": "FC"
+                }
+              },
+              "queryRef": "Sales Demo.FC",
+              "nativeQueryRef": "FC"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "colors": [
+        {
+          "properties": {
+            "goodColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#00AC8A'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "chart": [
+        {
+          "properties": {
+            "orientation": {
+              "expr": {
+                "Literal": {
+                  "Value": "'intwaterfall'"
+                }
+              }
+            },
+            "dualVariance": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "comparisonMode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'plan'"
+                }
+              }
+            },
+            "showAbsoluteVariance": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "showRelativeVariance": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "showTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "cumulative": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "compareClick": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "labels": [
+        {
+          "properties": {
+            "fontPreset": {
+              "expr": {
+                "Literal": {
+                  "Value": "'fullhd'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "categoryAxis": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10.5D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "subTitle": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Custom Visual  by Claude'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmarksMetadata/1.0.0/schema.json",
+  "items": [
+    {
+      "name": "Bookmark884692519bb4c48d9c8d",
+      "displayName": "Navigation Startseite",
+      "children": [
+        "Bookmark96ad0871da8f82fb290d",
+        "Bookmarkb86359baea43c014d114",
+        "Bookmark5e1c5da8a1b694691500",
+        "Bookmarkbbf0a7c60694f8bfe215",
+        "Bookmark044819d596e581be9a94",
+        "Bookmark78a70e66df10377121c1",
+        "Bookmark69053c5377515fb167ae"
+      ]
+    },
+    {
+      "name": "Bookmark5801d3598f07afa90a7f",
+      "displayName": "Navigation Deals",
+      "children": [
+        "Bookmarke02871b2bd2ca1b22001",
+        "Bookmark779beab2d66c1e134133",
+        "Bookmarkcbe47104d114f93dc3b0"
+      ]
+    },
+    {
+      "name": "Bookmarke418a243b96b939bbfa6",
+      "displayName": "Kundensteckbrief",
+      "children": [
+        "Bookmarkf2decebc627ad59f3ac8",
+        "Bookmark112deea3748c3d87cb4f",
+        "Bookmark1f8e1a5aa33dc00acbbe"
+      ]
+    },
+    {
+      "name": "Bookmark833f83d698901b4b16d7",
+      "displayName": "Power PointVorlage",
+      "children": [
+        "Bookmark131af9dd56611bd27bb4",
+        "Bookmark9d7ef85a3d999599dc1c"
+      ]
+    },
+    {
+      "name": "Bookmark568aee3c1ae567213676"
+    }
+  ]
+}

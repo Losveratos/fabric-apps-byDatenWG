@@ -1,0 +1,31 @@
+table '📶Time Intellegence Calculation Group'
+	lineageTag: e097652f-f3c2-4b90-bfc8-e63a1c78c104
+
+	calculationGroup
+
+		calculationItem AC = selectedmeasure()
+
+		calculationItem PY = Calculate(selectedmeasure(),dateadd('📅Kalender'[Date],-1,year))
+
+		calculationItem PM = calculate (selectedmeasure(),'📅Kalender'[Month]=month(today())-2)
+
+		calculationItem ACM = calculate (selectedmeasure(),'📅Kalender'[Month]=month(today())-1)
+
+	column Name
+		dataType: string
+		lineageTag: 00dd752a-73f1-4b21-b852-c9a86dc0f4f4
+		summarizeBy: none
+		sourceColumn: Name
+		sortByColumn: Ordinal
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ordinal
+		dataType: int64
+		isHidden
+		lineageTag: f7bddb10-deb1-4d3c-bb67-44dd28837131
+		summarizeBy: sum
+		sourceColumn: Ordinal
+
+		annotation SummarizationSetBy = Automatic
+

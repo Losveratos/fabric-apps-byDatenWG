@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "6682c39889d5ee53a4f5",
+  "position": {
+    "x": 1214.0098199672668,
+    "y": 111.03109656301146,
+    "z": 3000,
+    "height": 105.04559270516717,
+    "width": 66.139817629179333,
+    "tabOrder": 5000
+  },
+  "visualGroup": {
+    "displayName": "Icon Panel",
+    "groupMode": "ScaleMode"
+  }
+}

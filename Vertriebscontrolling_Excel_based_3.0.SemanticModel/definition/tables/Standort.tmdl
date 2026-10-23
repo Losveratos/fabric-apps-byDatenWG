@@ -1,0 +1,38 @@
+table Standort
+	lineageTag: 067b5625-59a0-4376-9f7b-e9cbf4b6f600
+
+	column Land
+		dataType: string
+		lineageTag: 705e2a69-f301-4d22-bee3-39219b07ce17
+		summarizeBy: none
+		sourceColumn: Land
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bundesland
+		dataType: string
+		lineageTag: edba55c5-e394-43dc-9c48-3bd7b7d995a1
+		summarizeBy: none
+		sourceColumn: Bundesland
+
+		annotation SummarizationSetBy = Automatic
+
+	column Stadt
+		dataType: string
+		lineageTag: 5344fe7f-08e6-48f8-893e-379ebb6b001a
+		summarizeBy: none
+		sourceColumn: Stadt
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Standort-2529ecaf-07d6-4b60-9bd8-2940948e6bee = m
+		mode: import
+		queryGroup: Modell
+		source =
+				let
+				    Source = #"Core Standort"
+				in
+				    Source
+
+	annotation PBI_ResultType = Table
+

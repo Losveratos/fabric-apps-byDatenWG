@@ -1,0 +1,316 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "465440ff38e512c5af31",
+  "position": {
+    "x": 41,
+    "y": 130,
+    "width": 1539,
+    "height": 903,
+    "z": 0,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "ibcsInspiredChartDeckE73997CF4C7D44978F8112A4E5FA0B4D",
+    "query": {
+      "queryState": {
+        "actual": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Sales Demo"
+                    }
+                  },
+                  "Property": "AC"
+                }
+              },
+              "queryRef": "Sales Demo.AC",
+              "nativeQueryRef": "AC"
+            }
+          ]
+        },
+        "previousYear": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Sales Demo"
+                    }
+                  },
+                  "Property": "PY"
+                }
+              },
+              "queryRef": "Sales Demo.PY",
+              "nativeQueryRef": "PY"
+            }
+          ]
+        },
+        "plan": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Sales Demo"
+                    }
+                  },
+                  "Property": "PL"
+                }
+              },
+              "queryRef": "Sales Demo.PL",
+              "nativeQueryRef": "PL"
+            }
+          ]
+        },
+        "category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Sales Demo"
+                    }
+                  },
+                  "Property": "Product"
+                }
+              },
+              "queryRef": "Sales Demo.Product",
+              "nativeQueryRef": "Product",
+              "active": true
+            }
+          ]
+        },
+        "lineMeasure": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Sales Demo"
+                    }
+                  },
+                  "Property": "FC"
+                }
+              },
+              "queryRef": "Sales Demo.FC",
+              "nativeQueryRef": "FC"
+            }
+          ]
+        },
+        "multiples": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Sales Demo"
+                    }
+                  },
+                  "Property": "Country"
+                }
+              },
+              "queryRef": "Sales Demo.Country",
+              "nativeQueryRef": "Country"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Sales Demo"
+                  }
+                },
+                "Property": "AC"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "chart": [
+        {
+          "properties": {
+            "orientation": {
+              "expr": {
+                "Literal": {
+                  "Value": "'dumbbell'"
+                }
+              }
+            },
+            "dualVariance": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "showRelativeVariance": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "compareClick": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "cumulative": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "waterfallStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "sortByImpact": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "comparisonMode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'plan'"
+                }
+              }
+            },
+            "topN": {
+              "expr": {
+                "Literal": {
+                  "Value": "3D"
+                }
+              }
+            },
+            "showAbsoluteVariance": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "highlight": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Laptop Pro'"
+                }
+              }
+            },
+            "multiplesTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "multiplesTopN": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "colors": [
+        {
+          "properties": {
+            "actualColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#D64541'"
+                    }
+                  }
+                }
+              }
+            },
+            "goodColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "labels": [
+        {
+          "properties": {
+            "fontPreset": {
+              "expr": {
+                "Literal": {
+                  "Value": "'fullhd'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "categoryAxis": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10.5D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

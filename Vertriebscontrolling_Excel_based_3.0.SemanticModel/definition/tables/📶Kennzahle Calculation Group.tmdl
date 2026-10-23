@@ -1,0 +1,48 @@
+table '📶Kennzahle Calculation Group'
+	lineageTag: 5cfec2f4-7e83-4a5c-89b0-d1d7c28baad8
+
+	calculationGroup
+		precedence: 1
+
+		calculationItem 'Gewichtet Angebotswert' = [€ Gewichte Angbotswert]
+
+		calculationItem 'Gewichtete Angebotsmege' =
+				
+				[€ Gewichte Angbotswert]
+
+		calculationItem 'Durchschnittliche Angebotshöhe' = [€ Gewichte Angbotsmenge]
+
+		calculationItem 'Durchschnittlicher Kundenumsatz' = [€ Durchschnittlicher Kundenumsatz]
+
+		calculationItem 'offene Angebote' = [€ Offene Angebote]
+
+		calculationItem 'Gewonne Angebote' = [€ Gewonne Angebote]
+
+		calculationItem 'Anzahl gewonnen' = [# Anzahl  Angebote]
+
+		calculationItem 'Anzahl Kunden' = [# Anzahl Kunden]
+
+		calculationItem 'Premium Share' = [% Premium Produkte]
+
+		calculationItem 'Gewonnen Share' = [% Anteil gewonnen Angebote]
+
+		calculationItem 'Dauer Angebotszyklus' = [# Angebots Cycle in Tagen]
+
+	column Name
+		dataType: string
+		lineageTag: cbbb2fcf-7051-4936-b575-3b5fa5cac7d3
+		summarizeBy: none
+		sourceColumn: Name
+		sortByColumn: Ordinal
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ordinal
+		dataType: int64
+		isHidden
+		lineageTag: 3d5d2b0e-88af-4c00-8e42-18bf64a0b238
+		summarizeBy: sum
+		sourceColumn: Ordinal
+
+		annotation SummarizationSetBy = Automatic
+

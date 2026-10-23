@@ -1,0 +1,24 @@
+// Abfragen der Seite „Säulen mit Abweichung zum Vorjahr“ ohne Querfilter, zum Prüfen in der DAX-Abfrageansicht.
+// erzeugt von `dwg app page`, nicht von Hand ändern.
+
+// Kachel karten (chartkitchen)
+EVALUATE
+    SUMMARIZECOLUMNS(
+        'Kunde'[Kanal],
+        'Kunde'[Kanal Sort],
+        "actual", 'Fakten'[Umsatz AC],
+        "previousYear", 'Fakten'[Umsatz PY bis Ist],
+        "plan", 'Fakten'[Umsatz PL bis Ist]
+    )
+ORDER BY 'Kunde'[Kanal Sort]
+
+// Kachel vorlage (chartkitchen)
+EVALUATE
+    SUMMARIZECOLUMNS(
+        'Kalender'[Monatsname],
+        'Kalender'[Monat],
+        "actual", 'Fakten'[Umsatz AC],
+        "previousYear", 'Fakten'[Umsatz PY],
+        "forecast", 'Fakten'[Umsatz FC]
+    )
+ORDER BY 'Kalender'[Monat]

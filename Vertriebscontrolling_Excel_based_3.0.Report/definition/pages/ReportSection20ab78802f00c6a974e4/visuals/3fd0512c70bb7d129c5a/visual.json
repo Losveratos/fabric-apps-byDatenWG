@@ -1,0 +1,423 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "3fd0512c70bb7d129c5a",
+  "position": {
+    "x": 684.16647189890773,
+    "y": 167.21232802006887,
+    "z": 11750,
+    "height": 552.69418345564748,
+    "width": 522.059863818383,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "ZebraBITablesBAE31B370F254F808553548EFB35BFA5",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Produkt"
+                    }
+                  },
+                  "Property": "Produkt Gruppe"
+                }
+              },
+              "queryRef": "Produkt.Produkt Gruppe",
+              "nativeQueryRef": "Produkt Gruppe1",
+              "active": true,
+              "displayName": "Produkt Gruppe"
+            }
+          ],
+          "fieldParameters": [
+            {
+              "parameterExpr": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "📶Auswahl 2"
+                    }
+                  },
+                  "Property": "Parameter"
+                }
+              },
+              "index": 0,
+              "length": 1
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Angebote"
+                    }
+                  },
+                  "Property": "AC"
+                }
+              },
+              "queryRef": "Angebote.AC"
+            }
+          ]
+        },
+        "Forecast": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Forecast"
+                    }
+                  },
+                  "Property": "FC"
+                }
+              },
+              "queryRef": "Forecast.FC",
+              "nativeQueryRef": "FC"
+            }
+          ]
+        },
+        "PreviousYear": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Angebote"
+                    }
+                  },
+                  "Property": "PY"
+                }
+              },
+              "queryRef": "Angebote.PY",
+              "nativeQueryRef": "PY"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Angebote"
+                  }
+                },
+                "Property": "AC"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "proFeaturesSettings": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "licenseSettings": [
+        {
+          "properties": {
+            "licenseKey": {
+              "expr": {
+                "Literal": {
+                  "Value": "'OWEMeniOfKRrc29R7ESaHASs07MogOlvPQrW4lDUsEglQvZfWJi9dKiL3sN2qDuQn8fP6joPnPJ5qrNGXdj+D3siY29tcGFueSI6IkhBWkVNQUcgJiBFUFIgR21iSCIsImV4cGlyeURhdGUiOiIyMDI1LTA2LTA4Iiwibk9mVXNlcnMiOiIyMCIsImxpY2Vuc2VUeXBlIjoiUGFpZCIsInZpc3VhbFR5cGUiOiJBbGwifQ=='"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "titleSettings": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Monat'"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Bold'', wf_segoe-ui_bold, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "version": [
+        {
+          "properties": {
+            "version": {
+              "expr": {
+                "Literal": {
+                  "Value": "'7.1.0'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "chartSettings": [
+        {
+          "properties": {
+            "showAsTable": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "showGrandTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "columnSettings": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"actual\":{\"invert\":false,\"scaleGroup\":1,\"format\":0,\"useMeasureName\":false,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"hiddenFromGroups\":[]},\"chartView\":{\"bold\":false,\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"hiddenFromGroups\":[]}},\"previousYear\":{\"invert\":false,\"scaleGroup\":1,\"format\":0,\"useMeasureName\":false,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"hiddenFromGroups\":[]},\"chartView\":{\"bold\":false,\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"hiddenFromGroups\":[]}},\"actual-previousYear\":{\"invert\":false,\"scaleGroup\":1,\"format\":1,\"useMeasureName\":false,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"hiddenFromGroups\":[]},\"chartView\":{\"bold\":false,\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"hiddenFromGroups\":[]}},\"actual-previousYear-percent\":{\"invert\":false,\"scaleGroup\":1,\"format\":2,\"useMeasureName\":false,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"hiddenFromGroups\":[]},\"chartView\":{\"bold\":false,\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"hiddenFromGroups\":[]}},\"forecast\":{\"invert\":false,\"scaleGroup\":1,\"format\":0,\"useMeasureName\":false,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"hiddenFromGroups\":[]},\"chartView\":{\"bold\":false,\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"hiddenFromGroups\":[]}},\"actual-forecast\":{\"invert\":false,\"scaleGroup\":1,\"format\":1,\"useMeasureName\":false,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"hiddenFromGroups\":[]},\"chartView\":{\"bold\":false,\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":2,\"hidden\":false,\"hiddenFromGroups\":[]}},\"actual-forecast-percent\":{\"invert\":false,\"scaleGroup\":1,\"format\":2,\"useMeasureName\":false,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"hiddenFromGroups\":[]},\"chartView\":{\"bold\":false,\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"hiddenFromGroups\":[]}}}'"
+                }
+              }
+            },
+            "absoluteChart": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "firstTimeShowingColumnAdder": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "categorySettings": [
+        {
+          "properties": {
+            "topNSettings": {
+              "expr": {
+                "Literal": {
+                  "Value": "'[{\"category\":\"Vertriebler\",\"dataProperty\":0,\"columnName\":\"actual\",\"level\":0,\"number\":10,\"numberInFocusMode\":20,\"type\":1}]'"
+                }
+              }
+            },
+            "showTopNForm": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "interactionSettings": [
+        {
+          "properties": {
+            "enableMeasureDrillThrough": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "categoriesMetadata": [
+        {
+          "properties": {
+            "collapsedVirtually": {
+              "expr": {
+                "Literal": {
+                  "Value": "'[]'"
+                }
+              }
+            },
+            "userChangedExpandCollapse": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "designSettings": [
+        {
+          "properties": {
+            "style": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            },
+            "positiveColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 3,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "sortSettings": [
+        {
+          "properties": {
+            "columnName": {
+              "expr": {
+                "Literal": {
+                  "Value": "'actual-forecast'"
+                }
+              }
+            },
+            "chartSort": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "categorySort": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "754287127e3577c7d12f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Date"
+              }
+            },
+            "Property": "Start of Month"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "50849cea1230e80312c4",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Date"
+              }
+            },
+            "Property": "Start of Month"
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      }
+    ]
+  }
+}

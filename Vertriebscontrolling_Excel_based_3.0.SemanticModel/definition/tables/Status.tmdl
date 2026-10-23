@@ -1,0 +1,48 @@
+table Status
+	lineageTag: 807dea36-b570-45dc-9173-6684f60df286
+
+	column Status
+		dataType: string
+		lineageTag: 36cbd578-5da9-4c24-ad0a-00451d81efe4
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bewertung
+		dataType: string
+		lineageTag: 596e6a68-0a17-47f0-8144-74ce10da4b90
+		summarizeBy: none
+		sourceColumn: Bewertung
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ID Status'
+		dataType: int64
+		formatString: 0
+		lineageTag: 579a04cc-8cde-4b34-bdd6-302b535b4a5c
+		summarizeBy: none
+		sourceColumn: ID Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Warscheinlichkeit
+		dataType: int64
+		formatString: 0
+		lineageTag: 2e73d87a-6317-42ef-966c-2edf594f3a26
+		summarizeBy: none
+		sourceColumn: Warscheinlichkeit
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Status-0ba74a99-1dce-4365-ac34-393df208fc6a = m
+		mode: import
+		queryGroup: Modell
+		source =
+				let
+				    Source = #"Core Status"
+				in
+				    Source
+
+	annotation PBI_ResultType = Exception
+

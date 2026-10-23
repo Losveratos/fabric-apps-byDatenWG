@@ -1,0 +1,4 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/dataAgent/definition/publishInfo/1.0.0/schema.json",
+  "description": "Beantwortet Fragen zur DatenWG Library, der Wissensdatenbank aus den Folgen und Seiten der Daten-WG Knowledge Kitchen zu Power BI, Microsoft Fabric und Datenmodellierung. Kennt 168 Dokumente (147 Folgen und 21 Seiten), 105 Themen, 35 Personen und 1124 automatisch extrahierte Kernaussagen mit Sprungmarke ins Video. Typische Fragen: wer erklaert ein Thema, was wurde dazu gesagt und wann, was verbindet zwei Themen, in welchen Folgen faellt ein Stichwort, was sagt eine bestimmte Person dazu. Antwortet auf Deutsch und nennt zu jeder Aussage Folge, Datum und Zeitmarke."
+}

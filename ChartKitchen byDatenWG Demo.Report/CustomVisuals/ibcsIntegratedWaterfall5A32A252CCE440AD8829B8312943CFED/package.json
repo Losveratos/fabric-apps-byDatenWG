@@ -1,0 +1,29 @@
+{
+  "version": "1.1.0.0",
+  "author": {
+    "name": "Michael Tenner",
+    "email": "michael.tenner84@gmail.com"
+  },
+  "resources": [
+    {
+      "resourceId": "rId0",
+      "sourceType": 5,
+      "file": "resources/ibcsIntegratedWaterfall5A32A252CCE440AD8829B8312943CFED.pbiviz.json"
+    }
+  ],
+  "visual": {
+    "guid": "ibcsIntegratedWaterfall5A32A252CCE440AD8829B8312943CFED",
+    "name": "ibcsIntegratedWaterfall",
+    "displayName": "IBCS Integrierte GuV (Test)",
+    "version": "1.1.0.0",
+    "description": "IBCS-konformer Wasserfall (AC vs. PY) mit ΔPY%-Pinchart, Monatssäulen und Forecast-Wert-Aufrechnung (FC-Messgröße füllt fehlende AC-Werte) — Testvisual, portiert aus ibcs-chart-standalone.html.",
+    "supportUrl": "https://github.com/",
+    "gitHubUrl": "",
+    "visualClassName": "Visual"
+  },
+  "metadata": {
+    "pbivizjson": {
+      "resourceId": "rId0"
+    }
+  }
+}

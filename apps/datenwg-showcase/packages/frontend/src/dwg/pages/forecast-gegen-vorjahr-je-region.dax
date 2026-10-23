@@ -1,0 +1,24 @@
+// Abfragen der Seite „Forecast gegen Vorjahr je Region“ ohne Querfilter, zum Prüfen in der DAX-Abfrageansicht.
+// erzeugt von `dwg app page`, nicht von Hand ändern.
+
+// Kachel karten (chartkitchen)
+EVALUATE
+    SUMMARIZECOLUMNS(
+        'Produkt'[Sorte],
+        'Produkt'[Sorte Sort],
+        "actual", 'Fakten'[Umsatz FC],
+        "previousYear", 'Fakten'[Umsatz PY],
+        "plan", 'Fakten'[Umsatz PL]
+    )
+ORDER BY 'Produkt'[Sorte Sort]
+
+// Kachel vorlage (pnl)
+EVALUATE
+    SUMMARIZECOLUMNS(
+        'Kunde'[Land],
+        'Kunde'[Region],
+        "ac", 'Fakten'[Umsatz AC],
+        "py", 'Fakten'[Umsatz PY],
+        "fc", 'Fakten'[Umsatz FC]
+    )
+ORDER BY 'Kunde'[Land], 'Kunde'[Region]

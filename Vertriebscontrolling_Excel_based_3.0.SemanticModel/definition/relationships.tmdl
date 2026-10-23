@@ -1,0 +1,53 @@
+relationship 7c9e8ec2-0996-4267-9319-6dc615b62f5d
+	fromColumn: Angebote.'Produkt ID'
+	toColumn: Produkt.'Produkt ID'
+
+relationship 10abfa32-1ae3-445a-8fc0-24bb3df67ad9
+	fromColumn: Angebote.Vertriebler
+	toColumn: Vertriebler.Vertriebler
+
+relationship 5bb1de79-4c4e-4f6d-acbe-0b84c168d35e
+	fromColumn: Angebote.Stadt
+	toColumn: Standort.Stadt
+
+relationship 35b3f335-3d2a-4377-867a-8c51896b6d81
+	fromColumn: Angebote.Kunde
+	toColumn: Kunde.Kunde
+
+relationship 2b77b3d0-bf0f-41b7-b9a3-6431439990ca
+	fromColumn: Angebote.'Abschluss Datum'
+	toColumn: 📅Kalender.Date
+
+relationship 717be366-b006-4137-a221-1623cbe55514
+	fromColumn: Angebote.'Status ID'
+	toColumn: Status.'ID Status'
+
+relationship 00d36f4d-d139-4bd8-8057-82945f57956f
+	isActive: false
+	fromColumn: Angebote.'Anlage Angbot'
+	toColumn: 📅Kalender.Date
+
+relationship 946c5ad9-02b0-43dd-9144-e632fe5b0b5a
+	fromColumn: Angebote.'Pipeline Status'
+	toColumn: 'Pipeline Status'.'Pipeline Status'
+
+relationship 10aad9e5-19b9-4195-a562-f2f1c1955721
+	fromColumn: Forecast.Vertriebler
+	toColumn: Vertriebler.Vertriebler
+
+relationship 515e48c4-275b-4054-9c04-2cea84ed4780
+	fromColumn: Forecast.Stadt
+	toColumn: Standort.Stadt
+
+relationship cd04d97d-fa39-4b42-8933-232e05e7b892
+	fromColumn: Forecast.Kunde
+	toColumn: Kunde.Kunde
+
+relationship d69d856d-8c61-43fb-a843-5a8ad2b903b1
+	fromColumn: Forecast.'Abschluss Datum'
+	toColumn: 📅Kalender.Date
+
+relationship 8fc51166-1189-465b-aaa9-7116052fefb7
+	fromColumn: Forecast.'Core Produkt.Produkt ID'
+	toColumn: Produkt.'Produkt ID'
+

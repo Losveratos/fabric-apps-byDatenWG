@@ -1,0 +1,29 @@
+{
+  "version": "1.26.0.0",
+  "author": {
+    "name": "PowerBI Kitchen",
+    "email": "michael.tenner84@gmail.com"
+  },
+  "resources": [
+    {
+      "resourceId": "rId0",
+      "sourceType": 5,
+      "file": "resources/ibcsInspiredChartDeckE73997CF4C7D44978F8112A4E5FA0B4D.pbiviz.json"
+    }
+  ],
+  "visual": {
+    "guid": "ibcsInspiredChartDeckE73997CF4C7D44978F8112A4E5FA0B4D",
+    "name": "ibcsInspiredChartDeck",
+    "displayName": "IBCS Inspired Chart Deck",
+    "version": "1.26.0.0",
+    "description": "IBCS inspired chart deck: base chart with scenario notation (AC solid, PY grey, PL outlined, FC hatched) plus absolute and relative variance panels — columns for time, bars for structure.",
+    "supportUrl": "https://github.com/losveratos/powerbi-kitchen-/issues",
+    "gitHubUrl": "https://github.com/losveratos/powerbi-kitchen-",
+    "visualClassName": "Visual"
+  },
+  "metadata": {
+    "pbivizjson": {
+      "resourceId": "rId0"
+    }
+  }
+}

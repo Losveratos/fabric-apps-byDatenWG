@@ -1,0 +1,21 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "ReportSection2f4af799b81b0e43dce1",
+  "displayName": "Quick Dashboad Sample",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "visibility": "HiddenInViewMode",
+  "visualInteractions": [
+    {
+      "source": "34f657a0c963b0c5408b",
+      "target": "59044bbea735368047c2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "34f657a0c963b0c5408b",
+      "target": "ce989a5a2fe8fbf9b038",
+      "type": "DataFilter"
+    }
+  ]
+}

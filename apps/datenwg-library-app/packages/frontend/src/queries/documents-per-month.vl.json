@@ -1,0 +1,23 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "Dokumente pro Monat",
+  "data": { "values": [] },
+  "mark": { "type": "bar", "cornerRadiusEnd": 3 },
+  "encoding": {
+    "x": {
+      "field": "Monat",
+      "type": "temporal",
+      "timeUnit": "yearmonth",
+      "axis": { "title": null, "format": "%b %y", "labelAngle": 0 }
+    },
+    "y": {
+      "field": "Dokumente",
+      "type": "quantitative",
+      "axis": { "title": null, "tickMinStep": 1 }
+    },
+    "tooltip": [
+      { "field": "Monat", "type": "temporal", "timeUnit": "yearmonth", "title": "Monat" },
+      { "field": "Dokumente", "type": "quantitative" }
+    ]
+  }
+}

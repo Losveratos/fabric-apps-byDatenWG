@@ -1,0 +1,102 @@
+table Forecast
+	lineageTag: 832f6ef8-ff5b-4cce-b56c-8d06227d87b6
+
+	measure FC =
+			sumx(Forecast,Forecast[FC Vorhersage]*Forecast[Angebotssumme])
+			//Calculation of the Relevant FC
+		displayFolder: 🎯FC
+		lineageTag: 67c2929b-e994-4056-834e-dbbad2283dd9
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Topic
+		dataType: string
+		lineageTag: 84602cc4-5841-42bc-b62d-cb3d59148881
+		summarizeBy: none
+		sourceColumn: Topic
+
+		annotation SummarizationSetBy = Automatic
+
+	column Kunde
+		dataType: string
+		lineageTag: f668f5dd-0893-4efc-88a7-ff4c8b3a6cfe
+		summarizeBy: none
+		sourceColumn: Kunde
+
+		annotation SummarizationSetBy = Automatic
+
+	column Angebotssumme
+		dataType: double
+		lineageTag: 944509b7-72d8-40aa-9897-e52751e9bf6a
+		summarizeBy: sum
+		sourceColumn: Angebotssumme
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Menge
+		dataType: int64
+		formatString: 0
+		lineageTag: 4f9a723e-6687-4dd5-ad9c-6cf8468142db
+		summarizeBy: sum
+		sourceColumn: Menge
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Abschluss Datum'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: ca61f7d9-36ef-4abe-b0be-8c4106e2b2e0
+		summarizeBy: none
+		sourceColumn: Abschluss Datum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Vertriebler
+		dataType: string
+		lineageTag: 9bfbf621-edec-44ba-9690-d0af1e36ddc3
+		summarizeBy: none
+		sourceColumn: Vertriebler
+
+		annotation SummarizationSetBy = Automatic
+
+	column Stadt
+		dataType: string
+		lineageTag: 549016c0-e5a0-4fd9-b09a-7f0e5ced6a4c
+		summarizeBy: none
+		sourceColumn: Stadt
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FC Vorhersage'
+		dataType: int64
+		formatString: 0
+		lineageTag: a791f2a4-61de-4023-a054-9d50cfb1c14c
+		summarizeBy: sum
+		sourceColumn: FC Vorhersage
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Core Produkt.Produkt ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: a7c59717-6f0c-4e1f-b5d8-009e3147d105
+		summarizeBy: none
+		sourceColumn: Core Produkt.Produkt ID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Forecast-ae1e7c3f-a2cb-47d2-a633-e2e5fb3abb16 = m
+		mode: import
+		queryGroup: Modell
+		source =
+				let
+				    Source = #"Core Forecast"
+				in
+				    Source
+
+	annotation PBI_ResultType = Table
+

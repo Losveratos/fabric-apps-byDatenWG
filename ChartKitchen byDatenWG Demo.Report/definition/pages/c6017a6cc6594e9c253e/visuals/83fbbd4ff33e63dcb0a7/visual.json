@@ -1,0 +1,216 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "83fbbd4ff33e63dcb0a7",
+  "position": {
+    "x": 935,
+    "y": 416,
+    "width": 639,
+    "height": 616,
+    "z": 1000,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "ibcsInspiredChartDeckE73997CF4C7D44978F8112A4E5FA0B4D",
+    "query": {
+      "queryState": {
+        "category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Sales Demo"
+                    }
+                  },
+                  "Property": "Product"
+                }
+              },
+              "queryRef": "Sales Demo.Product",
+              "nativeQueryRef": "Product",
+              "active": true,
+              "displayName": "Product"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Sales Demo"
+                    }
+                  },
+                  "Property": "Country"
+                }
+              },
+              "queryRef": "Sales Demo.Country",
+              "nativeQueryRef": "Country",
+              "active": false
+            }
+          ],
+          "fieldParameters": [
+            {
+              "parameterExpr": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Parameter"
+                    }
+                  },
+                  "Property": "Parameter"
+                }
+              },
+              "index": 0,
+              "length": 1
+            }
+          ]
+        },
+        "actual": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Sales Demo"
+                    }
+                  },
+                  "Property": "AC YTD"
+                }
+              },
+              "queryRef": "Sales Demo.AC YTD",
+              "nativeQueryRef": "AC YTD"
+            }
+          ]
+        },
+        "previousYear": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Sales Demo"
+                    }
+                  },
+                  "Property": "PY YTD"
+                }
+              },
+              "queryRef": "Sales Demo.PY YTD",
+              "nativeQueryRef": "PY YTD"
+            }
+          ]
+        },
+        "plan": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Sales Demo"
+                    }
+                  },
+                  "Property": "PL YTD"
+                }
+              },
+              "queryRef": "Sales Demo.PL YTD",
+              "nativeQueryRef": "PL YTD"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Sales Demo"
+                  }
+                },
+                "Property": "AC YTD"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "colors": [
+        {
+          "properties": {
+            "goodColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#00AC8A'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "chart": [
+        {
+          "properties": {
+            "orientation": {
+              "expr": {
+                "Literal": {
+                  "Value": "'catbridge'"
+                }
+              }
+            },
+            "comparisonMode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'py'"
+                }
+              }
+            },
+            "sortByImpact": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "driverNote": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "labels": [
+        {
+          "properties": {
+            "fontPreset": {
+              "expr": {
+                "Literal": {
+                  "Value": "'fullhd'"
+                }
+              }
+            },
+            "decimals": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

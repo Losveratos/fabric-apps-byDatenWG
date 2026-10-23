@@ -1,0 +1,209 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:is(.dark *));
+
+/* Bridged tokens: always emitted, read at runtime by SVG charts via var(). */
+@theme static {
+  --color-brand: #117865;
+  --color-brand-foreground: #117865;
+  --color-hover: #f4f1e8;
+
+  /* IBCS scenario notation */
+  --color-ac: #1a1a1a; /* actual: solid dark */
+  --color-py: #a8a396; /* previous year: grey */
+  --color-pl: #1a1a1a; /* plan: outlined */
+  --color-fc: #1a1a1a; /* forecast: hatched */
+  --color-sim: #c25a2d; /* simulation: kitchen accent */
+
+  /* Variances: teal instead of green, red for bad */
+  --color-good: #117865;
+  --color-bad: #c0392b;
+}
+
+@theme {
+  --color-background: #fafaf5;
+  --color-foreground: #1a1a1a;
+  --color-card: #ffffff;
+  --color-card-foreground: #1a1a1a;
+  --color-popover: #ffffff;
+  --color-popover-foreground: #1a1a1a;
+  --color-primary: #117865;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #f4f1e8;
+  --color-secondary-foreground: #1a1a1a;
+  --color-muted: #f4f1e8;
+  --color-muted-foreground: #6b6b6b;
+  --color-accent: #e3f2ed;
+  --color-accent-foreground: #0f5a4c;
+  --color-warm: #c25a2d;
+  --color-warm-foreground: #ffffff;
+  --color-destructive: #c0392b;
+  --color-destructive-foreground: #ffffff;
+  --color-border: #e6e2d6;
+  --color-input: #e6e2d6;
+  --color-ring: #117865;
+
+  --radius-none: 0;
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-xl: 14px;
+  --radius-2xl: 18px;
+  --radius-3xl: 24px;
+  --radius-4xl: 28px;
+  --radius-5xl: 32px;
+  --radius-6xl: 40px;
+  --radius-full: 9999px;
+  --radius: 10px;
+
+  --spacing-none: 0;
+  --spacing-100-nudge: 2px;
+  --spacing-100: 4px;
+  --spacing-200-nudge: 6px;
+  --spacing-200: 8px;
+  --spacing-300-nudge: 10px;
+  --spacing-300: 12px;
+  --spacing-400: 16px;
+  --spacing-500: 20px;
+  --spacing-600: 24px;
+  --spacing-700: 28px;
+  --spacing-800: 32px;
+
+  --text-100: 10px;
+  --text-200: 12px;
+  --text-300: 14px;
+  --text-400: 16px;
+  --text-500: 20px;
+  --text-600: 24px;
+  --text-hero-700: 28px;
+  --text-hero-800: 32px;
+  --text-hero-900: 40px;
+  --text-hero-1000: 68px;
+
+  --leading-100: 14px;
+  --leading-200: 16px;
+  --leading-300: 20px;
+  --leading-400: 22px;
+  --leading-500: 28px;
+  --leading-600: 32px;
+  --leading-hero-700: 36px;
+  --leading-hero-800: 40px;
+  --leading-hero-900: 52px;
+  --leading-hero-1000: 92px;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Kitchen tools never use serifs: Geist everywhere, JetBrains Mono for codes. */
+  --font-heading: 'Geist', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-base: 'Geist', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-monospace: 'JetBrains Mono', Consolas, 'Courier New', monospace;
+  --font-numeric: 'Geist', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --icon-size-100: 12px;
+  --icon-size-200: 16px;
+  --icon-size-300: 20px;
+  --icon-size-400: 24px;
+  --icon-size-500: 28px;
+  --icon-size-600: 32px;
+  --icon-size-700: 48px;
+}
+
+@utility icon-size-* {
+  width: --value(--icon-size-*);
+  height: --value(--icon-size-*);
+}
+
+@layer base {
+  .dark {
+    --color-background: #15140f;
+    --color-foreground: #f1eee5;
+    --color-card: #1e1c17;
+    --color-card-foreground: #f1eee5;
+    --color-popover: #24221c;
+    --color-popover-foreground: #f1eee5;
+    --color-primary: #3aa58f;
+    --color-primary-foreground: #0d1a16;
+    --color-secondary: #26231d;
+    --color-secondary-foreground: #f1eee5;
+    --color-muted: #26231d;
+    --color-muted-foreground: #a8a396;
+    --color-accent: #1f3b35;
+    --color-accent-foreground: #bfe8dc;
+    --color-warm: #e07a4b;
+    --color-warm-foreground: #1a0f08;
+    --color-destructive: #e06c5e;
+    --color-destructive-foreground: #1a0f08;
+    --color-border: #35322a;
+    --color-input: #35322a;
+    --color-ring: #3aa58f;
+    --color-brand: #3aa58f;
+    --color-brand-foreground: #6fd0b8;
+    --color-hover: #26231d;
+
+    --color-ac: #f1eee5;
+    --color-py: #6b675d;
+    --color-pl: #f1eee5;
+    --color-fc: #f1eee5;
+    --color-sim: #e07a4b;
+    --color-good: #3aa58f;
+    --color-bad: #e06c5e;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-base);
+  }
+  select,
+  input,
+  textarea,
+  button {
+    font-family: inherit;
+  }
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+/* IBCS forecast hatch for HTML swatches and bars */
+.hatch {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--color-fc) 0 1.5px,
+    transparent 1.5px 4px
+  );
+}
+.hatch-sim {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--color-sim) 0 1.5px,
+    transparent 1.5px 4px
+  );
+}
+
+/* Range input in kitchen teal */
+input[type='range'].lever {
+  accent-color: var(--color-primary);
+  height: 18px;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,648 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/graphIndex/definition/graphDefinition/1.0.0/schema.json",
+  "nodeTables": [
+    {
+      "nodeTypeAlias": "Document",
+      "id": "nt_n_document",
+      "dataSourceName": "n_document",
+      "propertyMappings": [
+        {
+          "propertyName": "id",
+          "sourceColumn": "id"
+        },
+        {
+          "propertyName": "title",
+          "sourceColumn": "title"
+        },
+        {
+          "propertyName": "source",
+          "sourceColumn": "source"
+        },
+        {
+          "propertyName": "published",
+          "sourceColumn": "published"
+        },
+        {
+          "propertyName": "url",
+          "sourceColumn": "url"
+        },
+        {
+          "propertyName": "coverage",
+          "sourceColumn": "coverage"
+        },
+        {
+          "propertyName": "format",
+          "sourceColumn": "format"
+        },
+        {
+          "propertyName": "bucket",
+          "sourceColumn": "bucket"
+        },
+        {
+          "propertyName": "n_claims",
+          "sourceColumn": "n_claims"
+        },
+        {
+          "propertyName": "n_segments",
+          "sourceColumn": "n_segments"
+        }
+      ]
+    },
+    {
+      "nodeTypeAlias": "Concept",
+      "id": "nt_n_concept",
+      "dataSourceName": "n_concept",
+      "propertyMappings": [
+        {
+          "propertyName": "id",
+          "sourceColumn": "id"
+        },
+        {
+          "propertyName": "name",
+          "sourceColumn": "name"
+        },
+        {
+          "propertyName": "kind",
+          "sourceColumn": "kind"
+        },
+        {
+          "propertyName": "aliases",
+          "sourceColumn": "aliases"
+        },
+        {
+          "propertyName": "doc_count",
+          "sourceColumn": "doc_count"
+        }
+      ]
+    },
+    {
+      "nodeTypeAlias": "Person",
+      "id": "nt_n_person",
+      "dataSourceName": "n_person",
+      "propertyMappings": [
+        {
+          "propertyName": "id",
+          "sourceColumn": "id"
+        },
+        {
+          "propertyName": "name",
+          "sourceColumn": "name"
+        },
+        {
+          "propertyName": "doc_count",
+          "sourceColumn": "doc_count"
+        }
+      ]
+    },
+    {
+      "nodeTypeAlias": "Bucket",
+      "id": "nt_n_bucket",
+      "dataSourceName": "n_bucket",
+      "propertyMappings": [
+        {
+          "propertyName": "id",
+          "sourceColumn": "id"
+        },
+        {
+          "propertyName": "name",
+          "sourceColumn": "name"
+        }
+      ]
+    },
+    {
+      "nodeTypeAlias": "Claim",
+      "id": "nt_n_claim",
+      "dataSourceName": "n_claim",
+      "propertyMappings": [
+        {
+          "propertyName": "id",
+          "sourceColumn": "id"
+        },
+        {
+          "propertyName": "aussage",
+          "sourceColumn": "text"
+        },
+        {
+          "propertyName": "kind",
+          "sourceColumn": "kind"
+        },
+        {
+          "propertyName": "doc_id",
+          "sourceColumn": "doc_id"
+        },
+        {
+          "propertyName": "start_s",
+          "sourceColumn": "start_s"
+        },
+        {
+          "propertyName": "precision",
+          "sourceColumn": "precision"
+        },
+        {
+          "propertyName": "anchor",
+          "sourceColumn": "anchor"
+        },
+        {
+          "propertyName": "anchor_score",
+          "sourceColumn": "anchor_score"
+        }
+      ]
+    }
+  ],
+  "edgeTables": [
+    {
+      "edgeTypeAlias": "MENTIONS",
+      "id": "et_e_mentions",
+      "edgeIdMapping": null,
+      "dataSourceName": "e_mentions",
+      "sourceNodeKeyColumns": [
+        "src"
+      ],
+      "propertyMappings": [
+        {
+          "propertyName": "weight",
+          "sourceColumn": "weight"
+        },
+        {
+          "propertyName": "evidence",
+          "sourceColumn": "evidence"
+        },
+        {
+          "propertyName": "doc_id",
+          "sourceColumn": "doc_id"
+        },
+        {
+          "propertyName": "share",
+          "sourceColumn": "share"
+        },
+        {
+          "propertyName": "segments",
+          "sourceColumn": "segments"
+        },
+        {
+          "propertyName": "role",
+          "sourceColumn": "role"
+        }
+      ],
+      "destinationNodeKeyColumns": [
+        "dst"
+      ]
+    },
+    {
+      "edgeTypeAlias": "MENTIONS_PERSON",
+      "id": "et_e_mentions_person",
+      "edgeIdMapping": null,
+      "dataSourceName": "e_mentions_person",
+      "sourceNodeKeyColumns": [
+        "src"
+      ],
+      "propertyMappings": [
+        {
+          "propertyName": "weight",
+          "sourceColumn": "weight"
+        },
+        {
+          "propertyName": "evidence",
+          "sourceColumn": "evidence"
+        },
+        {
+          "propertyName": "doc_id",
+          "sourceColumn": "doc_id"
+        },
+        {
+          "propertyName": "share",
+          "sourceColumn": "share"
+        },
+        {
+          "propertyName": "segments",
+          "sourceColumn": "segments"
+        },
+        {
+          "propertyName": "role",
+          "sourceColumn": "role"
+        }
+      ],
+      "destinationNodeKeyColumns": [
+        "dst"
+      ]
+    },
+    {
+      "edgeTypeAlias": "EXPLAINS",
+      "id": "et_e_explains",
+      "edgeIdMapping": null,
+      "dataSourceName": "e_explains",
+      "sourceNodeKeyColumns": [
+        "src"
+      ],
+      "propertyMappings": [
+        {
+          "propertyName": "weight",
+          "sourceColumn": "weight"
+        },
+        {
+          "propertyName": "evidence",
+          "sourceColumn": "evidence"
+        },
+        {
+          "propertyName": "doc_id",
+          "sourceColumn": "doc_id"
+        },
+        {
+          "propertyName": "share",
+          "sourceColumn": "share"
+        },
+        {
+          "propertyName": "segments",
+          "sourceColumn": "segments"
+        },
+        {
+          "propertyName": "role",
+          "sourceColumn": "role"
+        }
+      ],
+      "destinationNodeKeyColumns": [
+        "dst"
+      ]
+    },
+    {
+      "edgeTypeAlias": "SPEAKS_IN",
+      "id": "et_e_speaks_in",
+      "edgeIdMapping": null,
+      "dataSourceName": "e_speaks_in",
+      "sourceNodeKeyColumns": [
+        "src"
+      ],
+      "propertyMappings": [
+        {
+          "propertyName": "weight",
+          "sourceColumn": "weight"
+        },
+        {
+          "propertyName": "evidence",
+          "sourceColumn": "evidence"
+        },
+        {
+          "propertyName": "doc_id",
+          "sourceColumn": "doc_id"
+        },
+        {
+          "propertyName": "share",
+          "sourceColumn": "share"
+        },
+        {
+          "propertyName": "segments",
+          "sourceColumn": "segments"
+        },
+        {
+          "propertyName": "role",
+          "sourceColumn": "role"
+        }
+      ],
+      "destinationNodeKeyColumns": [
+        "dst"
+      ]
+    },
+    {
+      "edgeTypeAlias": "IN_BUCKET",
+      "id": "et_e_in_bucket",
+      "edgeIdMapping": null,
+      "dataSourceName": "e_in_bucket",
+      "sourceNodeKeyColumns": [
+        "src"
+      ],
+      "propertyMappings": [
+        {
+          "propertyName": "weight",
+          "sourceColumn": "weight"
+        },
+        {
+          "propertyName": "evidence",
+          "sourceColumn": "evidence"
+        },
+        {
+          "propertyName": "doc_id",
+          "sourceColumn": "doc_id"
+        },
+        {
+          "propertyName": "share",
+          "sourceColumn": "share"
+        },
+        {
+          "propertyName": "segments",
+          "sourceColumn": "segments"
+        },
+        {
+          "propertyName": "role",
+          "sourceColumn": "role"
+        }
+      ],
+      "destinationNodeKeyColumns": [
+        "dst"
+      ]
+    },
+    {
+      "edgeTypeAlias": "RELATES_TO",
+      "id": "et_e_relates_to",
+      "edgeIdMapping": null,
+      "dataSourceName": "e_relates_to",
+      "sourceNodeKeyColumns": [
+        "src"
+      ],
+      "propertyMappings": [
+        {
+          "propertyName": "weight",
+          "sourceColumn": "weight"
+        },
+        {
+          "propertyName": "evidence",
+          "sourceColumn": "evidence"
+        },
+        {
+          "propertyName": "doc_id",
+          "sourceColumn": "doc_id"
+        },
+        {
+          "propertyName": "share",
+          "sourceColumn": "share"
+        },
+        {
+          "propertyName": "segments",
+          "sourceColumn": "segments"
+        },
+        {
+          "propertyName": "role",
+          "sourceColumn": "role"
+        }
+      ],
+      "destinationNodeKeyColumns": [
+        "dst"
+      ]
+    },
+    {
+      "edgeTypeAlias": "REQUIRES",
+      "id": "et_e_requires",
+      "edgeIdMapping": null,
+      "dataSourceName": "e_requires",
+      "sourceNodeKeyColumns": [
+        "src"
+      ],
+      "propertyMappings": [
+        {
+          "propertyName": "weight",
+          "sourceColumn": "weight"
+        },
+        {
+          "propertyName": "evidence",
+          "sourceColumn": "evidence"
+        },
+        {
+          "propertyName": "doc_id",
+          "sourceColumn": "doc_id"
+        },
+        {
+          "propertyName": "share",
+          "sourceColumn": "share"
+        },
+        {
+          "propertyName": "segments",
+          "sourceColumn": "segments"
+        },
+        {
+          "propertyName": "role",
+          "sourceColumn": "role"
+        }
+      ],
+      "destinationNodeKeyColumns": [
+        "dst"
+      ]
+    },
+    {
+      "edgeTypeAlias": "REPLACES",
+      "id": "et_e_replaces",
+      "edgeIdMapping": null,
+      "dataSourceName": "e_replaces",
+      "sourceNodeKeyColumns": [
+        "src"
+      ],
+      "propertyMappings": [
+        {
+          "propertyName": "weight",
+          "sourceColumn": "weight"
+        },
+        {
+          "propertyName": "evidence",
+          "sourceColumn": "evidence"
+        },
+        {
+          "propertyName": "doc_id",
+          "sourceColumn": "doc_id"
+        },
+        {
+          "propertyName": "share",
+          "sourceColumn": "share"
+        },
+        {
+          "propertyName": "segments",
+          "sourceColumn": "segments"
+        },
+        {
+          "propertyName": "role",
+          "sourceColumn": "role"
+        }
+      ],
+      "destinationNodeKeyColumns": [
+        "dst"
+      ]
+    },
+    {
+      "edgeTypeAlias": "CONTRASTS",
+      "id": "et_e_contrasts",
+      "edgeIdMapping": null,
+      "dataSourceName": "e_contrasts",
+      "sourceNodeKeyColumns": [
+        "src"
+      ],
+      "propertyMappings": [
+        {
+          "propertyName": "weight",
+          "sourceColumn": "weight"
+        },
+        {
+          "propertyName": "evidence",
+          "sourceColumn": "evidence"
+        },
+        {
+          "propertyName": "doc_id",
+          "sourceColumn": "doc_id"
+        },
+        {
+          "propertyName": "share",
+          "sourceColumn": "share"
+        },
+        {
+          "propertyName": "segments",
+          "sourceColumn": "segments"
+        },
+        {
+          "propertyName": "role",
+          "sourceColumn": "role"
+        }
+      ],
+      "destinationNodeKeyColumns": [
+        "dst"
+      ]
+    },
+    {
+      "edgeTypeAlias": "PART_OF",
+      "id": "et_e_part_of",
+      "edgeIdMapping": null,
+      "dataSourceName": "e_part_of",
+      "sourceNodeKeyColumns": [
+        "src"
+      ],
+      "propertyMappings": [
+        {
+          "propertyName": "weight",
+          "sourceColumn": "weight"
+        },
+        {
+          "propertyName": "evidence",
+          "sourceColumn": "evidence"
+        },
+        {
+          "propertyName": "doc_id",
+          "sourceColumn": "doc_id"
+        },
+        {
+          "propertyName": "share",
+          "sourceColumn": "share"
+        },
+        {
+          "propertyName": "segments",
+          "sourceColumn": "segments"
+        },
+        {
+          "propertyName": "role",
+          "sourceColumn": "role"
+        }
+      ],
+      "destinationNodeKeyColumns": [
+        "dst"
+      ]
+    },
+    {
+      "edgeTypeAlias": "RECOMMENDS",
+      "id": "et_e_recommends",
+      "edgeIdMapping": null,
+      "dataSourceName": "e_recommends",
+      "sourceNodeKeyColumns": [
+        "src"
+      ],
+      "propertyMappings": [
+        {
+          "propertyName": "weight",
+          "sourceColumn": "weight"
+        },
+        {
+          "propertyName": "evidence",
+          "sourceColumn": "evidence"
+        },
+        {
+          "propertyName": "doc_id",
+          "sourceColumn": "doc_id"
+        },
+        {
+          "propertyName": "share",
+          "sourceColumn": "share"
+        },
+        {
+          "propertyName": "segments",
+          "sourceColumn": "segments"
+        },
+        {
+          "propertyName": "role",
+          "sourceColumn": "role"
+        }
+      ],
+      "destinationNodeKeyColumns": [
+        "dst"
+      ]
+    },
+    {
+      "edgeTypeAlias": "STATES",
+      "id": "et_e_states",
+      "edgeIdMapping": null,
+      "dataSourceName": "e_states",
+      "sourceNodeKeyColumns": [
+        "src"
+      ],
+      "propertyMappings": [
+        {
+          "propertyName": "weight",
+          "sourceColumn": "weight"
+        },
+        {
+          "propertyName": "evidence",
+          "sourceColumn": "evidence"
+        },
+        {
+          "propertyName": "doc_id",
+          "sourceColumn": "doc_id"
+        },
+        {
+          "propertyName": "share",
+          "sourceColumn": "share"
+        },
+        {
+          "propertyName": "segments",
+          "sourceColumn": "segments"
+        },
+        {
+          "propertyName": "role",
+          "sourceColumn": "role"
+        }
+      ],
+      "destinationNodeKeyColumns": [
+        "dst"
+      ]
+    },
+    {
+      "edgeTypeAlias": "ABOUT",
+      "id": "et_e_about",
+      "edgeIdMapping": null,
+      "dataSourceName": "e_about",
+      "sourceNodeKeyColumns": [
+        "src"
+      ],
+      "propertyMappings": [
+        {
+          "propertyName": "weight",
+          "sourceColumn": "weight"
+        },
+        {
+          "propertyName": "evidence",
+          "sourceColumn": "evidence"
+        },
+        {
+          "propertyName": "doc_id",
+          "sourceColumn": "doc_id"
+        },
+        {
+          "propertyName": "share",
+          "sourceColumn": "share"
+        },
+        {
+          "propertyName": "segments",
+          "sourceColumn": "segments"
+        },
+        {
+          "propertyName": "role",
+          "sourceColumn": "role"
+        }
+      ],
+      "destinationNodeKeyColumns": [
+        "dst"
+      ]
+    }
+  ]
+}

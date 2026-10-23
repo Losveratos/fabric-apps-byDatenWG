@@ -1,0 +1,22 @@
+// Wertelisten der Slicer im Filter-Panel, zum Prüfen in der DAX-Abfrageansicht.
+// erzeugt von `dwg app page`, nicht von Hand ändern.
+
+// Slicer Jahr
+EVALUATE
+SUMMARIZECOLUMNS('Kalender'[Jahr])
+ORDER BY 'Kalender'[Jahr]
+
+// Slicer Region
+EVALUATE
+SUMMARIZECOLUMNS('Kunde'[Region])
+ORDER BY 'Kunde'[Region]
+
+// Slicer Kanal
+EVALUATE
+SUMMARIZECOLUMNS('Kunde'[Kanal], 'Kunde'[Kanal Sort])
+ORDER BY 'Kunde'[Kanal Sort], 'Kunde'[Kanal]
+
+// Slicer Sorte
+EVALUATE
+SUMMARIZECOLUMNS('Produkt'[Sorte], 'Produkt'[Sorte Sort])
+ORDER BY 'Produkt'[Sorte Sort], 'Produkt'[Sorte]

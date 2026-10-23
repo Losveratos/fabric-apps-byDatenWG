@@ -1,0 +1,349 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "296c47c9a77af889b195",
+  "position": {
+    "x": 11.419302514193026,
+    "y": 16.609894566098944,
+    "z": 0,
+    "height": 703.84428223844282,
+    "width": 1076.528791565288
+  },
+  "visual": {
+    "visualType": "InforiverCharts582F6C55AB6442EF8FA129089285CB47",
+    "query": {
+      "queryState": {
+        "category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "📅Kalender"
+                    }
+                  },
+                  "Property": "Month Name"
+                }
+              },
+              "queryRef": "📅Kalender.Month Name",
+              "nativeQueryRef": "Month Name",
+              "active": true
+            }
+          ]
+        },
+        "ameasure": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Angebote"
+                    }
+                  },
+                  "Property": "AC"
+                }
+              },
+              "queryRef": "Angebote.AC",
+              "nativeQueryRef": "AC"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Angebote"
+                    }
+                  },
+                  "Property": "PY"
+                }
+              },
+              "queryRef": "Angebote.PY",
+              "nativeQueryRef": "PY"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "hiddenProperties": [
+        {
+          "properties": {
+            "waterfallTotalLabels": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"labels\":[]}'"
+                }
+              }
+            },
+            "persistChecker": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"SMALL_MULTIPLES_LEGEND\":false,\"SMALL_MULTIPLES_XAXIS_LABEL_ENABLED\":false,\"SMALL_MULTIPLES_AVERAGE_PANEL\":false,\"SMALL_MULTIPLES_DEVIATION\":false,\"SMALL_MULTIPLES_TOTAL_AVERAGE\":false,\"SMALL_MULTIPLES_VARIED_ROW_SORTING\":false,\"SMALL_MULTIPLES_VARIED_PANEL_SORTING\":false,\"SMALL_MULTIPLES_GRID_SORTING\":false,\"SMALL_MULTIPLES_MATRIX_SORTING\":false,\"SMALL_MULTIPLES_AXIS_BREAK\":false,\"SMALL_MULTIPLES_VARIED_PANEL_AXIS_BREAK\":false,\"SMALL_MULTIPLES_GRID_SIZE_CHANGE\":false,\"SMALL_MULTIPLES_AXIS_VISIBILITY_CHANGE_FOR_GRID\":false,\"SMALL_MULTIPLES_AXIS_VISIBILITY_CHANGE_FOR_VARIED_ROW\":false,\"SMALL_MULTIPLES_AXIS_VISIBILITY_CHANGE_FOR_RANKING\":false,\"SMALL_MULTIPLES_FROZEN_YAXIS_DUAL_AXIS_VALIDATION_SWITCH\":false,\"SMALL_MULTIPLES_ROW_HEADER_VISIBILITY_CHANGE_FOR_RANKING\":false,\"INTEGRATED_VARIANCE_DEFAULT_TEMPLATE\":false,\"SMALL_MULTIPLES_REFERENCE_LINE_TEXT\":false,\"STACKED_LINE_DEFAULT_VALUE\":false,\"SLOPE_GRAPH_DEFAULT_VALUE\":false,\"SERIES_LABEL_DEFAULT_VALUE\":false,\"SERIES_LABEL_LINE_AREA_DEFAULT_VALUE\":false,\"ANALYTICS_DEFAULT_REFERENCE_LINE\":false,\"SERIES_NAME_DEFAULT\":true,\"YAXIS1_TITLE_DEFAULT\":false,\"DEFAULT_YAXIS_2\":true,\"SMALL_MULTIPLES_TIME_SERIES_SORTING\":false,\"STACKED_DEFAULT_SORTING\":false,\"DEFAULT_TEMPLATE\":true,\"KPI_TRELLIS_DEFAULT\":true,\"INVERT_KPI_DEFAULT_VALUE\":false,\"EXECUTIVE_FUNNEL_YAXIS\":false,\"COMBO_EXECUTIVE_FUNNEL_YAXIS\":false,\"EXECUTIVE_FUNNEL_XAXIS\":false,\"EXECUTIVE_FUNNEL_AGGREGATE_SERIES\":false,\"KPI_TRELLIS_YAXIS2_DEFAULT\":false,\"TIME_SERIES_DEVIATION_DEFAULT\":false,\"LINE_AREA_YAXIS\":false,\"SLOPE_GRAPH_YAXIS\":false,\"SMALL_MULTIPLES_AUTO_SCALE_DETECTION\":false,\"LEGEND_AS_TITLE\":true,\"DEFAULT_KPI_ONLY\":null,\"STACKED_COLUMN_APPEARANCE_DEFAULT_VALUE\":false,\"XAXIS_TITLE\":false,\"CARD_XAXIS_TITLE\":false,\"KPI_SORTBY_DEFAULT\":false,\"KPI_SORTBY_TIME_SERIES_DEFAULT\":false,\"FOCUS_MODE_RESIZE\":false,\"EXECUTIVE_FUNNEL_RANKING\":false,\"SMALL_MULTIPLES_AXIS_VISIBILITY_CHANGE_FOR_MEASURE_AS_ROWS_WATERFALL\":false,\"BREAKDOWN_WATERFALL_DEVIATION\":false,\"RANKING_OTHERS_COLORS\":false,\"EXECUTIVE_FUNNEL_COMBO_TOTAL_DEFAULT\":false,\"TABLE_TOTAL_ROW_DEFAULT\":true,\"CARD_VIEW_TO_CHART_VIEW_XAXIS\":false,\"CARD_VIEW_DATA_LABEL_DEFAULT\":false,\"STACKED_COLUMN_DEVIATION\":false,\"LEGEND_ENABLED\":false,\"THEME_CHANGE\":true,\"STACKED_DEVIATION_DEFAULT\":false,\"TABLE_RANKING\":false,\"KPI_SIMPLE_PRESET_FLAG\":false,\"KPI_SINGLE_COLUMN_YAXIS\":false,\"COLUMN_AS_MEASURE_BASED_TEMPLATE\":false,\"SEMANTIC_COLOR\":true,\"TRELLIS_INDIVIDUAL_COLOR\":false,\"IBCS_BULLET_YAXIS\":true,\"KPI_YAXIS_TITLE_DEFAULT\":false,\"STACKED_CHART_LEGEND\":false,\"CATEGORY_GROUPING_TIME_SERIES\":false,\"CATEGORY_GROUPING_TOTAL_POSITION\":false,\"NF_TABLE_MODE\":true,\"DATA_LABEL_BAR_OVERLAP\":false,\"MARIMEKKO_CATEGORY_GROUPING\":false,\"NUMBER_FORMATTING_MEASURE_NAME_ROLE_MIGRATED\":true,\"CARD_CUSTOM_TITLE_DEFAULT\":false,\"CARD_TRELLIS_LAYOUT_DEFAULT\":false,\"BOXPLOT_XAXIS_POSITION\":false,\"BOXPLOT_LINE_MARKER\":false,\"BOXPLOT_LINE_MEASURE\":false,\"LINE_MARKER_DEFAULT\":false,\"IS_RANKING_MIGRATED\":true,\"AVERAGE_BAR_CARD_MODE\":false,\"CARD_SINGLE_COLUMN_POSITION\":false,\"CARD_SINGLE_COLUMN_DEFAULT_PRESET\":true,\"KPI_TRELLIS_AVERAGE_PANEL\":true,\"APPLY_MEASURE_COLOR\":false}'"
+                }
+              }
+            },
+            "yAxis": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"yAxis1\":{\"show\":true,\"enabled\":true,\"display\":\"off\",\"label\":{\"enabled\":false,\"fontSize\":null,\"fontColor\":\"#605E5C\",\"noOfDecimal\":null,\"scalingFactor\":\"auto\",\"interval\":{\"type\":\"auto\",\"value\":null,\"formattedValue\":null,\"count\":null},\"isBold\":false,\"isItalic\":false},\"title\":{\"enabled\":true,\"fontSize\":null,\"fontColor\":\"#605E5C\",\"text\":\"\",\"applyMeasureColor\":false,\"customTitle\":\"\"},\"lineWidth\":0,\"lineColor\":\"#333333\",\"offset\":null,\"scalingFactor\":null,\"gridLine\":{\"enabled\":true,\"color\":\"#e6e6e6\",\"width\":1,\"type\":\"dotted\"},\"scaleBand\":{\"enabled\":false,\"color\":\"#74B1E9\",\"fontSize\":11},\"prefix\":\"\",\"suffix\":\"\",\"customMinMax\":{\"enabled\":true,\"customMin\":null,\"customMax\":null,\"formattedCustomMax\":\"\",\"formattedCustomMin\":\"\"}},\"yAxis2\":{\"show\":true,\"enabled\":true,\"label\":{\"enabled\":true,\"fontSize\":null,\"fontColor\":\"#605E5C\",\"noOfDecimal\":null,\"scalingFactor\":\"auto\",\"interval\":{\"type\":\"auto\",\"value\":null,\"formattedValue\":null,\"count\":null},\"isBold\":false,\"isItalic\":false},\"title\":{\"enabled\":true,\"fontSize\":null,\"fontColor\":\"#605E5C\",\"text\":\"\",\"applyMeasureColor\":false,\"customTitle\":\"\"},\"lineWidth\":0,\"lineColor\":\"#333333\",\"offset\":null,\"gridLine\":{\"enabled\":true,\"color\":\"#e6e6e6\",\"width\":1,\"type\":\"dotted\"},\"scaleBand\":{\"enabled\":false,\"color\":\"#74B1E9\",\"fontSize\":11},\"customMinMax\":{\"enabled\":true,\"customMin\":null,\"customMax\":null,\"formattedCustomMax\":\"\",\"formattedCustomMin\":\"\"}}}'"
+                }
+              }
+            },
+            "totalAvgSeries": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"total\":{\"enabled\":false,\"showActualTotalAsNumber\":false,\"showVarianceTotalAsNumber\":false,\"scaling\":\"individual\"},\"average\":{\"enabled\":false,\"showActualTotalAsNumber\":false,\"showVarianceTotalAsNumber\":false},\"tooltipTotal\":{\"showTotalBar\":false,\"currentTTMeasure\":\"TT1\",\"tooltipTotalBarScaling\":\"auto\",\"showTotalAsBar\":true},\"instanceId\":null}'"
+                }
+              }
+            },
+            "chartsMode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"visualMode\":\"CHART\"}'"
+                }
+              }
+            },
+            "template": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"instanceId\":\"DEFAULT_VISUAL_INSTANCE\",\"id\":\"IBCS_BULLET_VERTICAL\",\"previousId\":\"IBCS_BULLET_VERTICAL\",\"rendererType\":\"columnChart\",\"chartType\":\"columnChart\",\"chartOrientation\":\"vertical\",\"groupInfo\":{\"groupType\":\"actual\",\"previousGroupType\":\"actual\",\"groupId\":\"NO_GROUP\",\"previousGroupId\":\"NO_GROUP\",\"expandedGroupMeta\":{\"expandedGroupId\":null,\"previousExpandedGroupId\":null,\"parentGroupId\":null,\"isFetching\":false,\"allSelectedFieldQueryNames\":[]}},\"lineSubChartType\":\"default\",\"actualChartType\":\"ibcsBullet\",\"groupedBarEnabled\":true,\"varianceWaterfallEnabled\":true,\"templateChanged\":false,\"isOrientChanged\":false,\"fromLandingPage\":false,\"fromToolbar\":false,\"isUserChangedTemplateID\":true,\"isTrellisMenuChanged\":false,\"summaryTable\":false,\"tableLayout\":\"tableOnly\",\"totalSummaryTable\":false}'"
+                }
+              }
+            },
+            "matrixSorting": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"row\":[{\"applyTo\":\"<--MIGRATION-FILLER-->\"}],\"column\":[{\"applyTo\":\"<--MIGRATION-FILLER-->\"}]}'"
+                }
+              }
+            },
+            "kpiControls": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"instanceId\":null,\"layout\":0,\"preset\":0,\"kpiFitMode\":\"Content\",\"validPresetMeta\":{\"preset\":null,\"width\":null,\"height\":null},\"isLayoutEdited\":false,\"isResponsiveTrellis\":false,\"title\":{\"enabled\":true,\"style\":{\"fontSize\":14,\"fontWeight\":\"bold\",\"color\":\"#000000\"},\"prefix\":{\"enabled\":true,\"value\":\"\"},\"suffix\":{\"enabled\":true,\"value\":\"\"}},\"total\":{\"enabled\":true,\"value\":{\"measure\":null,\"type\":\"total\",\"isDefaultType\":true},\"style\":{\"fontSize\":18,\"fontWeight\":\"bold\",\"color\":\"#000000\"}},\"variance\":{\"showVariance\":false,\"value\":true,\"percentage\":true,\"icon\":{\"enabled\":true,\"variableSize\":false,\"positiveIcon\":{\"value\":\"triangle-up\",\"isCustomIcon\":false,\"customIconValue\":\"\"},\"negativeIcon\":{\"value\":\"triangle-down\",\"isCustomIcon\":false,\"customIconValue\":\"\"}},\"colors\":{\"positive\":\"\",\"negative\":\"\"},\"style\":{\"fontSize\":15,\"fontWeight\":\"normal\",\"color\":\"#000000\"},\"border\":{\"width\":1,\"position\":\"none\",\"measureKey\":\"\"},\"varianceDisplay\":\"percentage\",\"showVarianceColorBorder\":false},\"gridLayout\":null,\"gridContainer\":null,\"isLayoutModified\":false,\"groupID\":\"NO_GROUP\",\"hasStateChange\":false,\"minimalDimension\":{\"height\":null,\"width\":null},\"isMinimalView\":false,\"minimalViewConfig\":\"auto\",\"isDefaultMinimalViewConfig\":true,\"individualKpiControls\":{},\"measures\":{\"varianceMeasures\":[\"ΔPY\"],\"variancePercentageMeasures\":[\"ΔPY%\"]},\"isSimplePreset\":false,\"isAutoLayout\":false,\"isDefaultPreset\":false,\"isDefaultLayout\":true,\"responsiveFontSize\":true,\"prevResponsiveFontSize\":true}'"
+                }
+              }
+            },
+            "comparisonMeasureMapping": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"config\":{\"AC\":\"Angebote.AC\",\"PY\":\"Angebote.PY\"},\"allMeasures\":[{\"AC\":\"Angebote.AC\"},{\"AC1\":\"Angebote.PY\"}],\"storedConfig\":{},\"defaultBucket\":\"AC\"}'"
+                }
+              }
+            },
+            "commonSettings": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"expandCollapse\":true,\"categoryGrouping\":true,\"raggedHierarchy\":false,\"singleChild\":0,\"swapColumns\":false,\"applyPLAsNull\":false,\"showFCAsComparison\":true,\"seriesNameConfig\":{\"enabled\":false},\"showAxisBreak\":true,\"showCategoryDeviation\":true,\"categoryDeviationShape\":\"circle\",\"categoryDeviationBorderRadius\":5,\"categoryDeviationFontSize\":10,\"categoryDeviationAutoFontColor\":true,\"categoryDeviationFontColor\":\"#000000\",\"categoryDeviationLabel\":\"percentage\",\"showDirectionArrow\":true,\"directionArrowSize\":5,\"categoryDeviationBackgroundTransparency\":0,\"rowNullSuppression\":true,\"rowZeroSuppression\":false,\"treatNullAsZero\":false,\"suppressNullVariance\":true,\"includeNullInCalculations\":false,\"includeBlankInCalculations\":false,\"varianceLabelType\":\"variance\",\"showInflation\":false,\"skipLines\":{\"enabled\":false,\"step\":4},\"categorySign\":false,\"alignAxis\":true,\"footer\":{\"enabled\":false,\"text\":\"Please visit inforiver.com for licensing.\",\"url\":\"https://inforiver.com/\",\"showInfoRiverLogo\":false},\"exportQuality\":4,\"titleWithSeriesLabel\":\"none\",\"showAreaChart\":false,\"areaFillColor\":\"#dddddd\",\"areaTransparency\":0,\"showExecutiveFunnelBubble\":false,\"bubbleValueType\":\"percentage\",\"bubbleConnectingLineColor\":\"#dddddd\",\"bubbleConnectingLineWidth\":5,\"showHelperTooltips\":true,\"showWarningToasts\":true,\"varianceInTooltip\":true,\"varianceTooltipType\":\"both\",\"exportData\":{\"isVisible\":false,\"maskData\":false},\"showAxisBreakGradient\":true,\"synchronizeHighlight\":true,\"dragSelection\":\"off\",\"showDataLabelOnHighlight\":true,\"applyHighlightedDataLabelColor\":false,\"highlightedDataLabelColor\":\"#000000\",\"applyHighlightedMarkerColor\":false,\"highlightedMarkerColor\":\"#000000\",\"savePropertyAgainstRole\":false,\"enableSharedTooltip\":true,\"showSummaryTableIcon\":false,\"applyBarHighlightedColor\":false,\"fadeOutOpacity\":0.3,\"isUserChangedBGColor\":false,\"prevHighContrastColor\":\"\",\"enableChartsAnimation\":false,\"hideAdvancePivot\":true}'"
+                }
+              }
+            },
+            "ranking": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"enabled\":false,\"type\":\"off\",\"noOfItems\":5,\"filterBy\":\"Angebote.AC\",\"showOthers\":false,\"customOthersColor\":false,\"othersColorConfig\":{\"AC\":\"#1470E8\",\"PY\":\"#99C2F6\",\"PL\":\"#1470E8\",\"FC\":\"#1470E8\",\"AC1\":\"#FFA34F\",\"AC2\":\"#4EC0C3\",\"AC3\":\"#9EDAE5\",\"AC4\":\"#7F7F7F\",\"AC5\":\"#C7C7C7\",\"AC6\":\"#8C564B\",\"AC7\":\"#C49C94\",\"AC8\":\"#9467BD\",\"AC9\":\"#C5B0D5\",\"AC10\":\"#E377C2\",\"AC11\":\"#F7B6D2\",\"AC12\":\"#9381FF\",\"AC13\":\"#B8B8FF\",\"AC14\":\"#FF9896\",\"AC15\":\"#5F77A0\",\"AC16\":\"#9FADC6\",\"AC17\":\"#C577B2\",\"AC18\":\"#B7BC5C\",\"AC19\":\"#858838\",\"AC20\":\"#B090DF\",\"AC21\":\"#E58E6C\",\"AC22\":\"#EEB6A0\",\"AC23\":\"#DEB841\",\"AC24\":\"#EDD897\",\"AC25\":\"#3885B3\",\"AC26\":\"#92C1DD\",\"AC27\":\"#D9A6CC\",\"AC28\":\"#FFC814\",\"AC29\":\"#FFE180\",\"Quartile\":\"#818181\",\"MedianLine\":\"#46D5F4\",\"Whisker\":\"#575757\",\"OverlappedBoxQuartile\":\"#C6C6C6\",\"Ø\":null},\"isPercent\":false,\"topNPercent\":20,\"othersLabel\":\"Other\",\"labelSuffix\":[\"category\",\"itemsCount\"],\"isDefaultValue\":true,\"isResetValue\":false,\"isDefaultLabelSuffix\":true}'"
+                }
+              }
+            },
+            "stackRanking": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"enabled\":false,\"type\":\"off\",\"noOfItems\":5,\"filterBy\":\"Angebote.AC\",\"showOthers\":false,\"isPercent\":false,\"topNPercent\":20,\"othersLabel\":\"Other\",\"labelSuffix\":[\"category\",\"itemsCount\"],\"isDefaultValue\":true,\"isResetValue\":false}'"
+                }
+              }
+            },
+            "panelRanking": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"enabled\":false,\"type\":\"off\",\"noOfItems\":5,\"filterBy\":\"Angebote.AC\",\"showOthers\":false,\"isPercent\":false,\"topNPercent\":20,\"othersLabel\":\"Other\",\"labelSuffix\":[\"category\",\"itemsCount\"],\"isDefaultValue\":true}'"
+                }
+              }
+            },
+            "appearance": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"charts\":{\"chartOrientation\":\"vertical\",\"seriesLabel\":{\"enabled\":false,\"showConnectingLine\":true},\"theme\":\"whiteAndBlue\",\"previousTheme\":\"whiteAndBlue\",\"isDefaultMeta\":{\"theme\":true},\"showFCLine\":true,\"fcLinePosition\":\"middle\",\"isStandardTheme\":false,\"chartBackground\":\"#ffffff\",\"globalFontStyle\":{\"fontFamily\":\"\\\"Segoe UI\\\", wf_segoe-ui_normal, helvetica, arial, sans-serif\",\"fontSize\":null,\"fontWeight\":\"normal\",\"fontStyle\":\"normal\",\"underline\":false,\"fontColor\":\"\"},\"individualColor\":false,\"measuresStyle\":{\"Ø\":{\"lineArea\":{\"marker\":{\"enabled\":false}},\"outlineRect\":{},\"lollipop\":{\"marker\":{}}},\"TT\":{\"lineArea\":{\"marker\":{\"enabled\":false},\"lineThickness\":3},\"outlineRect\":{},\"lollipop\":{\"marker\":{}}},\"Angebote.AC\":{\"lineArea\":{\"marker\":{\"enabled\":false}},\"outlineRect\":{},\"lollipop\":{\"marker\":{}}},\"AC\":{\"fillColor\":\"#1F77B4\",\"borderColor\":\"#1F77B4\",\"highlightColor\":\"#0E4FA2\",\"borderWidth\":1,\"borderStyle\":\"solid\",\"pattern\":\"solid\",\"stackedPattern\":\"solid\",\"lineArea\":{\"borderColor\":\"#1F77B4\",\"borderGradient\":false,\"fillColor\":\"#1F77B4\",\"fillGradient\":false,\"lineStyle\":\"solid\",\"lineThickness\":3,\"marker\":{\"enabled\":true,\"useSeriesColor\":false,\"color\":\"#1F77B4\",\"size\":6,\"type\":\"circleFilled\"},\"lineChartPlacement\":\"infront\",\"areaChartPlacement\":\"behind\"},\"outlineRect\":{\"showOutlineRect\":false,\"fillColor\":\"transparent\",\"borderColor\":\"#DDDDDD\"},\"lollipop\":{\"lineStyle\":\"solid\",\"lineThickness\":2,\"marker\":{\"enabled\":true,\"useSeriesColor\":false,\"color\":\"#1F77B4\",\"size\":6,\"type\":\"circleFilled\"}}},\"Angebote.PY\":{\"lineArea\":{\"marker\":{\"enabled\":false}},\"outlineRect\":{},\"lollipop\":{\"marker\":{}}},\"AC1\":{\"fillColor\":\"#FFA34F\",\"borderColor\":\"#FFA34F\",\"highlightColor\":\"#0E4FA2\",\"borderWidth\":1,\"borderStyle\":\"solid\",\"pattern\":\"solid\",\"stackedPattern\":\"solid\",\"lineArea\":{\"borderColor\":\"#FFA34F\",\"borderGradient\":false,\"fillColor\":\"#FFA34F\",\"fillGradient\":false,\"lineStyle\":\"solid\",\"lineThickness\":3,\"marker\":{\"enabled\":false,\"useSeriesColor\":false,\"color\":\"#FFA34F\",\"size\":6,\"type\":\"circleFilled\"},\"lineChartPlacement\":\"infront\",\"areaChartPlacement\":\"behind\"},\"outlineRect\":{\"showOutlineRect\":false,\"fillColor\":\"transparent\",\"borderColor\":\"#DDDDDD\"},\"lollipop\":{\"lineStyle\":\"solid\",\"lineThickness\":2,\"marker\":{\"enabled\":true,\"useSeriesColor\":false,\"color\":\"#FFA34F\",\"size\":6,\"type\":\"circleFilled\"}}},\"PY\":{\"fillColor\":\"#FF7F0E\",\"borderColor\":\"#FF7F0E\",\"highlightColor\":\"#E76F51\",\"borderWidth\":1,\"borderStyle\":\"solid\",\"pattern\":\"solid\",\"stackedPattern\":\"solid\",\"lineArea\":{\"borderColor\":\"#FF7F0E\",\"borderGradient\":false,\"fillColor\":\"#FF7F0E\",\"fillGradient\":false,\"lineStyle\":\"solid\",\"lineThickness\":2,\"marker\":{\"enabled\":false,\"useSeriesColor\":false,\"color\":\"#FF7F0E\",\"size\":6,\"type\":\"circleFilled\"},\"lineChartPlacement\":\"infront\",\"areaChartPlacement\":\"behind\"},\"outlineRect\":{\"showOutlineRect\":false,\"fillColor\":\"transparent\",\"borderColor\":\"#DDDDDD\"},\"lollipop\":{\"lineStyle\":\"solid\",\"lineThickness\":2,\"marker\":{\"enabled\":true,\"useSeriesColor\":false,\"color\":\"#FF7F0E\",\"size\":6,\"type\":\"circleFilled\"}}}},\"groupStyle\":{},\"categoryStyle\":{},\"markerSeries\":null,\"variance\":{\"colors\":{\"positive\":\"#82ba00\",\"negative\":\"#ff000a\"},\"varianceDisplay\":\"bar\",\"switchComparison\":false,\"measureCombination\":null,\"varianceFillType\":\"area\",\"varianceCustomization\":{\"enabled\":true,\"marker\":{\"color\":\"#262626\",\"type\":\"squareFilled\"},\"variancePercentage\":{\"min\":0,\"max\":0},\"semanticAxis\":\"thin\",\"varianceMarkerSize\":\"mini\"},\"varianceLineSize\":4},\"waterfall\":{\"intermediateSumBar\":{\"fillColor\":\"#4472c4\",\"borderColor\":\"#4472c4\",\"highlightColor\":\"#4472c4\",\"pattern\":\"solid\",\"stackedPattern\":\"solid\",\"borderStyle\":\"solid\",\"borderWidth\":1},\"summationBar\":{\"fillColor\":\"#4472c4\",\"borderColor\":\"#4472c4\",\"highlightColor\":\"#4472c4\",\"pattern\":\"solid\",\"stackedPattern\":\"solid\",\"borderStyle\":\"solid\",\"borderWidth\":1},\"connectorLine\":{\"enabled\":true,\"fillColor\":\"#707070\",\"lineStyle\":\"solid\",\"lineThickness\":1},\"isVarianceEnabled\":true,\"isGrandTotalEnabled\":true,\"isInterimTotalEnabled\":true,\"breakDownType\":\"simple\",\"breakDownTotal\":false,\"breakDownSubTotal\":true,\"stackColorType\":\"stack\",\"breakdownVariance\":{\"enabled\":false,\"colors\":{\"positive\":\"#82ba00\",\"negative\":\"#ff000a\"}},\"subgroupType\":\"continuous\"},\"lineArea\":{\"marker\":{\"enabled\":true,\"useSeriesColor\":false,\"size\":4,\"type\":\"circleFilled\",\"color\":\"#A6A6A6\",\"display\":\"limited\",\"minColor\":\"#ff0000\",\"maxColor\":\"#008000\",\"interval\":2,\"isCategoryDisplay\":true,\"outlier\":false,\"outlierPercentage\":20,\"outlierColor\":\"#ff4400\"},\"lineType\":\"line\",\"connectOverNull\":false,\"skipZeros\":false,\"isVarianceEnabled\":false,\"varianceType\":\"average\",\"chartPlacement\":\"behind\",\"lineChartPlacement\":\"infront\",\"areaTransparency\":85,\"constant\":null,\"percentile\":50,\"stddev\":1},\"slopegraph\":{\"colorType\":\"trends\",\"topNTrend\":{\"enabled\":true,\"upTrendCount\":1,\"downTrendCount\":1},\"trendColor\":{\"upTrendColor\":\"#82ba00\",\"downTrendColor\":\"#ff000a\",\"neutralTrendColor\":\"#7F7F7F\"},\"verticalAxisLine\":{\"enabled\":true,\"lineStyle\":\"solid\",\"lineThickness\":1,\"color\":\"#7F7F7F\"},\"connector\":{\"markerAsConnector\":true,\"markerTrendColor\":true},\"groupSelection\":{\"selectedGroups\":[]},\"seriesLabelTrendColor\":true},\"table\":{\"fitMode\":\"Best fit\",\"syncScroll\":false,\"columnText\":{},\"totalRowText\":null,\"rowHighLight\":{\"type\":\"off\",\"oddRow\":\"#FFFFFF\",\"evenRow\":\"#F4F8FB\",\"cell\":\"#FFFFFF\",\"rowHeader\":\"#FFFFFF\",\"values\":\"#F4F8FB\",\"applyToHeader\":true},\"tableTemplate\":\"T05\",\"indentSpacing\":10,\"isDefaultTableTemplate\":true},\"marimekko\":{\"showBorder\":true,\"borderColor\":\"#ffffff\",\"borderSize\":1},\"trellisIndividualColor\":false,\"globalAutoFontColor\":false,\"individualCategoryColor\":false,\"waterfallFormatType\":\"variance\",\"isStdThemeFromLandingPage\":false}}'"
+                }
+              }
+            },
+            "sorting": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"sortBy\":\"Angebote.AC\",\"sortType\":\"reset\",\"includeOtherInSort\":false,\"isDefaultValue\":true}'"
+                }
+              }
+            },
+            "legendSettings": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"enabled\":false,\"showTitleAsLegend\":true,\"showLegendWithSeriesLabels\":false,\"layout\":\"horizontal\",\"horizontalAlignment\":\"left\",\"verticalAlignment\":\"top\",\"title\":{\"enabled\":false,\"fontColor\":\"#333333\",\"fontSize\":null,\"text\":\"\"},\"label\":{\"enabled\":false,\"fontColor\":\"#333333\",\"fontSize\":null,\"userChangeFontSize\":null},\"showIcon\":true,\"rtl\":false,\"legendMarkerStyle\":\"markerDefault\"}'"
+                }
+              }
+            },
+            "dataLabel": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"labelStyle\":{\"default\":{\"enabled\":true,\"display\":\"limited\",\"outlier\":false,\"outlierPercentage\":20,\"outlierColor\":\"#ff4400\",\"varianceDisplay\":\"minMax\",\"minColor\":\"#333333\",\"maxColor\":\"#333333\",\"interval\":2,\"position\":\"auto\",\"executiveFunnelLabelType\":\"valuePercentage\",\"horizontalPosition\":\"auto\",\"stackedPosition\":\"auto\",\"valuePosition\":\"auto\",\"barOverlap\":false,\"percentagePosition\":\"auto\",\"categoryPosition\":\"auto\",\"valuePositionHorizontal\":\"auto\",\"percentagePositionHorizontal\":\"auto\",\"categoryPositionHorizontal\":\"auto\",\"percentageStackedLabelType\":\"value\",\"stackedHorizontalPosition\":\"auto\",\"slopePosition\":\"auto\",\"boxPlotPosition\":\"inside\",\"contrastColor\":true,\"fontSize\":10,\"userChangeFontSize\":10,\"isUserChangedFontSize\":false,\"fontColor\":\"#333333\",\"background\":\"transparent\",\"showBackgroundColor\":true,\"offset\":0,\"posNegSplit\":false,\"isCategoryDisplay\":false,\"isSeriesDisplay\":true,\"fontStyle\":{\"isBold\":false,\"isItalic\":false,\"isUnderLine\":false},\"commonFontStyle\":{\"isBold\":false,\"isItalic\":false},\"orientation\":-90,\"slopeDisplay\":\"none\",\"isUserChangedContrastColor\":false,\"mariMekko\":{\"basedOn\":\"height\",\"labelDisplay\":\"heightWidth\",\"category\":{\"categoryPosition\":\"auto\",\"categoryPositionHorizontal\":\"auto\"},\"width\":{\"displayType\":\"percentage\",\"displayFormat\":\"inLine\",\"primaryLabelPosition\":\"outsideTop\",\"secondaryLabelPosition\":\"outsideTop\",\"primaryLabelPositionHorizontal\":\"outsideRight\",\"secondaryLabelPositionHorizontal\":\"outsideRight\"},\"height\":{\"displayType\":\"value\",\"displayFormat\":\"inLine\",\"primaryLabelPosition\":\"outsideTop\",\"secondaryLabelPosition\":\"outsideTop\",\"primaryLabelPositionHorizontal\":\"outsideRight\",\"secondaryLabelPositionHorizontal\":\"outsideRight\"}},\"stackedMarimekko\":{\"basedOn\":\"height\",\"labelDisplay\":\"height\",\"category\":{\"categoryPosition\":\"auto\",\"categoryPositionHorizontal\":\"auto\"},\"width\":{\"displayType\":\"percentage\",\"displayFormat\":\"inLine\",\"primaryLabelPosition\":\"outsideTop\",\"secondaryLabelPosition\":\"outsideTop\",\"primaryLabelPositionHorizontal\":\"outsideRight\",\"secondaryLabelPositionHorizontal\":\"outsideRight\"},\"height\":{\"displayType\":\"both\",\"displayFormat\":\"block\",\"primaryLabelPosition\":\"insideCenter\",\"secondaryLabelPosition\":\"insideCenter\",\"primaryLabelPositionHorizontal\":\"insideCenter\",\"secondaryLabelPositionHorizontal\":\"insideCenter\"}},\"isResponsiveOrientation\":true,\"allowOverlap\":false},\"Ø\":{\"enabled\":true,\"display\":\"limited\",\"outlier\":false,\"outlierPercentage\":20,\"outlierColor\":\"#ff4400\",\"varianceDisplay\":\"minMax\",\"minColor\":\"#333333\",\"maxColor\":\"#333333\",\"interval\":2,\"position\":\"auto\",\"executiveFunnelLabelType\":\"valuePercentage\",\"horizontalPosition\":\"auto\",\"stackedPosition\":\"auto\",\"valuePosition\":\"auto\",\"barOverlap\":false,\"percentagePosition\":\"auto\",\"categoryPosition\":\"auto\",\"valuePositionHorizontal\":\"auto\",\"percentagePositionHorizontal\":\"auto\",\"categoryPositionHorizontal\":\"auto\",\"percentageStackedLabelType\":\"value\",\"stackedHorizontalPosition\":\"auto\",\"slopePosition\":\"auto\",\"boxPlotPosition\":\"inside\",\"contrastColor\":true,\"fontSize\":10,\"userChangeFontSize\":10,\"isUserChangedFontSize\":false,\"fontColor\":\"#333333\",\"background\":\"transparent\",\"showBackgroundColor\":true,\"offset\":0,\"posNegSplit\":false,\"isCategoryDisplay\":false,\"isSeriesDisplay\":true,\"fontStyle\":{\"isBold\":false,\"isItalic\":false,\"isUnderLine\":false},\"commonFontStyle\":{\"isBold\":false,\"isItalic\":false},\"orientation\":-90,\"slopeDisplay\":\"none\",\"isUserChangedContrastColor\":false,\"mariMekko\":{\"basedOn\":\"height\",\"labelDisplay\":\"heightWidth\",\"category\":{\"categoryPosition\":\"auto\",\"categoryPositionHorizontal\":\"auto\"},\"width\":{\"displayType\":\"percentage\",\"displayFormat\":\"inLine\",\"primaryLabelPosition\":\"outsideTop\",\"secondaryLabelPosition\":\"outsideTop\",\"primaryLabelPositionHorizontal\":\"outsideRight\",\"secondaryLabelPositionHorizontal\":\"outsideRight\"},\"height\":{\"displayType\":\"value\",\"displayFormat\":\"inLine\",\"primaryLabelPosition\":\"outsideTop\",\"secondaryLabelPosition\":\"outsideTop\",\"primaryLabelPositionHorizontal\":\"outsideRight\",\"secondaryLabelPositionHorizontal\":\"outsideRight\"}},\"stackedMarimekko\":{\"basedOn\":\"height\",\"labelDisplay\":\"height\",\"category\":{\"categoryPosition\":\"auto\",\"categoryPositionHorizontal\":\"auto\"},\"width\":{\"displayType\":\"percentage\",\"displayFormat\":\"inLine\",\"primaryLabelPosition\":\"outsideTop\",\"secondaryLabelPosition\":\"outsideTop\",\"primaryLabelPositionHorizontal\":\"outsideRight\",\"secondaryLabelPositionHorizontal\":\"outsideRight\"},\"height\":{\"displayType\":\"both\",\"displayFormat\":\"block\",\"primaryLabelPosition\":\"insideCenter\",\"secondaryLabelPosition\":\"insideCenter\",\"primaryLabelPositionHorizontal\":\"insideCenter\",\"secondaryLabelPositionHorizontal\":\"insideCenter\"}},\"isResponsiveOrientation\":true,\"allowOverlap\":false},\"total\":{\"enabled\":true,\"display\":\"auto\",\"outlier\":false,\"outlierPercentage\":20,\"outlierColor\":\"#ff4400\",\"varianceDisplay\":\"minMax\",\"minColor\":\"#333333\",\"maxColor\":\"#333333\",\"interval\":2,\"position\":\"auto\",\"executiveFunnelLabelType\":\"valuePercentage\",\"horizontalPosition\":\"auto\",\"stackedPosition\":\"auto\",\"valuePosition\":\"auto\",\"barOverlap\":false,\"percentagePosition\":\"auto\",\"categoryPosition\":\"auto\",\"valuePositionHorizontal\":\"auto\",\"percentagePositionHorizontal\":\"auto\",\"categoryPositionHorizontal\":\"auto\",\"percentageStackedLabelType\":\"value\",\"stackedHorizontalPosition\":\"auto\",\"slopePosition\":\"auto\",\"boxPlotPosition\":\"inside\",\"contrastColor\":true,\"fontSize\":10,\"userChangeFontSize\":10,\"isUserChangedFontSize\":false,\"fontColor\":\"#333333\",\"background\":\"transparent\",\"showBackgroundColor\":true,\"offset\":0,\"posNegSplit\":false,\"isCategoryDisplay\":false,\"isSeriesDisplay\":false,\"fontStyle\":{\"isBold\":true,\"isItalic\":false,\"isUnderLine\":false},\"commonFontStyle\":{\"isBold\":false,\"isItalic\":false},\"orientation\":-90,\"slopeDisplay\":\"none\",\"isUserChangedContrastColor\":false,\"mariMekko\":{\"basedOn\":\"height\",\"labelDisplay\":\"heightWidth\",\"category\":{\"categoryPosition\":\"auto\",\"categoryPositionHorizontal\":\"auto\"},\"width\":{\"displayType\":\"percentage\",\"displayFormat\":\"inLine\",\"primaryLabelPosition\":\"outsideTop\",\"secondaryLabelPosition\":\"outsideTop\",\"primaryLabelPositionHorizontal\":\"outsideRight\",\"secondaryLabelPositionHorizontal\":\"outsideRight\"},\"height\":{\"displayType\":\"value\",\"displayFormat\":\"inLine\",\"primaryLabelPosition\":\"outsideTop\",\"secondaryLabelPosition\":\"outsideTop\",\"primaryLabelPositionHorizontal\":\"outsideRight\",\"secondaryLabelPositionHorizontal\":\"outsideRight\"}},\"stackedMarimekko\":{\"basedOn\":\"height\",\"labelDisplay\":\"heightWidth\",\"category\":{\"categoryPosition\":\"auto\",\"categoryPositionHorizontal\":\"auto\"},\"width\":{\"displayType\":\"percentage\",\"displayFormat\":\"inLine\",\"primaryLabelPosition\":\"outsideTop\",\"secondaryLabelPosition\":\"outsideTop\",\"primaryLabelPositionHorizontal\":\"outsideRight\",\"secondaryLabelPositionHorizontal\":\"outsideRight\"},\"height\":{\"displayType\":\"value\",\"displayFormat\":\"block\",\"primaryLabelPosition\":\"insideCenter\",\"secondaryLabelPosition\":\"insideCenter\",\"primaryLabelPositionHorizontal\":\"insideCenter\",\"secondaryLabelPositionHorizontal\":\"insideCenter\"}},\"isResponsiveOrientation\":true,\"allowOverlap\":false},\"TT\":{\"enabled\":true,\"display\":\"limited\",\"outlier\":false,\"outlierPercentage\":20,\"outlierColor\":\"#ff4400\",\"varianceDisplay\":\"minMax\",\"minColor\":\"#333333\",\"maxColor\":\"#333333\",\"interval\":2,\"position\":\"auto\",\"executiveFunnelLabelType\":\"valuePercentage\",\"horizontalPosition\":\"auto\",\"stackedPosition\":\"auto\",\"valuePosition\":\"auto\",\"barOverlap\":false,\"percentagePosition\":\"auto\",\"categoryPosition\":\"auto\",\"valuePositionHorizontal\":\"auto\",\"percentagePositionHorizontal\":\"auto\",\"categoryPositionHorizontal\":\"auto\",\"percentageStackedLabelType\":\"value\",\"stackedHorizontalPosition\":\"auto\",\"slopePosition\":\"auto\",\"boxPlotPosition\":\"inside\",\"contrastColor\":true,\"fontSize\":10,\"userChangeFontSize\":10,\"isUserChangedFontSize\":false,\"fontColor\":\"#333333\",\"background\":\"transparent\",\"showBackgroundColor\":true,\"offset\":0,\"posNegSplit\":false,\"isCategoryDisplay\":false,\"isSeriesDisplay\":true,\"fontStyle\":{\"isBold\":false,\"isItalic\":false,\"isUnderLine\":false},\"commonFontStyle\":{\"isBold\":false,\"isItalic\":false},\"orientation\":-90,\"slopeDisplay\":\"none\",\"isUserChangedContrastColor\":false,\"mariMekko\":{\"basedOn\":\"height\",\"labelDisplay\":\"heightWidth\",\"category\":{\"categoryPosition\":\"auto\",\"categoryPositionHorizontal\":\"auto\"},\"width\":{\"displayType\":\"percentage\",\"displayFormat\":\"inLine\",\"primaryLabelPosition\":\"outsideTop\",\"secondaryLabelPosition\":\"outsideTop\",\"primaryLabelPositionHorizontal\":\"outsideRight\",\"secondaryLabelPositionHorizontal\":\"outsideRight\"},\"height\":{\"displayType\":\"value\",\"displayFormat\":\"inLine\",\"primaryLabelPosition\":\"outsideTop\",\"secondaryLabelPosition\":\"outsideTop\",\"primaryLabelPositionHorizontal\":\"outsideRight\",\"secondaryLabelPositionHorizontal\":\"outsideRight\"}},\"stackedMarimekko\":{\"basedOn\":\"height\",\"labelDisplay\":\"height\",\"category\":{\"categoryPosition\":\"auto\",\"categoryPositionHorizontal\":\"auto\"},\"width\":{\"displayType\":\"percentage\",\"displayFormat\":\"inLine\",\"primaryLabelPosition\":\"outsideTop\",\"secondaryLabelPosition\":\"outsideTop\",\"primaryLabelPositionHorizontal\":\"outsideRight\",\"secondaryLabelPositionHorizontal\":\"outsideRight\"},\"height\":{\"displayType\":\"both\",\"displayFormat\":\"block\",\"primaryLabelPosition\":\"insideCenter\",\"secondaryLabelPosition\":\"insideCenter\",\"primaryLabelPositionHorizontal\":\"insideCenter\",\"secondaryLabelPositionHorizontal\":\"insideCenter\"}},\"isResponsiveOrientation\":true,\"allowOverlap\":false},\"BOXPLOT_MEAN_LINE\":{\"enabled\":true,\"display\":\"limited\",\"outlier\":false,\"outlierPercentage\":20,\"outlierColor\":\"#ff4400\",\"varianceDisplay\":\"minMax\",\"minColor\":\"#333333\",\"maxColor\":\"#333333\",\"interval\":2,\"position\":\"auto\",\"executiveFunnelLabelType\":\"valuePercentage\",\"horizontalPosition\":\"auto\",\"stackedPosition\":\"auto\",\"valuePosition\":\"auto\",\"barOverlap\":false,\"percentagePosition\":\"auto\",\"categoryPosition\":\"auto\",\"valuePositionHorizontal\":\"auto\",\"percentagePositionHorizontal\":\"auto\",\"categoryPositionHorizontal\":\"auto\",\"percentageStackedLabelType\":\"value\",\"stackedHorizontalPosition\":\"auto\",\"slopePosition\":\"auto\",\"boxPlotPosition\":\"inside\",\"contrastColor\":true,\"fontSize\":10,\"userChangeFontSize\":10,\"isUserChangedFontSize\":false,\"fontColor\":\"#333333\",\"background\":\"transparent\",\"showBackgroundColor\":true,\"offset\":0,\"posNegSplit\":false,\"isCategoryDisplay\":false,\"isSeriesDisplay\":true,\"fontStyle\":{\"isBold\":false,\"isItalic\":false,\"isUnderLine\":false},\"commonFontStyle\":{\"isBold\":false,\"isItalic\":false},\"orientation\":-90,\"slopeDisplay\":\"none\",\"isUserChangedContrastColor\":false,\"mariMekko\":{\"basedOn\":\"height\",\"labelDisplay\":\"heightWidth\",\"category\":{\"categoryPosition\":\"auto\",\"categoryPositionHorizontal\":\"auto\"},\"width\":{\"displayType\":\"percentage\",\"displayFormat\":\"inLine\",\"primaryLabelPosition\":\"outsideTop\",\"secondaryLabelPosition\":\"outsideTop\",\"primaryLabelPositionHorizontal\":\"outsideRight\",\"secondaryLabelPositionHorizontal\":\"outsideRight\"},\"height\":{\"displayType\":\"value\",\"displayFormat\":\"inLine\",\"primaryLabelPosition\":\"outsideTop\",\"secondaryLabelPosition\":\"outsideTop\",\"primaryLabelPositionHorizontal\":\"outsideRight\",\"secondaryLabelPositionHorizontal\":\"outsideRight\"}},\"stackedMarimekko\":{\"basedOn\":\"height\",\"labelDisplay\":\"height\",\"category\":{\"categoryPosition\":\"auto\",\"categoryPositionHorizontal\":\"auto\"},\"width\":{\"displayType\":\"percentage\",\"displayFormat\":\"inLine\",\"primaryLabelPosition\":\"outsideTop\",\"secondaryLabelPosition\":\"outsideTop\",\"primaryLabelPositionHorizontal\":\"outsideRight\",\"secondaryLabelPositionHorizontal\":\"outsideRight\"},\"height\":{\"displayType\":\"both\",\"displayFormat\":\"block\",\"primaryLabelPosition\":\"insideCenter\",\"secondaryLabelPosition\":\"insideCenter\",\"primaryLabelPositionHorizontal\":\"insideCenter\",\"secondaryLabelPositionHorizontal\":\"insideCenter\"}},\"isResponsiveOrientation\":true,\"allowOverlap\":false},\"Angebote.AC\":{\"enabled\":true,\"display\":\"limited\",\"outlier\":false,\"outlierPercentage\":20,\"outlierColor\":\"#ff4400\",\"varianceDisplay\":\"minMax\",\"minColor\":\"#333333\",\"maxColor\":\"#333333\",\"interval\":2,\"position\":\"auto\",\"executiveFunnelLabelType\":\"valuePercentage\",\"horizontalPosition\":\"auto\",\"stackedPosition\":\"auto\",\"valuePosition\":\"auto\",\"barOverlap\":false,\"percentagePosition\":\"auto\",\"categoryPosition\":\"auto\",\"valuePositionHorizontal\":\"auto\",\"percentagePositionHorizontal\":\"auto\",\"categoryPositionHorizontal\":\"auto\",\"percentageStackedLabelType\":\"value\",\"stackedHorizontalPosition\":\"auto\",\"slopePosition\":\"auto\",\"boxPlotPosition\":\"inside\",\"contrastColor\":true,\"fontSize\":10,\"userChangeFontSize\":10,\"isUserChangedFontSize\":false,\"fontColor\":\"#333333\",\"background\":\"transparent\",\"showBackgroundColor\":true,\"offset\":0,\"posNegSplit\":false,\"isCategoryDisplay\":false,\"isSeriesDisplay\":true,\"fontStyle\":{\"isBold\":false,\"isItalic\":false,\"isUnderLine\":false},\"commonFontStyle\":{\"isBold\":false,\"isItalic\":false},\"orientation\":-90,\"slopeDisplay\":\"none\",\"isUserChangedContrastColor\":false,\"mariMekko\":{\"basedOn\":\"height\",\"labelDisplay\":\"heightWidth\",\"category\":{\"categoryPosition\":\"auto\",\"categoryPositionHorizontal\":\"auto\"},\"width\":{\"displayType\":\"percentage\",\"displayFormat\":\"inLine\",\"primaryLabelPosition\":\"outsideTop\",\"secondaryLabelPosition\":\"outsideTop\",\"primaryLabelPositionHorizontal\":\"outsideRight\",\"secondaryLabelPositionHorizontal\":\"outsideRight\"},\"height\":{\"displayType\":\"value\",\"displayFormat\":\"inLine\",\"primaryLabelPosition\":\"outsideTop\",\"secondaryLabelPosition\":\"outsideTop\",\"primaryLabelPositionHorizontal\":\"outsideRight\",\"secondaryLabelPositionHorizontal\":\"outsideRight\"}},\"stackedMarimekko\":{\"basedOn\":\"height\",\"labelDisplay\":\"height\",\"category\":{\"categoryPosition\":\"auto\",\"categoryPositionHorizontal\":\"auto\"},\"width\":{\"displayType\":\"percentage\",\"displayFormat\":\"inLine\",\"primaryLabelPosition\":\"outsideTop\",\"secondaryLabelPosition\":\"outsideTop\",\"primaryLabelPositionHorizontal\":\"outsideRight\",\"secondaryLabelPositionHorizontal\":\"outsideRight\"},\"height\":{\"displayType\":\"both\",\"displayFormat\":\"block\",\"primaryLabelPosition\":\"insideCenter\",\"secondaryLabelPosition\":\"insideCenter\",\"primaryLabelPositionHorizontal\":\"insideCenter\",\"secondaryLabelPositionHorizontal\":\"insideCenter\"}},\"isResponsiveOrientation\":true,\"allowOverlap\":false},\"Angebote.PY\":{\"enabled\":true,\"display\":\"limited\",\"outlier\":false,\"outlierPercentage\":20,\"outlierColor\":\"#ff4400\",\"varianceDisplay\":\"minMax\",\"minColor\":\"#333333\",\"maxColor\":\"#333333\",\"interval\":2,\"position\":\"auto\",\"executiveFunnelLabelType\":\"valuePercentage\",\"horizontalPosition\":\"auto\",\"stackedPosition\":\"auto\",\"valuePosition\":\"auto\",\"barOverlap\":false,\"percentagePosition\":\"auto\",\"categoryPosition\":\"auto\",\"valuePositionHorizontal\":\"auto\",\"percentagePositionHorizontal\":\"auto\",\"categoryPositionHorizontal\":\"auto\",\"percentageStackedLabelType\":\"value\",\"stackedHorizontalPosition\":\"auto\",\"slopePosition\":\"auto\",\"boxPlotPosition\":\"inside\",\"contrastColor\":true,\"fontSize\":10,\"userChangeFontSize\":10,\"isUserChangedFontSize\":false,\"fontColor\":\"#333333\",\"background\":\"transparent\",\"showBackgroundColor\":true,\"offset\":0,\"posNegSplit\":false,\"isCategoryDisplay\":false,\"isSeriesDisplay\":true,\"fontStyle\":{\"isBold\":false,\"isItalic\":false,\"isUnderLine\":false},\"commonFontStyle\":{\"isBold\":false,\"isItalic\":false},\"orientation\":-90,\"slopeDisplay\":\"none\",\"isUserChangedContrastColor\":false,\"mariMekko\":{\"basedOn\":\"height\",\"labelDisplay\":\"heightWidth\",\"category\":{\"categoryPosition\":\"auto\",\"categoryPositionHorizontal\":\"auto\"},\"width\":{\"displayType\":\"percentage\",\"displayFormat\":\"inLine\",\"primaryLabelPosition\":\"outsideTop\",\"secondaryLabelPosition\":\"outsideTop\",\"primaryLabelPositionHorizontal\":\"outsideRight\",\"secondaryLabelPositionHorizontal\":\"outsideRight\"},\"height\":{\"displayType\":\"value\",\"displayFormat\":\"inLine\",\"primaryLabelPosition\":\"outsideTop\",\"secondaryLabelPosition\":\"outsideTop\",\"primaryLabelPositionHorizontal\":\"outsideRight\",\"secondaryLabelPositionHorizontal\":\"outsideRight\"}},\"stackedMarimekko\":{\"basedOn\":\"height\",\"labelDisplay\":\"height\",\"category\":{\"categoryPosition\":\"auto\",\"categoryPositionHorizontal\":\"auto\"},\"width\":{\"displayType\":\"percentage\",\"displayFormat\":\"inLine\",\"primaryLabelPosition\":\"outsideTop\",\"secondaryLabelPosition\":\"outsideTop\",\"primaryLabelPositionHorizontal\":\"outsideRight\",\"secondaryLabelPositionHorizontal\":\"outsideRight\"},\"height\":{\"displayType\":\"both\",\"displayFormat\":\"block\",\"primaryLabelPosition\":\"insideCenter\",\"secondaryLabelPosition\":\"insideCenter\",\"primaryLabelPositionHorizontal\":\"insideCenter\",\"secondaryLabelPositionHorizontal\":\"insideCenter\"}},\"isResponsiveOrientation\":true,\"allowOverlap\":false}},\"varianceFontColor\":\"#333333\",\"varianceFontSize\":10,\"varianceFormat\":\"both\",\"allowOverlap\":false,\"combinedLabel\":false,\"categorySeriesDisplay\":{\"showCategory\":true,\"first\":true,\"last\":true,\"separator\":\", \",\"responsiveLabel\":true},\"isUserChanged\":false,\"isMultiMeasureDataLabel\":false}'"
+                }
+              }
+            },
+            "numberFormatting": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"enabled\":true,\"ibcsformat\":false,\"thousandSeparator\":\",\",\"decimalSeparator\":\".\",\"noOfDecimal\":1,\"noOfDecimalPercent\":2,\"prefix\":\"\",\"suffix\":\"\",\"scalingFactor\":\"auto\",\"showScalingUnit\":true,\"semanticFormatting\":true,\"showValueColor\":false,\"positiveValueColor\":\"#82ba00\",\"positiveValueFormat\":\"x\",\"negativeValueColor\":\"#ff000a\",\"negativeValueFormat\":\"-x\",\"showNullAs\":\"hidden\",\"showZeroAs\":\"0\",\"includeBetweenSign\":false,\"customFormat\":{\"ΔFC\":{\"enabled\":false,\"noOfDecimal\":1,\"prefix\":\"\",\"suffix\":\"\",\"scalingFactor\":\"auto\"},\"ΔPY\":{\"enabled\":false,\"noOfDecimal\":1,\"prefix\":\"\",\"suffix\":\"\",\"scalingFactor\":\"auto\"},\"ΔPL\":{\"enabled\":false,\"noOfDecimal\":1,\"prefix\":\"\",\"suffix\":\"\",\"scalingFactor\":\"auto\"},\"ΔØ\":{\"enabled\":false,\"noOfDecimal\":1,\"prefix\":\"\",\"suffix\":\"\",\"scalingFactor\":\"auto\"},\"ΔFC%\":{\"enabled\":false,\"noOfDecimal\":1,\"prefix\":\"\",\"suffix\":\"\",\"scalingFactor\":\"percentage\"},\"ΔPY%\":{\"enabled\":false,\"noOfDecimal\":1,\"prefix\":\"\",\"suffix\":\"\",\"scalingFactor\":\"percentage\"},\"ΔPL%\":{\"enabled\":false,\"noOfDecimal\":1,\"prefix\":\"\",\"suffix\":\"\",\"scalingFactor\":\"percentage\"},\"ΔØ%\":{\"enabled\":false,\"noOfDecimal\":1,\"prefix\":\"\",\"suffix\":\"\",\"scalingFactor\":\"percentage\"},\"Ø\":{\"enabled\":false,\"noOfDecimal\":1,\"prefix\":\"\",\"suffix\":\"\",\"scalingFactor\":\"auto\"},\"total\":{\"enabled\":false,\"noOfDecimal\":1,\"prefix\":\"\",\"suffix\":\"\",\"scalingFactor\":\"auto\"},\"Angebote.AC\":{\"enabled\":false,\"noOfDecimal\":1,\"prefix\":\"\",\"suffix\":\"\",\"scalingFactor\":\"auto\"},\"Angebote.PY\":{\"enabled\":false,\"noOfDecimal\":1,\"prefix\":\"\",\"suffix\":\"\",\"scalingFactor\":\"auto\"}},\"isIndividual\":false,\"isCustomUnitLabel\":false,\"shortUnitText\":{\"thousands\":\"k\",\"billions\":\"b\",\"millions\":\"m\",\"trillions\":\"t\",\"percentagePoints\":\"pp\",\"basisPoints\":\"bps\"},\"longUnitText\":{\"thousands\":\"in Thousands\",\"billions\":\"in Billions\",\"millions\":\"in Millions\",\"trillions\":\"in Trillions\"},\"kpiTotalType\":\"native\",\"displayScalingIn\":\"title\",\"tableFormatType\":\"auto\",\"showInPP\":false,\"showInBPS\":false,\"enforceSign\":false}'"
+                }
+              }
+            },
+            "xAxis": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"enabled\":true,\"label\":{\"enabled\":true,\"fontColor\":\"#605E5C\",\"fontSize\":null,\"textAlignHorizontal\":\"end\",\"type\":\"categorical\",\"display\":\"auto\",\"density\":\"all\",\"step\":2,\"rotation\":-90,\"interval\":1,\"wordWrap\":true,\"maxHeight\":30,\"maxWidth\":25,\"padding\":null,\"concatLabels\":false,\"expandToLastChildren\":false,\"showFirstAndLast\":false,\"totalPosition\":\"first\",\"labelGrouping\":false,\"reversed\":false,\"isBold\":false,\"isItalic\":false,\"categoryGrouping\":{\"isBold\":true,\"isItalic\":false},\"minDateRange\":null,\"maxDateRange\":null},\"title\":{\"enabled\":true,\"fontColor\":\"#605E5C\",\"fontSize\":null,\"text\":\"\",\"isBold\":true,\"isItalic\":false,\"fontFamily\":\"\\\"Segoe UI\\\", wf_segoe-ui_normal, helvetica, arial, sans-serif\"},\"groupLine\":{\"enabled\":true,\"color\":\"#cccccc\",\"width\":1,\"type\":\"dotted\"},\"categoryWidth\":\"auto\",\"innerPadding\":30,\"enableScroll\":\"auto\",\"maxHeight\":null,\"minWidth\":18,\"axisLineWidth\":1,\"gridLine\":{\"enabled\":false,\"color\":\"#e6e6e6\",\"width\":1,\"type\":\"dotted\",\"position\":\"auto\"},\"maxCategoryCount\":null,\"offset\":null,\"isDefaultValue\":true,\"showBlankLabel\":false,\"position\":\"bottomOrLeft\"}'"
+                }
+              }
+            },
+            "stackedSorting": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"sortBy\":\"Angebote.AC\",\"sortType\":\"reset\",\"includeOtherInSort\":false,\"isDefaultValue\":true}'"
+                }
+              }
+            },
+            "toolbar": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"isPinned\":true,\"showTabContent\":true,\"isEditMode\":true,\"showOnHover\":false,\"isDropDownOpen\":true,\"toolbarView\":\"full\",\"previousToolbarType\":\"\",\"isSwitchedToFocusView\":false,\"isFloatingToolbar\":false,\"showOnObjectInteraction\":true,\"floatingView\":{\"isFloatingView\":false,\"showFloatingIcon\":true,\"showFloatingMenu\":false,\"showFocusToolbar\":false,\"pushToFocusMode\":false,\"prevContainerWidth\":null,\"prevContainerHeight\":null}}'"
+                }
+              }
+            },
+            "panelSorting": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"sortBy\":\"Angebote.AC\",\"sortType\":\"reset\",\"includeOtherInSort\":false,\"isDefaultValue\":true,\"instanceId\":null}'"
+                }
+              }
+            },
+            "fieldsMeta": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"AC\":\"0\",\"PY\":\"1\",\"PL\":\"2\",\"FC\":\"3\"}'"
+                }
+              }
+            },
+            "analytics": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"instanceId\":null,\"referenceLine\":[],\"referenceBand\":[],\"errorBar\":[],\"additionalSeries\":{\"enabled\":false,\"measure\":\"\",\"type\":\"pareto\",\"enableDataLabel\":true,\"dataLabelFontSize\":10,\"dataLabelColor\":\"#000000\",\"displayAxis\":false,\"lineColor\":\"#AAAAAA\",\"lineStyle\":\"solid\",\"lineWidth\":1,\"showInLegend\":false,\"textStyle\":\"normal\"},\"trendLine\":{\"enabled\":false,\"type\":\"linear\",\"lineColor\":\"#C21111\",\"lineStyle\":\"solid\",\"displayEquation\":false,\"measure\":\"\",\"lineWidth\":1,\"showInLegend\":false,\"fontSize\":13,\"fontColor\":\"#C21111\",\"textStyle\":\"normal\",\"labelXPosition\":0,\"labelYPosition\":0,\"rotation\":0}}'"
+                }
+              }
+            },
+            "categoryIndexMap": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"R0-%-Januar\":0,\"OTHERS_GROUP\":12,\"R0-%-Februar\":1,\"R0-%-März\":2,\"R0-%-April\":3,\"R0-%-Mai\":4,\"R0-%-Juni\":5,\"R0-%-Juli\":6,\"R0-%-August\":7,\"R0-%-September\":8,\"R0-%-Oktober\":9,\"R0-%-November\":10,\"R0-%-Dezember\":11}'"
+                }
+              }
+            },
+            "comparisonBand": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"enabled\":false,\"comparedSeries\":\"percentage\",\"noOfBands\":3,\"rangeConfig\":[{\"name\":\"Band 1\",\"color\":\"\",\"fromValue\":0,\"toValue\":33,\"fromCustomValue\":0,\"toCustomValue\":8102424.335511888},{\"name\":\"Band 2\",\"color\":\"\",\"fromValue\":33,\"toValue\":66,\"fromCustomValue\":8102424.335511888,\"toCustomValue\":16204848.671023777},{\"name\":\"Band 3\",\"color\":\"\",\"fromValue\":66,\"toValue\":100,\"fromCustomValue\":16204848.671023777,\"toCustomValue\":24307273.006535664}],\"applyFor\":\"AC\",\"basedOn\":\"AC\",\"flip\":false}'"
+                }
+              }
+            },
+            "bulletConfig": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"actual\":\"AC\",\"target\":\"PY\",\"additionalTarget\":\"\",\"actualConfig\":{\"type\":\"bar\",\"markerSize\":\"medium\",\"color\":\"#262626\"},\"targetConfig\":{\"type\":\"integrated\",\"markerSize\":\"medium\",\"color\":\"#515151\"},\"additionalTargetConfig\":{\"type\":\"arrow\",\"markerSize\":\"medium\",\"color\":\"\"},\"progressConfig\":{\"actual\":\"\",\"target\":\"\",\"style\":\"curve\",\"type\":\"progress\",\"label\":\"value\",\"value\":null,\"trackBackground\":\"#d3d3d3\"},\"style\":{\"actualPattern\":\"solid\",\"actualLineStyle\":\"solid\",\"targetPattern\":\"solid\",\"targetLineStyle\":\"solid\",\"additionalTargetPattern\":\"solid\",\"additionalTargetLineStyle\":\"solid\",\"variancePattern\":\"solid\"},\"bulletComparisonBand\":{\"bandModified\":false,\"dynamic\":false,\"showInLegend\":false,\"basedOn\":\"maxValue\",\"noOfBands\":3,\"flip\":false,\"divergingColors\":false,\"setLabel\":false,\"rangeConfig\":[{\"name\":\"Band 1\",\"fromPercentageValue\":0,\"toPercentageValue\":33,\"color\":\"\"},{\"name\":\"Band 2\",\"fromPercentageValue\":33,\"toPercentageValue\":66,\"color\":\"\"},{\"name\":\"Band 3\",\"fromPercentageValue\":66,\"toPercentageValue\":100,\"color\":\"\"}]},\"statisticalConfig\":{\"marker\":true,\"roundedEdge\":false,\"extendBaseline\":false,\"stemColor\":\"#A6A6A6\"},\"measureUpdated\":false}'"
+                }
+              }
+            },
+            "measureConfig": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"instanceId\":\"DEFAULT_VISUAL_INSTANCE\",\"config\":[{\"role\":\"AC\",\"isVisible\":true,\"enable\":true,\"chart\":\"ibcsBullet\",\"type\":\"ACTUAL\",\"order\":0,\"calcFormula\":\"\",\"isWaterfallMeasure\":false,\"yAxis\":\"yAxis1\",\"isTrellis\":false,\"dimension\":null},{\"role\":\"PY\",\"isVisible\":true,\"enable\":true,\"chart\":\"ibcsBullet\",\"type\":\"ACTUAL\",\"order\":1,\"calcFormula\":\"\",\"isWaterfallMeasure\":false,\"yAxis\":\"yAxis1\",\"isTrellis\":false,\"dimension\":null}]}'"
+                }
+              }
+            },
+            "toolbarReadViewConfig": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"enabled\":false,\"showComments\":true,\"showExport\":true,\"showSettings\":true,\"showToolbarPreview\":false,\"showDrillDownIcon\":false,\"showAxisBreakIcon\":false,\"showLassoReverseLassoIcon\":true,\"home\":{\"chartOption\":true,\"display\":true,\"ranking\":true,\"sorting\":true,\"trellis\":true,\"deviation\":true,\"conditionalFormat\":true,\"comments\":true,\"exportPDF\":true},\"floatsettings\":{\"element\":{\"title\":true,\"xAxis\":true,\"yAxis\":true,\"yAxisSecondary\":true,\"numberFormatting\":false,\"deviation\":true,\"display\":false,\"trellis\":true,\"switchValueToRow\":true,\"kpi\":true},\"appearance\":{\"deviation\":false,\"trellis\":false,\"exportPDF\":false},\"chart\":{\"chartOption\":true},\"dataFilter\":{\"display\":false,\"quickAccess\":false,\"sorting\":false,\"ranking\":false,\"cfOption\":false},\"trellis\":{\"multiChart\":false,\"focusPanel\":false,\"pinPanel\":false},\"table\":{\"resizeColumns\":false,\"reOrder\":false,\"renameHeaders\":false},\"summaryTable\":{\"renameHeaders\":false,\"reOrder\":false}}}'"
+                }
+              }
+            },
+            "suppressAlertModal": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"kpiAlert\":null,\"manageMeasuresAlert\":true,\"metaDataChangePrompt\":true}'"
+                }
+              }
+            },
+            "measuresAsRows": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"instanceId\":null,\"enabled\":false,\"groupingIgnoredMeasures\":{},\"isDirty\":false,\"templateId\":null}'"
+                }
+              }
+            },
+            "columnAsMeasure": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"enabled\":false,\"config\":{},\"queryName\":\"\",\"queryNames\":[],\"standardNotation\":false,\"trace\":{},\"storedConfig\":{}}'"
+                }
+              }
+            },
+            "tableConfig": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"rowConfig\":{\"rowHeight\":null,\"categoryImageRef\":null,\"categoryValue\":\"label\",\"chartsGrandTotal\":false,\"varianceGrandTotal\":true,\"grandTotalPosition\":\"top\",\"influenceTotal\":true,\"showSignHeader\":false,\"calculatedRows\":[]},\"columnConfig\":{\"responsiveColumns\":true,\"isDefaultResponsiveColumns\":true,\"blendColumnCount\":0,\"formulaColumnCount\":0,\"nativeColumnCount\":0,\"chartColumnCount\":0,\"scaleType\":\"universal\",\"hasCustomOrder\":false,\"columns\":[],\"hasCustomColumnSize\":false,\"isLayoutModifiedByResponsive\":false}}'"
+                }
+              }
+            },
+            "deviationLine": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"enabled\":false,\"fromTo\":\"auto\",\"stackedFromTo\":\"auto\",\"isGroupFromTo\":false,\"label\":\"percentage\",\"labelBackground\":\"off\",\"autoFontColor\":true,\"fontColor\":\"#000000\",\"backgroundColor\":\"#0070c0\",\"arrowStyle\":\"closedArrow\",\"lineWidth\":2,\"showStartIndicator\":false,\"connectorLineStyle\":\"solid\",\"connectorLineColor\":\"#808080\",\"createYourOwn\":{\"categories\":{\"from\":null,\"to\":null},\"measure\":{\"from\":null,\"to\":null},\"groups\":{\"from\":null,\"to\":null},\"isCreated\":false,\"fromTo\":\"createYourOwn\",\"isDeleted\":false},\"individualCreateYourOwn\":{},\"fontSize\":10,\"userChangeFontSize\":10,\"selectedGroup\":null,\"multipleDeviations\":[],\"multipleDeviationType\":1,\"createYourOwnMode\":0,\"backgroundTransparency\":90,\"showMultipleDeviation\":false,\"currentCreateYourOwnId\":null,\"backUpCreateYourOwn\":null,\"deletedStackedDeviation\":{},\"enableNumberFormatting\":false,\"includeBetweenSign\":false,\"deviationValue\":{\"enabled\":false,\"scalingFactor\":\"auto\",\"noOfDecimal\":1,\"prefix\":\"\",\"suffix\":\"\"},\"deviationPercentage\":{\"enabled\":false,\"noOfDecimal\":1},\"varianceColors\":{\"positive\":null,\"negative\":null},\"suppressStackDeviationWarningModal\":false,\"showInPP\":false,\"showInBPS\":false}'"
+                }
+              }
+            },
+            "scenarios": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"scenarioId\":\"none\",\"previousId\":\"none\",\"appliedSettings\":{\"commonSettings\":false,\"cfProps\":false,\"appearance\":false,\"kpiControls\":false,\"trellisSettings\":false,\"sorting\":false,\"analytics\":false,\"deviationLine\":false}}'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualConfig": [
+        {
+          "properties": {
+            "migrationSettings": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"v1_2_0\":{\"visualConfig\":{\"isResolved\":true}},\"v1_2_0_0\":{\"hiddenProperties\":{\"isResolved\":true}},\"v1_4_0_0\":{\"hiddenProperties\":{\"isResolved\":true}},\"v1_5_0_0\":{\"hiddenProperties\":{\"isResolved\":true}},\"v1_6_0_0\":{\"hiddenProperties\":{\"isResolved\":true}},\"v1_7_0_0\":{\"hiddenProperties\":{\"isResolved\":true}},\"v1_8_0_0\":{\"hiddenProperties\":{\"isResolved\":true}},\"v1_9_0_0\":{\"hiddenProperties\":{\"isResolved\":true}},\"v2_1_0_0\":{\"hiddenProperties\":{\"isResolved\":true}},\"v2_5_0_0\":{\"hiddenProperties\":{\"isResolved\":true}},\"v2_6_0_0\":{\"hiddenProperties\":{\"isResolved\":true}},\"v2_7_0_0\":{\"hiddenProperties\":{\"isResolved\":true}},\"v3_0_0_0\":{\"hiddenProperties\":{\"isResolved\":true}},\"v3_1_0_0\":{\"hiddenProperties\":{\"isResolved\":true}},\"v3_2_0_0\":{\"hiddenProperties\":{\"isResolved\":true}},\"v3_3_0_0\":{\"hiddenProperties\":{\"isResolved\":true}},\"v3_4_0_0\":{\"hiddenProperties\":{\"isResolved\":true}},\"v3_5_0_0\":{\"hiddenProperties\":{\"isResolved\":true}}}'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "license": [
+        {
+          "properties": {
+            "appSourceLicence": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

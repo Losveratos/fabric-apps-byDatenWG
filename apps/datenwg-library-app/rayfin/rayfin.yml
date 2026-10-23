@@ -1,0 +1,42 @@
+id: datenwg-library-app
+name: datenwg-library-app
+version: 1.0.0
+services:
+  auth:
+    enabled: true
+    fabric:
+      enabled: true
+      externalEntraExchange: true
+    password:
+      enabled: false
+    allowedRedirectUris:
+      - http://localhost:5173
+      - http://127.0.0.1:5173
+  data:
+    enabled: false
+    path: packages/data
+    buildCommand: npm run build
+    dialect: mssql
+  staticHosting:
+    enabled: true
+    path: packages/frontend
+    folder: dist
+    buildCommand: npm run build:fabric
+    indexDocument: index.html
+    assetAccess: protected
+    embedded:
+      only: false
+  functions:
+    enabled: false
+  storage:
+    enabled: false
+connectors:
+  - name: library
+    type: fabric-sqlanalytics
+    config:
+      workspaceId: "<your-workspace-id>"
+      itemId: "<your-lakehouse-id>"
+    auth:
+      type: application
+    operations:
+      - name: read

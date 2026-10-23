@@ -1,0 +1,24 @@
+// Abfragen der Seite „Bierranking nach Planabweichung im Monat“ ohne Querfilter, zum Prüfen in der DAX-Abfrageansicht.
+// erzeugt von `dwg app page`, nicht von Hand ändern.
+
+// Kachel karten (chartkitchen)
+EVALUATE
+    SUMMARIZECOLUMNS(
+        'Kunde'[Kanal],
+        'Kunde'[Kanal Sort],
+        "actual", 'Fakten'[Absatz hl AC],
+        "previousYear", 'Fakten'[Absatz hl PY bis Ist],
+        "plan", 'Fakten'[Absatz hl PL bis Ist]
+    )
+ORDER BY 'Kunde'[Kanal Sort]
+
+// Kachel vorlage (pnl)
+EVALUATE
+    SUMMARIZECOLUMNS(
+        'Produkt'[Produkt],
+        'Kalender'[Periode],
+        'Produkt'[Produkt Sort],
+        "ac", 'Fakten'[Absatz hl AC],
+        "pl", 'Fakten'[Absatz hl PL]
+    )
+ORDER BY 'Produkt'[Produkt Sort], 'Kalender'[Periode]

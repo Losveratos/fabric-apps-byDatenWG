@@ -1,0 +1,89 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/graphIndex/definition/stylingConfiguration/1.0.0/schema.json",
+  "modelLayout": {
+    "positions": {
+      "Document": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "Concept": {
+        "x": 6.0,
+        "y": 0.0
+      },
+      "Person": {
+        "x": 12.0,
+        "y": 0.0
+      },
+      "Bucket": {
+        "x": 0.0,
+        "y": 5.0
+      },
+      "Claim": {
+        "x": 6.0,
+        "y": 5.0
+      }
+    },
+    "styles": {
+      "Document": {
+        "size": 30
+      },
+      "Concept": {
+        "size": 30
+      },
+      "Person": {
+        "size": 30
+      },
+      "Bucket": {
+        "size": 30
+      },
+      "Claim": {
+        "size": 30
+      },
+      "MENTIONS": {
+        "size": 30
+      },
+      "MENTIONS_PERSON": {
+        "size": 30
+      },
+      "EXPLAINS": {
+        "size": 30
+      },
+      "SPEAKS_IN": {
+        "size": 30
+      },
+      "IN_BUCKET": {
+        "size": 30
+      },
+      "RELATES_TO": {
+        "size": 30
+      },
+      "REQUIRES": {
+        "size": 30
+      },
+      "REPLACES": {
+        "size": 30
+      },
+      "CONTRASTS": {
+        "size": 30
+      },
+      "PART_OF": {
+        "size": 30
+      },
+      "RECOMMENDS": {
+        "size": 30
+      },
+      "STATES": {
+        "size": 30
+      },
+      "ABOUT": {
+        "size": 30
+      }
+    },
+    "pan": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "zoomLevel": 1.0
+  },
+  "visualFormat": null
+}

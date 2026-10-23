@@ -1,0 +1,26 @@
+// Abfragen der Seite „Bubble Biere nach Menge, Marge und Umsatz“ ohne Querfilter, zum Prüfen in der DAX-Abfrageansicht.
+// erzeugt von `dwg app page`, nicht von Hand ändern.
+
+// Kachel karten (chartkitchen)
+EVALUATE
+    SUMMARIZECOLUMNS(
+        'Kunde'[Kanal],
+        'Kunde'[Kanal Sort],
+        TREATAS({TRUE()}, 'Kalender'[Ist]),
+        "actual", 'Fakten'[Umsatz AC],
+        "previousYear", 'Fakten'[Umsatz PY bis Ist],
+        "plan", 'Fakten'[Umsatz PL bis Ist]
+    )
+ORDER BY 'Kunde'[Kanal Sort]
+
+// Kachel vorlage (chartkitchen)
+EVALUATE
+    SUMMARIZECOLUMNS(
+        'Produkt'[Produkt],
+        'Produkt'[Produkt Sort],
+        TREATAS({TRUE()}, 'Kalender'[Ist]),
+        "actual", 'Fakten'[DB-Marge % AC],
+        "xValue", 'Fakten'[Absatz hl AC],
+        "bubbleSize", 'Fakten'[Umsatz AC]
+    )
+ORDER BY 'Produkt'[Produkt Sort]

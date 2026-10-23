@@ -1,0 +1,52 @@
+table '📶Auswahl 1'
+	lineageTag: 8bfce695-6e08-4887-a010-d0bd4fcdedb4
+
+	column Parameter
+		lineageTag: 19e23b69-6f03-4f4a-a6ed-26c8860a9ddd
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Parameter Reihenfolge'
+
+		relatedColumnDetails
+			groupByColumn: 'Parameter Felder'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter Felder'
+		isHidden
+		lineageTag: ab64d513-81ac-4337-a63c-88669a6384e1
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Parameter Reihenfolge'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter Reihenfolge'
+		isHidden
+		formatString: 0
+		lineageTag: 4378bb21-0476-442c-a537-728e4fd45c59
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition '📶Auswahl 1-4b2257fc-e4d4-4f7a-800d-d71d09f1d2df' = calculated
+		mode: import
+		source =
+				{
+				    ("Vertriebler", NAMEOF('Vertriebler'[Vertriebler]), 0),
+				    ("Kunde", NAMEOF('Kunde'[Kunde]), 1),
+				    ("Produkt Gruppe", NAMEOF('Produkt'[Produkt Gruppe]), 2),
+				    ("Produkt Typ", NAMEOF('Produkt'[Produkt Typ]), 3),
+				    ("Bundesland", NAMEOF('Standort'[Bundesland]), 4),
+				    ("Stadt", NAMEOF('Standort'[Stadt]), 5)
+				}
+
+	annotation PBI_Id = 12ab5a4fad084b4fa30ad75a3927b1d0
+

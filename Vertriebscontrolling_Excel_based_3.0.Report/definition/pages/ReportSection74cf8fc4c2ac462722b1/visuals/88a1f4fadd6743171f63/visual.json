@@ -1,0 +1,368 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "88a1f4fadd6743171f63",
+  "position": {
+    "x": 0,
+    "y": 75.555555555555557,
+    "z": 4000,
+    "height": 644.44444444444446,
+    "width": 1280,
+    "tabOrder": 12000
+  },
+  "visual": {
+    "visualType": "zebraBiCards2C860CFAA9944091B75F0DBD117F20FA",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Angebote"
+                    }
+                  },
+                  "Property": "AC"
+                }
+              },
+              "queryRef": "Angebote.AC Selection"
+            }
+          ]
+        },
+        "PreviousYear": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Angebote"
+                    }
+                  },
+                  "Property": "PY"
+                }
+              },
+              "queryRef": "Angebote.LY"
+            }
+          ]
+        },
+        "Group": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "📶Auswahl Kennzahl"
+                    }
+                  },
+                  "Property": "Name Kennzahl"
+                }
+              },
+              "queryRef": "📶Auswahl Kennzahl.Name Kennzahl"
+            }
+          ]
+        },
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "📅Kalender"
+                    }
+                  },
+                  "Property": "Month Name"
+                }
+              },
+              "queryRef": "Kalender.Month Name",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "license": [
+        {
+          "properties": {
+            "licenseKey": {
+              "expr": {
+                "Literal": {
+                  "Value": "'OWEMeniOfKRrc29R7ESaHASs07MogOlvPQrW4lDUsEglQvZfWJi9dKiL3sN2qDuQn8fP6joPnPJ5qrNGXdj+D3siY29tcGFueSI6IkhBWkVNQUcgJiBFUFIgR21iSCIsImV4cGlyeURhdGUiOiIyMDI1LTA2LTA4Iiwibk9mVXNlcnMiOiIyMCIsImxpY2Vuc2VUeXBlIjoiUGFpZCIsInZpc3VhbFR5cGUiOiJBbGwifQ=='"
+                }
+              }
+            },
+            "licensedTo": {
+              "expr": {
+                "Literal": {
+                  "Value": "'HAZEMAG &amp; EPR GmbH'"
+                }
+              }
+            },
+            "product": {
+              "expr": {
+                "Literal": {
+                  "Value": "'All'"
+                }
+              }
+            },
+            "validUntil": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Sun Jun 08 2025'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "legend": [
+        {
+          "properties": {
+            "actualPreviousYear": {
+              "expr": {
+                "Literal": {
+                  "Value": "'ΔLY'"
+                }
+              }
+            },
+            "forecastPreviousYear": {
+              "expr": {
+                "Literal": {
+                  "Value": "'ΔLY'"
+                }
+              }
+            },
+            "actualPreviousYearPercent": {
+              "expr": {
+                "Literal": {
+                  "Value": "'ΔLY%'"
+                }
+              }
+            },
+            "forecastPreviousYearPercent": {
+              "expr": {
+                "Literal": {
+                  "Value": "'ΔLY%'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "customData": [
+        {
+          "properties": {
+            "version": {
+              "expr": {
+                "Literal": {
+                  "Value": "'7.5.1.45'"
+                }
+              }
+            },
+            "gridData": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"instance\":0,\"cards\":{\"card-d1a8ee2a-dc64-5219-956f-37c53b90976e\":{\"id\":\"card-d1a8ee2a-dc64-5219-956f-37c53b90976e\",\"cardTitle\":\"AC\",\"cardValue\":67107328.99999998,\"cardType\":1,\"total\":67107328.99999998,\"group\":\"Gewichtet Angebotswert\",\"roles\":[],\"chartType\":3,\"numberFormat\":null,\"decimals\":1,\"relativeDecimals\":1,\"currency\":\"None\",\"chartMax\":11435105.899999999,\"chartMin\":0,\"axisBreakMax\":1531626.24,\"axisBreakMin\":11435105.899999999,\"transitions\":[],\"coordinates\":{\"x\":0,\"y\":0,\"w\":2,\"h\":2},\"globalMaxMeasure\":176342.20885172335,\"hasComments\":false,\"isNegative\":false,\"isMixed\":false},\"card-1f706cba-827f-53fa-81c7-ea4f4c6fa9bf\":{\"id\":\"card-1f706cba-827f-53fa-81c7-ea4f4c6fa9bf\",\"cardTitle\":\"AC\",\"cardValue\":14352709.850000001,\"cardType\":1,\"total\":14352709.850000001,\"group\":\"Gewichtete Angebotsmege\",\"roles\":[],\"chartType\":3,\"numberFormat\":null,\"decimals\":1,\"relativeDecimals\":1,\"currency\":\"None\",\"chartMax\":4317704.84,\"chartMin\":0,\"axisBreakMax\":141871,\"axisBreakMin\":4317704.84,\"transitions\":[],\"coordinates\":{\"x\":2,\"y\":0,\"w\":2,\"h\":2},\"globalMaxMeasure\":176342.20885172335,\"hasComments\":false,\"isNegative\":false,\"isMixed\":false},\"card-536b69a1-9843-5295-9e9b-8c452ad04d2c\":{\"id\":\"card-536b69a1-9843-5295-9e9b-8c452ad04d2c\",\"cardTitle\":\"AC\",\"cardValue\":47180472,\"cardType\":1,\"total\":47180472,\"group\":\"Anzahl gewonnen\",\"roles\":[],\"chartType\":3,\"numberFormat\":null,\"decimals\":1,\"relativeDecimals\":1,\"currency\":\"None\",\"chartMax\":6595426,\"chartMin\":0,\"axisBreakMax\":393928,\"axisBreakMin\":6595426,\"transitions\":[],\"coordinates\":{\"x\":4,\"y\":0,\"w\":2,\"h\":2},\"globalMaxMeasure\":176342.20885172335,\"hasComments\":false,\"isNegative\":false,\"isMixed\":false},\"card-ccbd9ac0-d65c-5e90-8aa0-542c8d9e33d0\":{\"id\":\"card-ccbd9ac0-d65c-5e90-8aa0-542c8d9e33d0\",\"cardTitle\":\"AC\",\"cardValue\":19926856.999999978,\"cardType\":1,\"total\":19926856.999999978,\"group\":\"offene Angebote\",\"roles\":[],\"chartType\":0,\"numberFormat\":null,\"decimals\":1,\"relativeDecimals\":1,\"currency\":\"None\",\"chartMax\":19926856.999999996,\"chartMin\":0,\"axisBreakMax\":1470.6,\"axisBreakMin\":19926856.999999996,\"transitions\":[],\"coordinates\":{\"x\":6,\"y\":0,\"w\":2,\"h\":2},\"globalMaxMeasure\":176342.20885172335,\"hasComments\":false,\"isNegative\":false,\"isMixed\":false},\"card-3640ffea-2e9d-5478-bd82-eb830519aa90\":{\"id\":\"card-3640ffea-2e9d-5478-bd82-eb830519aa90\",\"cardTitle\":\"AC\",\"cardValue\":0.18176274218871094,\"cardType\":1,\"total\":0.18176274218871094,\"group\":\"Premium Share\",\"roles\":[],\"chartType\":1,\"numberFormat\":null,\"decimals\":1,\"relativeDecimals\":1,\"currency\":\"None\",\"chartMax\":0.6531053401127861,\"chartMin\":0,\"axisBreakMax\":0.0192238211079068,\"axisBreakMin\":0.6531053401127861,\"transitions\":[],\"coordinates\":{\"x\":0,\"y\":2,\"w\":2,\"h\":1},\"globalMaxMeasure\":176342.20885172335,\"hasComments\":false,\"isNegative\":false,\"isMixed\":false},\"card-cb452620-5aed-59e3-97d4-caad1698a996\":{\"id\":\"card-cb452620-5aed-59e3-97d4-caad1698a996\",\"cardTitle\":\"AC\",\"cardValue\":1321,\"cardType\":1,\"total\":1321,\"group\":\"Gewonne Angebote\",\"roles\":[],\"chartType\":1,\"numberFormat\":null,\"decimals\":1,\"relativeDecimals\":1,\"currency\":\"None\",\"chartMax\":185,\"chartMin\":0,\"axisBreakMax\":22,\"axisBreakMin\":185,\"transitions\":[],\"coordinates\":{\"x\":2,\"y\":2,\"w\":2,\"h\":1},\"globalMaxMeasure\":176342.20885172335,\"hasComments\":false,\"isNegative\":false,\"isMixed\":false},\"card-1fc5e8e3-e46b-59ef-9166-a8854a7ba4b2\":{\"id\":\"card-1fc5e8e3-e46b-59ef-9166-a8854a7ba4b2\",\"cardTitle\":\"AC\",\"cardValue\":284353.0889830508,\"cardType\":1,\"total\":284353.0889830508,\"group\":\"Durchschnittlicher Kundenumsatz\",\"roles\":[],\"chartType\":1,\"numberFormat\":null,\"decimals\":1,\"relativeDecimals\":1,\"currency\":\"None\",\"chartMax\":97458.08,\"chartMin\":0,\"axisBreakMax\":19387.673924050632,\"axisBreakMin\":97458.08,\"transitions\":[],\"coordinates\":{\"x\":4,\"y\":2,\"w\":2,\"h\":1},\"globalMaxMeasure\":176342.20885172335,\"hasComments\":false,\"isNegative\":false,\"isMixed\":false},\"card-0b4fa572-ef8f-5e50-82d9-0c23fcd191fa\":{\"id\":\"card-0b4fa572-ef8f-5e50-82d9-0c23fcd191fa\",\"cardTitle\":\"AC\",\"cardValue\":133.28592092574735,\"cardType\":1,\"total\":133.28592092574735,\"group\":\"Dauer Angebotszyklus\",\"roles\":[],\"chartType\":1,\"numberFormat\":null,\"decimals\":1,\"relativeDecimals\":1,\"currency\":\"None\",\"chartMax\":153.4835164835165,\"chartMin\":0,\"axisBreakMax\":115.68493150684931,\"axisBreakMin\":153.4835164835165,\"transitions\":[],\"coordinates\":{\"x\":6,\"y\":2,\"w\":2,\"h\":1},\"globalMaxMeasure\":176342.20885172335,\"hasComments\":false,\"isNegative\":false,\"isMixed\":false},\"card-705ca301-7ae9-5c29-bf0f-4c96555461d8\":{\"id\":\"card-705ca301-7ae9-5c29-bf0f-4c96555461d8\",\"cardTitle\":\"AC\",\"cardValue\":0.636933461909354,\"cardType\":1,\"total\":0.636933461909354,\"group\":\"Gewonnen Share\",\"roles\":[],\"chartType\":1,\"numberFormat\":null,\"decimals\":1,\"relativeDecimals\":1,\"currency\":\"None\",\"chartMax\":0.8715596330275229,\"chartMin\":0,\"axisBreakMax\":0.24175824175824176,\"axisBreakMin\":0.8715596330275229,\"transitions\":[],\"coordinates\":{\"x\":0,\"y\":3,\"w\":2,\"h\":1},\"globalMaxMeasure\":176342.20885172335,\"hasComments\":false,\"isNegative\":false,\"isMixed\":false},\"card-8f34c436-a6b9-505d-a8c3-a4c7024b04f2\":{\"id\":\"card-8f34c436-a6b9-505d-a8c3-a4c7024b04f2\",\"cardTitle\":\"AC\",\"cardValue\":32356.47492767598,\"cardType\":1,\"total\":32356.47492767598,\"group\":\"Durchschnittliche Angebotshöhe\",\"roles\":[],\"chartType\":1,\"numberFormat\":null,\"decimals\":1,\"relativeDecimals\":1,\"currency\":\"None\",\"chartMax\":66752.1095890411,\"chartMin\":0,\"axisBreakMax\":11603.229090909092,\"axisBreakMin\":66752.1095890411,\"transitions\":[],\"coordinates\":{\"x\":2,\"y\":3,\"w\":2,\"h\":1},\"globalMaxMeasure\":176342.20885172335,\"hasComments\":false,\"isNegative\":false,\"isMixed\":false},\"card-581c5dd9-7d83-5f66-b7f7-cb8cf41c74fd\":{\"id\":\"card-581c5dd9-7d83-5f66-b7f7-cb8cf41c74fd\",\"cardTitle\":\"AC\",\"cardValue\":236,\"cardType\":1,\"total\":236,\"group\":\"Anzahl Kunden\",\"roles\":[],\"chartType\":1,\"numberFormat\":null,\"decimals\":1,\"relativeDecimals\":1,\"currency\":\"None\",\"chartMax\":126,\"chartMin\":0,\"axisBreakMax\":50,\"axisBreakMin\":126,\"transitions\":[],\"coordinates\":{\"x\":4,\"y\":3,\"w\":4,\"h\":1},\"globalMaxMeasure\":176342.20885172335,\"hasComments\":false,\"isNegative\":false,\"isMixed\":false}},\"groups\":{}}'"
+                }
+              }
+            },
+            "migrations": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"dataMigrationVersion\":\"7.5.1.45\"}'"
+                }
+              }
+            },
+            "dataVersion": {
+              "expr": {
+                "Literal": {
+                  "Value": "1L"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "cardSort": {
+              "expr": {
+                "Literal": {
+                  "Value": "'custom-sort'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "design": [
+        {
+          "properties": {
+            "style": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            },
+            "positiveColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 3,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "licenseSettings": [
+        {
+          "properties": {
+            "licenseKey": {
+              "expr": {
+                "Literal": {
+                  "Value": "'OWEMeniOfKRrc29R7ESaHASs07MogOlvPQrW4lDUsEglQvZfWJi9dKiL3sN2qDuQn8fP6joPnPJ5qrNGXdj+D3siY29tcGFueSI6IkhBWkVNQUcgJiBFUFIgR21iSCIsImV4cGlyeURhdGUiOiIyMDI1LTA2LTA4Iiwibk9mVXNlcnMiOiIyMCIsImxpY2Vuc2VUeXBlIjoiUGFpZCIsInZpc3VhbFR5cGUiOiJBbGwifQ=='"
+                }
+              }
+            },
+            "appliedTimestamp": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "border": [
+        {
+          "properties": {
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "Filtercc9bde9ab817d7a21d68",
+        "ordinal": 0,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Vertriebler"
+              }
+            },
+            "Property": "Vertriebler"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "Filterb07c6ec7e0a09070ee61",
+        "ordinal": 1,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Kunde"
+              }
+            },
+            "Property": "Kunde"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "Filter5f707a52557501336c92",
+        "ordinal": 2,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Angebote"
+              }
+            },
+            "Property": "AC"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "Filterbe08f57acb87f5cfa370",
+        "ordinal": 3,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "📅Kalender"
+              }
+            },
+            "Property": "Month Name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "Filterd963527463ffce91eff5",
+        "ordinal": 4,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "📶Auswahl Kennzahl"
+              }
+            },
+            "Property": "Name Kennzahl"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "Filter77a9edc01747e18842c1",
+        "ordinal": 5,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Angebote"
+              }
+            },
+            "Property": "PY"
+          }
+        },
+        "type": "Advanced"
+      }
+    ],
+    "filterSortOrder": "Custom"
+  }
+}

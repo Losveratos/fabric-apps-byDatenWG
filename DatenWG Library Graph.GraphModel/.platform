@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "GraphModel",
+    "displayName": "DatenWG Library Graph",
+    "description": "Knoten und Kanten der DatenWG Library aus dem Lakehouse DatenWGLibrary (graph_nodes, graph_edges)."
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "255d2d13-fc71-9dd8-43e5-40139e0bfead"
+  }
+}

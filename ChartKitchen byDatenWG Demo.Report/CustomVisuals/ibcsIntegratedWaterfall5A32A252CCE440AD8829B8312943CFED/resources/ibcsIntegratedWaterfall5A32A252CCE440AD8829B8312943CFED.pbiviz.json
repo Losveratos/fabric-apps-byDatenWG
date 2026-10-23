@@ -1,0 +1,177 @@
+{
+  "visual": {
+    "name": "ibcsIntegratedWaterfall",
+    "displayName": "IBCS Integrierte GuV (Test)",
+    "guid": "ibcsIntegratedWaterfall5A32A252CCE440AD8829B8312943CFED",
+    "visualClassName": "Visual",
+    "version": "1.1.0.0",
+    "description": "IBCS-konformer Wasserfall (AC vs. PY) mit ΔPY%-Pinchart, Monatssäulen und Forecast-Wert-Aufrechnung (FC-Messgröße füllt fehlende AC-Werte) — Testvisual, portiert aus ibcs-chart-standalone.html.",
+    "supportUrl": "https://github.com/",
+    "gitHubUrl": ""
+  },
+  "author": {
+    "name": "Michael Tenner",
+    "email": "michael.tenner84@gmail.com"
+  },
+  "apiVersion": "5.3.0",
+  "style": "style/visual.less",
+  "stringResources": {},
+  "capabilities": {
+    "dataRoles": [
+      {
+        "displayName": "Monat",
+        "name": "category",
+        "kind": "Grouping"
+      },
+      {
+        "displayName": "AC (aktueller Wert)",
+        "name": "ac",
+        "kind": "Measure"
+      },
+      {
+        "displayName": "PY (Vorjahr)",
+        "name": "py",
+        "kind": "Measure"
+      },
+      {
+        "displayName": "Forecast-Kennzeichen (≠0 = FC)",
+        "name": "forecast",
+        "kind": "Measure"
+      }
+    ],
+    "objects": {
+      "colors": {
+        "displayName": "Farben",
+        "properties": {
+          "goodColor": {
+            "displayName": "Positiv (Δ > 0)",
+            "type": {
+              "fill": {
+                "solid": {
+                  "color": true
+                }
+              }
+            }
+          },
+          "badColor": {
+            "displayName": "Negativ (Δ < 0)",
+            "type": {
+              "fill": {
+                "solid": {
+                  "color": true
+                }
+              }
+            }
+          },
+          "grayColor": {
+            "displayName": "PY / Neutral",
+            "type": {
+              "fill": {
+                "solid": {
+                  "color": true
+                }
+              }
+            }
+          },
+          "darkColor": {
+            "displayName": "AC",
+            "type": {
+              "fill": {
+                "solid": {
+                  "color": true
+                }
+              }
+            }
+          },
+          "inkColor": {
+            "displayName": "Schrift / Linien",
+            "type": {
+              "fill": {
+                "solid": {
+                  "color": true
+                }
+              }
+            }
+          }
+        }
+      },
+      "general": {
+        "displayName": "Allgemein",
+        "properties": {
+          "year": {
+            "displayName": "Jahr (AC)",
+            "type": {
+              "numeric": true
+            }
+          },
+          "showDeltaChart": {
+            "displayName": "ΔPY%-Pinchart anzeigen",
+            "type": {
+              "bool": true
+            }
+          }
+        }
+      }
+    },
+    "dataViewMappings": [
+      {
+        "conditions": [
+          {
+            "category": {
+              "max": 1
+            },
+            "ac": {
+              "max": 1
+            },
+            "py": {
+              "max": 1
+            },
+            "forecast": {
+              "max": 1
+            }
+          }
+        ],
+        "categorical": {
+          "categories": {
+            "for": {
+              "in": "category"
+            },
+            "dataReductionAlgorithm": {
+              "top": {}
+            }
+          },
+          "values": {
+            "select": [
+              {
+                "bind": {
+                  "to": "ac"
+                }
+              },
+              {
+                "bind": {
+                  "to": "py"
+                }
+              },
+              {
+                "bind": {
+                  "to": "forecast"
+                }
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "privileges": []
+  },
+  "content": {
+    "js": "var ibcsIntegratedWaterfall5A32A252CCE440AD8829B8312943CFED;(()=>{\"use strict\";var e={754(e,t,a){a.d(t,{Kx:()=>r,St:()=>l,Tn:()=>s,iB:()=>g,jF:()=>c,sk:()=>d});var o=a(639);class i{}class n extends i{}class r{}class l extends i{}class s extends n{}class p extends i{constructor(e){super(),Object.assign(this,e)}getFormattingSlice(e,t){const a=this.type,o=this.name,i={displayName:t&&this.displayNameKey?t.getDisplayName(this.displayNameKey):this.displayName,description:t&&this.descriptionKey?t.getDisplayName(this.descriptionKey):this.description,uid:e+\"-\"+o};return Object.assign(Object.assign({},i),{control:{type:a,properties:this.getFormattingComponent(e,t)}})}getFormattingComponent(e,t){return{descriptor:o.y(e,this),value:this.value}}getRevertToDefaultDescriptor(e){return[{objectName:e,propertyName:this.name}]}setPropertiesValues(e,t){var a;const i=null===(a=null==e?void 0:e[t])||void 0===a?void 0:a[this.name];this.value=o.D(this,i,this.value)}}class c extends p{constructor(e){super(e),this.type=\"ToggleSwitch\"}}class d extends p{constructor(e){super(e),this.type=\"ColorPicker\"}getFormattingComponent(e){return Object.assign(Object.assign({},super.getFormattingComponent(e)),{defaultColor:this.defaultColor,isNoFillItemSupported:this.isNoFillItemSupported})}}class g extends p{constructor(e){super(e),this.type=\"NumUpDown\"}getFormattingComponent(e){return Object.assign(Object.assign({},super.getFormattingComponent(e)),{options:this.options})}}},667(e,t,a){var o=a(754);a.d(t,[\"A\",0,class{constructor(e){this.localizationManager=e}populateFormattingSettingsModel(e,t){var a,i;const n=new e,r=null===(a=null==t?void 0:t.metadata)||void 0===a?void 0:a.objects;return r&&(null===(i=n.cards)||void 0===i||i.forEach(e=>{var t;e instanceof o.St&&(null===(t=e.topLevelSlice)||void 0===t||t.setPropertiesValues(r,e.name)),(e instanceof o.Tn?[e]:e.groups).forEach(t=>{var a,o,i,n;null===(a=t.topLevelSlice)||void 0===a||a.setPropertiesValues(r,e.name),null===(o=null==t?void 0:t.slices)||void 0===o||o.forEach(t=>{null==t||t.setPropertiesValues(r,e.name)}),null===(n=null===(i=null==t?void 0:t.container)||void 0===i?void 0:i.containerItems)||void 0===n||n.forEach(t=>{var a;null===(a=null==t?void 0:t.slices)||void 0===a||a.forEach(t=>{null==t||t.setPropertiesValues(r,e.name)})})})})),n}buildFormattingModel(e){const t={cards:[]};return e.cards.filter(({visible:e=!0})=>e).forEach(e=>{var a;const i={displayName:this.localizationManager&&e.displayNameKey?this.localizationManager.getDisplayName(e.displayNameKey):e.displayName,description:this.localizationManager&&e.descriptionKey?this.localizationManager.getDisplayName(e.descriptionKey):e.description,groups:[],uid:e.name+\"-card\",analyticsPane:e.analyticsPane},n=e.name;if(e.topLevelSlice){const t=e.topLevelSlice.getFormattingSlice(n,this.localizationManager);t.suppressDisplayName=!0,i.topLevelToggle=t}null===(a=e.onPreProcess)||void 0===a||a.call(e);const r=e instanceof o.Tn;(r?[e].filter(({visible:e=!0})=>e):e.groups.filter(({visible:e=!0})=>e)).forEach(e=>{const t=e.name+\"-group\",a={displayName:r?void 0:this.localizationManager&&e.displayNameKey?this.localizationManager.getDisplayName(e.displayNameKey):e.displayName,description:r?void 0:this.localizationManager&&e.descriptionKey?this.localizationManager.getDisplayName(e.descriptionKey):e.description,slices:[],uid:t,collapsible:e.collapsible,delaySaveSlices:e.delaySaveSlices,disabled:e.disabled,disabledReason:e.disabledReason};i.groups.push(a);const o={};if(e.container){const i=e.container,r=t+\"-container\",l={displayName:this.localizationManager&&i.displayNameKey?this.localizationManager.getDisplayName(i.displayNameKey):i.displayName,description:this.localizationManager&&i.descriptionKey?this.localizationManager.getDisplayName(i.descriptionKey):i.description,containerItems:[],uid:r};i.containerItems.forEach(e=>{const t=e.displayNameKey?e.displayNameKey:e.displayName,a=r+t,i={displayName:this.localizationManager&&e.displayNameKey?this.localizationManager.getDisplayName(e.displayNameKey):e.displayName,slices:[],uid:a};this.buildFormattingSlices({slices:e.slices,objectName:n,sliceNames:o,formattingSlices:i.slices}),l.containerItems.push(i)}),a.container=l}if(e.slices){if(e.topLevelSlice){const t=e.topLevelSlice.getFormattingSlice(n,this.localizationManager);t.suppressDisplayName=!0,(null==a.displayName?i:a).topLevelToggle=t}this.buildFormattingSlices({slices:e.slices,objectName:n,sliceNames:o,formattingSlices:a.slices})}}),i.revertToDefaultDescriptors=this.getRevertToDefaultDescriptor(e),t.cards.push(i)}),t}buildFormattingSlices({slices:e,objectName:t,sliceNames:a,formattingSlices:o}){null==e||e.filter(({visible:e=!0})=>e).forEach(e=>{const i=null==e?void 0:e.getFormattingSlice(t,this.localizationManager);i&&(void 0===a[e.name]?a[e.name]=0:(a[e.name]++,i.uid=`${i.uid}-${a[e.name]}`),o.push(i))})}getRevertToDefaultDescriptor(e){var t;const a={},i=[];let n,r=[];return e instanceof o.St&&e.topLevelSlice&&i.push(...null===(t=e.topLevelSlice)||void 0===t?void 0:t.getRevertToDefaultDescriptor(e.name)),(e instanceof o.Tn?[e].filter(({visible:e=!0})=>e):e.groups.filter(({visible:e=!0})=>e)).forEach(t=>{var o,l;n=this.getSlicesRevertToDefaultDescriptor(e.name,t.slices,a,t.topLevelSlice),null===(l=null===(o=t.container)||void 0===o?void 0:o.containerItems)||void 0===l||l.forEach(t=>{r=r.concat(this.getSlicesRevertToDefaultDescriptor(e.name,t.slices,a))}),i.push(...n.concat(r))}),i}getSlicesRevertToDefaultDescriptor(e,t,a,o){let i=[];return o&&(a[o.name]=!0,i=i.concat(o.getRevertToDefaultDescriptor(e))),null==t||t.forEach(t=>{t&&!a[t.name]&&(a[t.name]=!0,i=i.concat(t.getRevertToDefaultDescriptor(e)))}),i}}])},674(e,t,a){a.d(t,{O:()=>i.A,z:()=>o});var o=a(754),i=a(667)},639(e,t,a){function o(e,t){return{objectName:e,propertyName:t.name,selector:t.selector,altConstantValueSelector:t.altConstantSelector,instanceKind:t.instanceKind}}function i(e,t,a){return null==t||\"object\"==typeof t&&!t.solid?a:t.solid?{value:null==t?void 0:t.solid.color}:\"Dropdown\"===(null==e?void 0:e.type)&&e.items?e.items.find(e=>e.value==t):t}a.d(t,{D:()=>i,y:()=>o})},473(e,t,a){a.d(t,{S:()=>s});var o=a(674),i=o.z.Tn,n=o.z.Kx;class r extends i{goodColor=new o.z.sk({name:\"goodColor\",displayName:\"Positiv (Δ > 0)\",value:{value:\"#8ab300\"}});badColor=new o.z.sk({name:\"badColor\",displayName:\"Negativ (Δ < 0)\",value:{value:\"#f23000\"}});grayColor=new o.z.sk({name:\"grayColor\",displayName:\"PY / Neutral\",value:{value:\"#a6a6a6\"}});darkColor=new o.z.sk({name:\"darkColor\",displayName:\"AC\",value:{value:\"#404040\"}});inkColor=new o.z.sk({name:\"inkColor\",displayName:\"Schrift / Linien\",value:{value:\"#1a1a1a\"}});name=\"colors\";displayName=\"Farben\";slices=[this.goodColor,this.badColor,this.grayColor,this.darkColor,this.inkColor]}class l extends i{year=new o.z.iB({name:\"year\",displayName:\"Jahr (AC)\",value:2025});showDeltaChart=new o.z.jF({name:\"showDeltaChart\",displayName:\"ΔPY%-Pinchart anzeigen\",value:!0});name=\"general\";displayName=\"Allgemein\";slices=[this.year,this.showDeltaChart]}class s extends n{colorsCard=new r;generalCard=new l;cards=[this.colorsCard,this.generalCard]}},848(e,t,a){a.d(t,{b:()=>l});var o=a(674),i=a(473);const n={width:1120,height:660,goodColor:\"#8ab300\",badColor:\"#f23000\",grayColor:\"#a6a6a6\",darkColor:\"#404040\",inkColor:\"#1a1a1a\",year:2025,showDeltaChart:!0};function r(e,t){return e&&e.filter(e=>e.source.roles&&e.source.roles[t])[0]}class l{events;target;chartContainer;formattingSettings;formattingSettingsService;constructor(e){this.events=e.host.eventService,this.formattingSettingsService=new o.O,this.target=e.element,this.chartContainer=document.createElement(\"div\"),this.target.appendChild(this.chartContainer)}update(e){this.events.renderingStarted(e);try{const t=e.dataViews&&e.dataViews[0];this.formattingSettings=this.formattingSettingsService.populateFormattingSettingsModel(i.S,t);const a=function(e){const t=e&&e.categorical;if(!t||!t.categories||!t.categories.length)return[];const a=t.categories[0],o=t.values,i=r(o,\"ac\"),n=r(o,\"py\"),l=r(o,\"forecast\");return a.values.map((e,t)=>{const a=i?i.values[t]:null,o=n?Number(n.values[t]):0,r=l?l.values[t]:null,s=null==r||isNaN(Number(r))?null:Number(r),p=null!==s&&0!==s,c=null==a||isNaN(Number(a))?0:Number(a),d=p?s:c;return{name:String(e),ac:d,py:isNaN(o)?0:o,fc:p}})}(t),o=this.formattingSettings.colorsCard,l=this.formattingSettings.generalCard;!function(e,t,a){const o=Object.assign({},n,a),i=t.length;if(0===i){const t=document.createElement(\"div\");return t.style.cssText=\"font-family:Arial,Helvetica,sans-serif;color:#666;padding:16px\",t.textContent=\"Keine Daten — Monat, AC und PY zuweisen.\",void e.replaceChildren(t)}const r=t.reduce((e,t)=>e+t.py,0),l=t.reduce((e,t)=>e+t.ac,0),s=t.filter(e=>!e.fc).reduce((e,t)=>e+t.ac,0),p=l-s,c=l-r,d=0!==r?c/r*100:0,g=t.findIndex(e=>e.fc),h=600,u=160,x=301/(Math.max(r,l)||1),f=46/(Math.max(...t.map(e=>Math.max(e.ac,e.py)))||1),m=73/(Math.max(...t.map(e=>0!==e.py?Math.abs((e.ac-e.py)/e.py*100):0),Math.abs(d))||1),v=e=>172+62*e,y=e=>Math.round(e).toLocaleString(\"de-DE\"),b=e=>(e>=0?\"+\":\"-\")+Math.abs(e).toLocaleString(\"de-DE\",{minimumFractionDigits:1,maximumFractionDigits:1}),C=e=>(e>=0?\"+\":\"-\")+y(Math.abs(e)),$=e=>`repeating-linear-gradient(45deg,#ffffff 0 3px,${e} 3px 5px)`,w=\"repeating-linear-gradient(45deg,#ffffff 0 2px,#333333 2px 4px)\",N=document.createElement(\"div\"),S=(e,t)=>{const a=document.createElement(\"div\");return a.style.cssText=`position:absolute;${e}`,void 0!==t&&(a.textContent=t),N.appendChild(a),a},M=(e,t,a)=>{const o=document.createElement(\"div\");o.style.cssText=`position:absolute;${e}`;const i=document.createElement(\"span\");i.style.cssText=`background:${t};padding:0 4px;font-size:15px`,i.textContent=a,o.appendChild(i),N.appendChild(o)};if(o.showDeltaChart){S(\"left:84px;top:151px;font-size:15px\",\"ΔPY%\"),S(`left:140px;top:159px;width:${v(i-1)+32-140}px;height:3px;background:${o.grayColor}`),S(`left:934px;top:159px;width:68px;height:3px;background:${o.grayColor}`),t.forEach((e,t)=>{const a=0!==e.py?(e.ac-e.py)/e.py*100:0,i=a>0,n=i?o.goodColor:o.badColor,r=Math.max(3,Math.round(Math.abs(a)*m)),l=v(t);S(`left:${l-2}px;top:${i?u-r:u}px;width:5px;height:${r}px;background:${n}`),S(`left:${l-5}px;top:${i?u-r-4:u+r-5}px;width:9px;height:9px;box-sizing:border-box;background:${e.fc?w:o.inkColor};border:${e.fc?\"1px solid \"+o.inkColor:\"none\"}`),S(`left:${l-40}px;top:${i?u-r-26:u+r+7}px;width:80px;text-align:center;font-size:15px`,b(a))});const e=d>0,a=e?o.goodColor:o.badColor,n=Math.max(3,Math.round(Math.abs(d)*m));S(`left:966px;top:${e?u-n:u}px;width:5px;height:${n}px;background:${a}`),S(`left:963px;top:${e?u-n-4:u+n-5}px;width:9px;height:9px;box-sizing:border-box;background:${w};border:1px solid ${o.inkColor}`),S(`left:928px;top:${e?u-n-26:u+n+12}px;width:80px;text-align:center;font-size:15px`,b(d))}g>=0&&S(`left:${v(g)-31}px;top:72px;width:2px;height:576px;background:${o.inkColor}`);const z=h-Math.round(r*x);S(`left:52px;top:${z}px;width:58px;height:${h-z}px;background:${o.grayColor}`),S(`left:52px;top:${z-23}px;width:58px;text-align:center;font-size:15px`,y(r));const D=h-Math.round(l*x);S(`left:110px;top:${z-1}px;width:934px;height:2px;background:${o.grayColor}`),S(`left:${v(i-1)+26}px;top:${D-1}px;width:${1044-v(i-1)-26}px;height:2px;background:${o.grayColor}`);let k=r;t.forEach((e,t)=>{const a=v(t),i=e.ac-e.py,n=k;k+=i;const r=i>0,l=r?o.goodColor:o.badColor,s=0===t?a-26-110:10;S(`left:${0===t?110:a-36}px;top:${h-Math.round(n*x)-1}px;width:${s}px;height:2px;background:${o.grayColor}`);const p=h-Math.round(Math.max(n,k)*x),c=Math.max(5,Math.round(Math.abs(i)*x));S(`left:${a-26}px;top:${p}px;width:52px;height:${c}px;box-sizing:border-box;background:${e.fc?$(l):l};border:${e.fc?\"1.5px solid \"+l:\"none\"}`),S(`left:${a-31}px;top:${r?p-20:p+c+4}px;width:62px;text-align:center;font-size:15px`,C(i));const d=Math.round(e.py*f),u=Math.round(e.ac*f);S(`left:${a-24}px;top:${h-d}px;width:34px;height:${d}px;background:${o.grayColor}`),S(`left:${a-10}px;top:${h-u}px;width:34px;height:${u}px;box-sizing:border-box;background:${e.fc?$(o.inkColor):o.inkColor};border:${e.fc?\"1.5px solid \"+o.inkColor:\"none\"}`),S(`left:${a-10}px;top:${h-Math.max(d,u)-20}px;width:34px;text-align:center;font-size:15px`,y(e.ac)),S(`left:${a-31}px;top:610px;width:62px;text-align:center;font-size:15px`,e.name);const m=0===t?String(o.year):t===g?\"FC\":\"\";m&&S(`left:${a-31}px;top:628px;width:62px;text-align:center;font-size:15px`,m)});const F=c>=0?o.goodColor:o.badColor;S(`left:1044px;top:${Math.min(z,D)}px;width:9px;height:${Math.abs(D-z)}px;background:${F}`),S(`left:1060px;top:${Math.round((z+D)/2)-13}px;min-width:48px;height:27px;box-sizing:border-box;border:2px solid #2f5fd0;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;padding:0 6px`,C(c)),S(`left:52px;top:599px;width:945px;height:2px;background:${o.inkColor}`);const E=Math.round(s*x),T=Math.round(p*x);S(`left:939px;top:${h-E}px;width:58px;height:${E}px;background:${o.darkColor}`),T>0&&(S(`left:939px;top:${h-E-T}px;width:58px;height:${T}px;box-sizing:border-box;background:repeating-linear-gradient(45deg,#ffffff 0 4px,${o.inkColor} 4px 6px);border:1.5px solid ${o.inkColor}`),M(`left:939px;top:${h-E-Math.round(T/2)-10}px;width:58px;text-align:center`,\"#ffffff\",y(p)),S(`left:1005px;top:${h-E-Math.round(T/2)-10}px;font-size:15px`,\"FC\")),S(`left:939px;top:${h-E-T-23}px;width:58px;text-align:center;font-size:15px`,y(l)),M(`left:939px;top:${h-Math.round(E/2)-10}px;width:58px;text-align:center`,\"#d9d9d9\",y(s)),S(`left:1005px;top:${h-Math.round(E/2)-10}px;font-size:15px`,\"AC\"),S(\"left:114px;top:548px;font-size:14px\",\"AC\"),S(\"left:114px;top:576px;font-size:14px\",\"PY\"),g>=0&&S(`left:${v(i-1)+30}px;top:578px;font-size:14px`,\"FC\"),S(\"left:52px;top:610px;width:58px;text-align:center;font-size:15px\",String(o.year-1)),S(\"left:52px;top:628px;width:58px;text-align:center;font-size:15px\",\"AC\"),S(\"left:929px;top:610px;width:78px;text-align:center;font-size:15px\",String(o.year)),S(\"left:929px;top:628px;width:78px;text-align:center;font-size:15px\",\"AC+FC\");const A=Math.min(o.width/1120,o.height/660)||1;N.style.cssText=`position:relative;width:1120px;height:660px;background:#ffffff;font-family:Arial,Helvetica,sans-serif;color:${o.inkColor};overflow:hidden;transform:scale(${A});transform-origin:top left`,e.replaceChildren(N)}(this.chartContainer,a,{width:e.viewport.width,height:e.viewport.height,goodColor:o.goodColor.value.value,badColor:o.badColor.value.value,grayColor:o.grayColor.value.value,darkColor:o.darkColor.value.value,inkColor:o.inkColor.value.value,year:l.year.value,showDeltaChart:l.showDeltaChart.value}),this.events.renderingFinished(e)}catch(t){console.error(\"Error in update method\",t),this.events.renderingFailed(e,String(t))}}getFormattingModel(){return this.formattingSettingsService.buildFormattingModel(this.formattingSettings)}}}};const t={};function a(o){const i=t[o];if(void 0!==i)return i.exports;const n=t[o]={exports:{}};return e[o](n,n.exports,a),n.exports}a.d=(e,t)=>{if(Array.isArray(t))for(var o=0;o<t.length;){var i=t[o++],n=t[o++];a.o(e,i)?0===n&&o++:0===n?Object.defineProperty(e,i,{enumerable:!0,value:t[o++]}):Object.defineProperty(e,i,{enumerable:!0,get:n})}else for(var i in t)a.o(t,i)&&!a.o(e,i)&&Object.defineProperty(e,i,{enumerable:!0,get:t[i]})},a.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),a.r=e=>{Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:\"Module\"}),Object.defineProperty(e,\"__esModule\",{value:!0})};let o={};(()=>{a.r(o);var e=a(848),t=window.powerbi,i={name:\"ibcsIntegratedWaterfall5A32A252CCE440AD8829B8312943CFED\",displayName:\"IBCS Integrierte GuV (Test)\",class:\"Visual\",apiVersion:\"5.3.0\",create:t=>{if(e.b)return new e.b(t);throw\"Visual instance not found\"},createModalDialog:(e,t,a)=>{const o=globalThis.dialogRegistry;e in o&&new o[e](t,a)},custom:!0};void 0!==t&&(t.visuals=t.visuals||{},t.visuals.plugins=t.visuals.plugins||{},t.visuals.plugins.ibcsIntegratedWaterfall5A32A252CCE440AD8829B8312943CFED=i);const n=i;a.d(o,[\"default\",0,n])})(),ibcsIntegratedWaterfall5A32A252CCE440AD8829B8312943CFED=o})();",
+    "css": ":host,\n.visual {\n  display: block;\n  width: 100%;\n  height: 100%;\n  overflow: hidden;\n}\n\n",
+    "iconBase64": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2RpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpBOEJGMzkxN0NBRDNFMDExQTcxQ0JFODI3ODBCQUE5RSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo3NEY1QjA1NUQ0OTAxMUUwQTgxREI2NjMxMkNEMUNEMyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo3NEY1QjA1NEQ0OTAxMUUwQTgxREI2NjMxMkNEMUNEMyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IFdpbmRvd3MiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5Mjk5RDU1ODBGRDRFMDExQTcxQ0JFODI3ODBCQUE5RSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpBOEJGMzkxN0NBRDNFMDExQTcxQ0JFODI3ODBCQUE5RSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PpDoNX0AAAI3SURBVHjarJRLSFVRFIY9t7SiRDGLoEEPCRJRaCSYkxCiFCXCF+LIMExQLkilgumgwkbdBuWDRC2EomhURCOjgagkXEgKLUKhidobM6H0+i34rxyPnuvEA5/rXPda/1l7739vJxKJxG3ls93+hEKhTILxJhgMftmsiPxdhHw4CfepeR8dCyjWwwB0kZy3iVgCoQ2ewnmXxhrBD7Cgr/ZQVA17fDRPw2UYhzK6G99IsBse6/0QNME+H8FT4EA/YiPqOgA1q4IMzBNuw6iKjkCpj+Av+AdnEEmD3bxfhzvuDk30HaEaLsEkXCO53rN+Bwg5qsvTuj/TjGYtx9nINhRmEx7AYWiFW7AXOuEcbPOUvIZ2mnrl+PkQUbNEh4QHNKUSDdsSBWEOlmxTEfvs26FL9Khe211if6Acgee+xo7xzMgBxfq9qPe3fgWBGN2lEnqtG9nExM7CV3jp3bDos2bKJB0nHFRxAxRpA/5CIXyHh5ABv6GZqd9dJ6iz2SjbxMMypGhJFtTlNzu3kK7xgDxpove8U66FK2A+s6nul5gVVMEL+Ak7lG/T+g9JcIOGar2CRUoogxMwpP/bLTJMB9bRhDbkk5bBUU0y3ES0xS04CBfN9RSHiY90vJK0BHaSzG9h2eejS3RJeVfdtrGzuGyd8CX7Yq6ExuCH63jaVMPkFOv6OibB6DKs2+VEQp+WYBoqERn2sVWWRNN0YurIfeL14U6YkpkLYCSG6e0yqdCxvKBLIm5FgAEAV0nKuwMYRUsAAAAASUVORK5CYII="
+  },
+  "visualEntryPoint": "",
+  "externalJS": [],
+  "assets": {
+    "icon": "assets/icon.png"
+  }
+}

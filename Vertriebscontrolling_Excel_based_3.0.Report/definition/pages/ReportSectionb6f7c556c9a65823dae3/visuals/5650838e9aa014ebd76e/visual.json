@@ -1,0 +1,327 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "5650838e9aa014ebd76e",
+  "position": {
+    "x": 0,
+    "y": 0,
+    "z": 0,
+    "height": 298.10010214504592,
+    "width": 1192.4004085801837,
+    "tabOrder": 14000
+  },
+  "visual": {
+    "visualType": "decompositionTreeVisual",
+    "query": {
+      "queryState": {
+        "Analyze": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Angebote"
+                    }
+                  },
+                  "Property": "Abweichung AC zu PY"
+                }
+              },
+              "queryRef": "Angebote.Abweichung AC zu PY"
+            }
+          ]
+        },
+        "ExplainBy": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Standort"
+                    }
+                  },
+                  "Property": "Bundesland"
+                }
+              },
+              "queryRef": "Standort.Bundesland",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Standort"
+                    }
+                  },
+                  "Property": "Stadt"
+                }
+              },
+              "queryRef": "Standort.Stadt",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Kunde"
+                    }
+                  },
+                  "Property": "Kunde"
+                }
+              },
+              "queryRef": "Kunde.Kunde",
+              "active": false
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Produkt"
+                    }
+                  },
+                  "Property": "Produkt ID"
+                }
+              },
+              "queryRef": "Produkt.Produkt ID",
+              "active": false
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Produkt"
+                    }
+                  },
+                  "Property": "Produkt Typ"
+                }
+              },
+              "queryRef": "Produkt.Produkt Typ",
+              "active": false
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Vertriebler"
+                    }
+                  },
+                  "Property": "Vertriebler"
+                }
+              },
+              "queryRef": "Vertriebler.Vertriebler",
+              "active": false
+            }
+          ]
+        },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Angebote"
+                    }
+                  },
+                  "Property": "AC"
+                }
+              },
+              "queryRef": "Angebote.AC"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Angebote"
+                    }
+                  },
+                  "Property": "PY"
+                }
+              },
+              "queryRef": "Angebote.PY"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Angebote"
+                    }
+                  },
+                  "Property": "€ Durschnittliche Angebotshöhe"
+                }
+              },
+              "queryRef": "Angebote.€ Durschnittliche Angebotshöhe"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Angebote"
+                  }
+                },
+                "Property": "Abweichung AC zu PY"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "expansionStates": [
+      {
+        "roles": [
+          "ExplainBy"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "Standort.Bundesland"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Standort"
+                    }
+                  },
+                  "Property": "Bundesland"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "Standort.Stadt"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Standort"
+                    }
+                  },
+                  "Property": "Stadt"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "Kunde.Kunde"
+            ],
+            "isCollapsed": true
+          },
+          {
+            "queryRefs": [
+              "Produkt.Produkt ID"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Produkt"
+                    }
+                  },
+                  "Property": "Produkt ID"
+                }
+              }
+            ]
+          },
+          {
+            "queryRefs": [
+              "Produkt.Produkt Typ"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Produkt"
+                    }
+                  },
+                  "Property": "Produkt Typ"
+                }
+              }
+            ]
+          },
+          {
+            "queryRefs": [
+              "Vertriebler.Vertriebler"
+            ],
+            "isCollapsed": true
+          }
+        ],
+        "root": {
+          "isToggled": true,
+          "children": [
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "' Niedersachsen'"
+                  }
+                }
+              ],
+              "isToggled": true
+            }
+          ]
+        }
+      }
+    ],
+    "objects": {
+      "tree": [
+        {
+          "properties": {
+            "effectiveBarsPerLevel": {
+              "expr": {
+                "Literal": {
+                  "Value": "3L"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "visualTooltip": [
+        {
+          "properties": {
+            "section": {
+              "expr": {
+                "Literal": {
+                  "Value": "'ReportSection579fbe26f437ef4f4f15'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "parentGroupName": "802be5f59c785504bb49"
+}

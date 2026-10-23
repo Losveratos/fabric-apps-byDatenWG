@@ -1,0 +1,11 @@
+// Station master data (one row): name, river, catchment, source and licence note.
+EVALUATE
+SELECTCOLUMNS(
+    dim_station,
+    "station", dim_station[station],
+    "fluss", dim_station[fluss],
+    "einzugsgebiet", dim_station[einzugsgebiet_km2],
+    "quelle", dim_station[datenquelle],
+    "lizenz", dim_station[lizenzhinweis],
+    "stand", dim_station[datenstand]
+)

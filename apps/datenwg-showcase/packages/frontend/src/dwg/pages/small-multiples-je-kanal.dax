@@ -1,0 +1,26 @@
+// Abfragen der Seite „Small Multiples je Kanal“ ohne Querfilter, zum Prüfen in der DAX-Abfrageansicht.
+// erzeugt von `dwg app page`, nicht von Hand ändern.
+
+// Kachel karten (chartkitchen)
+EVALUATE
+    SUMMARIZECOLUMNS(
+        'Produkt'[Sorte],
+        'Produkt'[Sorte Sort],
+        "actual", 'Fakten'[Umsatz AC],
+        "previousYear", 'Fakten'[Umsatz PY bis Ist],
+        "plan", 'Fakten'[Umsatz PL bis Ist]
+    )
+ORDER BY 'Produkt'[Sorte Sort]
+
+// Kachel vorlage (chartkitchen)
+EVALUATE
+    SUMMARIZECOLUMNS(
+        'Kalender'[Monatsname],
+        'Kunde'[Kanal],
+        'Kalender'[Monat],
+        'Kunde'[Kanal Sort],
+        "actual", 'Fakten'[Umsatz AC],
+        "previousYear", 'Fakten'[Umsatz PY],
+        "forecast", 'Fakten'[Umsatz FC]
+    )
+ORDER BY 'Kalender'[Monat], 'Kunde'[Kanal Sort]

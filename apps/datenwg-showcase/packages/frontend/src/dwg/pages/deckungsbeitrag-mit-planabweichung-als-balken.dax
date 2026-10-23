@@ -1,0 +1,24 @@
+// Abfragen der Seite „Deckungsbeitrag mit Planabweichung als Balken“ ohne Querfilter, zum Prüfen in der DAX-Abfrageansicht.
+// erzeugt von `dwg app page`, nicht von Hand ändern.
+
+// Kachel karten (chartkitchen)
+EVALUATE
+    SUMMARIZECOLUMNS(
+        'Kunde'[Kanal],
+        'Kunde'[Kanal Sort],
+        "actual", 'Fakten'[DB AC],
+        "previousYear", 'Fakten'[DB PY bis Ist],
+        "plan", 'Fakten'[DB PL bis Ist]
+    )
+ORDER BY 'Kunde'[Kanal Sort]
+
+// Kachel vorlage (pnl)
+EVALUATE
+    SUMMARIZECOLUMNS(
+        'Kunde'[Land],
+        'Kunde'[Region],
+        'Kalender'[Periode],
+        "ac", 'Fakten'[DB AC],
+        "pl", 'Fakten'[DB PL]
+    )
+ORDER BY 'Kunde'[Land], 'Kunde'[Region], 'Kalender'[Periode]

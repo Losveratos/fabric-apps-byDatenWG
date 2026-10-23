@@ -1,0 +1,22 @@
+table Kunde
+	lineageTag: 8257dd69-07e4-43d2-a4f4-a30c0594df5d
+
+	column Kunde
+		dataType: string
+		lineageTag: c7928941-43b1-47ef-bc63-a71f82cea980
+		summarizeBy: none
+		sourceColumn: Kunde
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Kunde-1f0f0cfb-e141-4256-8fc7-0c6906515835 = m
+		mode: import
+		queryGroup: Modell
+		source =
+				let
+				    Source = #"Core Kunde"
+				in
+				    Source
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "e632c73d7faa9aede63a",
+  "position": {
+    "x": 7.000164047064529,
+    "y": 109.99939827224732,
+    "z": 11819,
+    "height": 588.43422303245609,
+    "width": 643.320712382555,
+    "tabOrder": 2000
+  },
+  "visualGroup": {
+    "displayName": "Einstieg",
+    "groupMode": "ScaleMode"
+  }
+}

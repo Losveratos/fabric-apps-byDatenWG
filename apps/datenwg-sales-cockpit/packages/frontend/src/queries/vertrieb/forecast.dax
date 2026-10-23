@@ -1,0 +1,13 @@
+// Forecast-Deals mit Erfolgs-Flag (FC Vorhersage 0/1); Produkt kommt über die Produkt ID aus der Dimension.
+EVALUATE
+SELECTCOLUMNS (
+    Forecast,
+    "topic", Forecast[Topic],
+    "kunde", Forecast[Kunde],
+    "vertriebler", Forecast[Vertriebler],
+    "stadt", Forecast[Stadt],
+    "produktId", Forecast[Core Produkt.Produkt ID],
+    "summe", ROUND ( Forecast[Angebotssumme], 0 ),
+    "abschluss", Forecast[Abschluss Datum],
+    "flag", Forecast[FC Vorhersage]
+)

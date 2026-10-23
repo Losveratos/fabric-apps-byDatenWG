@@ -1,0 +1,56 @@
+table 📶Kennzahlen
+	lineageTag: 5d873e85-68c4-4e58-9fb4-a0468f52947d
+
+	column Kennzahlen
+		lineageTag: 55c47c87-60d5-44eb-a245-57fa05b6dbc6
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Kennzahlen Reihenfolge'
+
+		relatedColumnDetails
+			groupByColumn: 'Kennzahlen Felder'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Kennzahlen Felder'
+		isHidden
+		lineageTag: 039736fa-8ccc-4756-9891-5641042c14a2
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Kennzahlen Reihenfolge'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Kennzahlen Reihenfolge'
+		isHidden
+		formatString: 0
+		lineageTag: d65c8265-b54b-4107-88a4-f67d43512328
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 📶Kennzahlen-e600afef-ada7-4078-acaa-9bebf2dc117b = calculated
+		mode: import
+		source =
+				{
+				    ("€ Gewichte Angbotswert", NAMEOF('Angebote'[€ Gewichte Angbotswert]), 0),
+				    ("€ Gewonne Angebote", NAMEOF('Angebote'[€ Gewonne Angebote]), 1),
+				    ("€ Offene Angebote", NAMEOF('Angebote'[€ Offene Angebote]), 2),
+				    ("€ Durschnittliche Angebotshöhe", NAMEOF('Angebote'[€ Durschnittliche Angebotshöhe]), 3),
+				    ("€ Durchschnittlicher Kundenumsatz", NAMEOF('Angebote'[€ Durchschnittlicher Kundenumsatz]), 4),
+				    ("# Anzahl  Angebote", NAMEOF('Angebote'[# Anzahl  Angebote]), 5),
+				    ("# Anzahl Kunden", NAMEOF('Angebote'[# Anzahl Kunden]), 6),
+				    ("#Angebote gewonnen", NAMEOF('Angebote'[#Angebote gewonnen]), 7),
+				    ("% Anteil gewonnen Angebote", NAMEOF('Angebote'[% Anteil gewonnen Angebote]), 8),
+				    ("% Premium Produkte", NAMEOF('Angebote'[% Premium Produkte]), 9)
+				}
+
+	annotation PBI_Id = a6f753d7a3f74ea6b0923aad0d7ce92c
+

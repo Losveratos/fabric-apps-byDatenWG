@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/dataAgent/definition/fewShots/1.0.0/schema.json",
+  "fewShots": [
+    {
+      "id": "a68aab67-7564-475a-9ab2-375244d095b4",
+      "question": "Wer erklaert Direct Lake?",
+      "query": "MATCH (p:Person)-[:SPEAKS_IN]->(d:Document)-[:EXPLAINS]->(c:Concept {id: 'tool:direct-lake'})\nRETURN p.name AS person, count(d) AS folgen GROUP BY person ORDER BY folgen DESC"
+    },
+    {
+      "id": "a4f94e42-e2af-4f77-8780-2835c0189cf9",
+      "question": "Was wurde zu Translytical Task Flows gesagt?",
+      "query": "MATCH (k:Claim)-[:ABOUT]->(c:Concept {id: 'tool:translytical-task-flows'})\nRETURN k.kind AS art, k.aussage AS aussage, k.doc_id AS folge, k.start_s AS sekunde\nORDER BY sekunde LIMIT 20"
+    },
+    {
+      "id": "f7f5c1d3-9474-4eca-99c3-b4e4f3bdeac2",
+      "question": "Was verbindet Direct Lake und DirectQuery?",
+      "query": "MATCH (a:Concept {id: 'tool:direct-lake'})<-[m1:MENTIONS]-(d:Document)-[m2:MENTIONS]->(b:Concept {id: 'tool:directquery'})\nRETURN d.title AS folge, m1.segments AS stellen_a, m2.segments AS stellen_b\nORDER BY stellen_a DESC LIMIT 10"
+    },
+    {
+      "id": "415bd109-713d-4fe2-bb93-dc8024a51f85",
+      "question": "Was sagt Artur Koenig zu Direct Lake?",
+      "query": "MATCH (p:Person {id: 'person:artur-konig'})-[:SPEAKS_IN]->(d:Document)-[:STATES]->(k:Claim)-[:ABOUT]->(c:Concept {id: 'tool:direct-lake'})\nRETURN d.title AS folge, d.published AS datum, k.aussage AS aussage, k.start_s AS sekunde\nORDER BY datum DESC LIMIT 10"
+    },
+    {
+      "id": "68cae1d7-98dc-4dfc-ba42-e94c358f43bf",
+      "question": "Welche Kernaussagen zu Microsoft Fabric sitzen genau auf der Sekunde?",
+      "query": "MATCH (k:Claim)-[:ABOUT]->(c:Concept {id: 'tool:microsoft-fabric'})\nWHERE k.`precision` = 'word'\nRETURN k.aussage AS aussage, k.start_s AS sekunde, k.anchor AS transkriptstelle LIMIT 20"
+    },
+    {
+      "id": "1272bfdc-f501-428a-bce4-c4a0bb4bc292",
+      "question": "Welche Themen haengen mit dem Sternschema zusammen?",
+      "query": "MATCH (a:Concept {id: 'topic:sternschema'})-[r:RELATES_TO]-(b:Concept)\nRETURN b.name AS thema, r.weight AS gemeinsame_segmente ORDER BY gemeinsame_segmente DESC LIMIT 15"
+    },
+    {
+      "id": "888ab7e4-717d-4d6a-8551-2e94a85931b7",
+      "question": "Welche Themen behandelt der Themenbereich Microsoft Fabric?",
+      "query": "MATCH (b:Bucket)<-[:IN_BUCKET]-(d:Document)-[m:MENTIONS]->(c:Concept)\nWHERE b.name CONTAINS 'Fabric'\nRETURN c.name AS thema, count(d) AS folgen GROUP BY thema ORDER BY folgen DESC LIMIT 15"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+// Abfragen der Seite „Forecast-GuV mit Vorjahres-Wasserfall“ ohne Querfilter, zum Prüfen in der DAX-Abfrageansicht.
+// erzeugt von `dwg app page`, nicht von Hand ändern.
+
+// Kachel karten (chartkitchen)
+EVALUATE
+    SUMMARIZECOLUMNS(
+        'Kunde'[Kanal],
+        'Kunde'[Kanal Sort],
+        "actual", 'Fakten'[Umsatz FC],
+        "previousYear", 'Fakten'[Umsatz PY],
+        "plan", 'Fakten'[Umsatz PL]
+    )
+ORDER BY 'Kunde'[Kanal Sort]
+
+// Kachel vorlage (pnl)
+EVALUATE
+    ADDMISSINGITEMS(
+        'Konto'[KontoID],
+        'Konto'[Konto],
+        'Konto'[L1],
+        'Konto'[L2],
+        'Konto'[SortOrder],
+        'Konto'[RowType],
+        'Konto'[FormulaDef],
+        'Konto'[SignConvention],
+        'Konto'[DisplayInvert],
+        'Konto'[VarianceInvert],
+        'Konto'[Kommentar],
+    SUMMARIZECOLUMNS(
+        'Konto'[KontoID],
+        'Konto'[Konto],
+        'Konto'[L1],
+        'Konto'[L2],
+        'Konto'[SortOrder],
+        'Konto'[RowType],
+        'Konto'[FormulaDef],
+        'Konto'[SignConvention],
+        'Konto'[DisplayInvert],
+        'Konto'[VarianceInvert],
+        'Konto'[Kommentar],
+        "ac", 'Fakten'[GuV AC],
+        "py", 'Fakten'[GuV PY],
+        "fc", 'Fakten'[GuV FC]
+    ),
+        'Konto'[KontoID],
+        'Konto'[Konto],
+        'Konto'[L1],
+        'Konto'[L2],
+        'Konto'[SortOrder],
+        'Konto'[RowType],
+        'Konto'[FormulaDef],
+        'Konto'[SignConvention],
+        'Konto'[DisplayInvert],
+        'Konto'[VarianceInvert],
+        'Konto'[Kommentar]
+    )
+ORDER BY 'Konto'[KontoID], 'Konto'[Konto], 'Konto'[L1], 'Konto'[L2], 'Konto'[SortOrder], 'Konto'[RowType], 'Konto'[FormulaDef], 'Konto'[SignConvention], 'Konto'[DisplayInvert], 'Konto'[VarianceInvert], 'Konto'[Kommentar]

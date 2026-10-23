@@ -1,0 +1,170 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "07683aed5e8eaa43275d",
+  "position": {
+    "x": 277.49373433583963,
+    "y": 113.88471177944862,
+    "z": 13000,
+    "height": 121.90476190476191,
+    "width": 904.66165413533838,
+    "tabOrder": 12000
+  },
+  "visual": {
+    "visualType": "waterfall6C9ED82ABD1F44C4A0D590CE01EB5EE7",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "📅Kalender"
+                        }
+                      },
+                      "Hierarchy": "Year Hierarchie"
+                    }
+                  },
+                  "Level": "Year"
+                }
+              },
+              "queryRef": "📅Kalender.Year Hierarchie.Year",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "📅Kalender"
+                    }
+                  },
+                  "Property": "Month Name"
+                }
+              },
+              "queryRef": "📅Kalender.Month Name",
+              "active": false
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Angebote"
+                    }
+                  },
+                  "Property": "€ Gewonne Angebote"
+                }
+              },
+              "queryRef": "Angebote.€ Gewonne Angebote"
+            }
+          ]
+        },
+        "Forecast": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Angebote"
+                    }
+                  },
+                  "Property": "€ Gewichte Angbotsmenge"
+                }
+              },
+              "queryRef": "Angebote.€ Gewichte Angbotsmenge"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "visualCreatedVersion": [
+        {
+          "properties": {
+            "version": {
+              "expr": {
+                "Literal": {
+                  "Value": "'6.0.0'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "licenseSettings": [
+        {
+          "properties": {
+            "licenseKey": {
+              "expr": {
+                "Literal": {
+                  "Value": "'TOva5rYVzyvM3+U2ojUNvUIJN7GTJJfCsxKFhj4o1zZ6YU+4mUuoffwfjQ1LblMnZq4B8wwZ+4sDD5IVCNn8BXsiY29tcGFueSI6IlFVTklTIEdtYkgiLCJleHBpcnlEYXRlIjoiMjAyNC0wMS0xMyIsIm5PZlVzZXJzIjoiMTAiLCJsaWNlbnNlVHlwZSI6IlBhaWQiLCJ2aXN1YWxUeXBlIjoiQWxsIn0='"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "proFeaturesSettings": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "chartType": [
+        {
+          "properties": {
+            "chartType": {
+              "expr": {
+                "Literal": {
+                  "Value": "3D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "designSettings": [
+        {
+          "properties": {
+            "style": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            },
+            "positiveColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 3,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

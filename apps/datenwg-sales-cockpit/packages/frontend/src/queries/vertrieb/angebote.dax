@@ -1,0 +1,21 @@
+// Alle Angebote des aktuellen Stands (Pipeline-Snapshot mit Sort Order 0).
+// Ohne Snapshot-Filter wäre jede Summe siebenfach, weil die Faktentabelle alle Monatsstände stapelt.
+EVALUATE
+SELECTCOLUMNS (
+    FILTER ( Angebote, RELATED ( 'Pipeline Status'[Sort Order] ) = 0 ),
+    "id", Angebote[ID],
+    "topic", Angebote[Topic],
+    "kunde", Angebote[Kunde],
+    "vertriebler", Angebote[Vertriebler],
+    "stadt", Angebote[Stadt],
+    "bundesland", TRIM ( RELATED ( Standort[Bundesland] ) ),
+    "gruppe", RELATED ( Produkt[Produkt Gruppe] ),
+    "typ", RELATED ( Produkt[Produkt Typ] ),
+    "summe", ROUND ( Angebote[Angebotssumme], 0 ),
+    "menge", Angebote[Menge],
+    "status", RELATED ( 'Status'[Status] ),
+    "wsk", RELATED ( 'Status'[Warscheinlichkeit] ),
+    "anlage", Angebote[Anlage Angbot],
+    "abschluss", Angebote[Abschluss Datum],
+    "tage", Angebote[Dauer Angebot in Tage]
+)

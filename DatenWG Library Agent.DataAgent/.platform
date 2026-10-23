@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataAgent",
+    "displayName": "DatenWG Library Agent",
+    "description": "Fragt die DatenWG Library in natuerlicher Sprache ab: Lakehouse fuer Zahlen und Volltext, Graph fuer Zusammenhaenge."
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "6fada440-6a29-9274-4d4c-493ed161d43e"
+  }
+}

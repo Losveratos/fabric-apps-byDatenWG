@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "7b67084125951c6cac98",
+  "position": {
+    "x": 937.27047332832467,
+    "y": 409.01653513016907,
+    "z": 6000,
+    "height": 45.454545454545453,
+    "width": 257.72952667167533,
+    "tabOrder": 7000
+  },
+  "visualGroup": {
+    "displayName": "Quickinfor",
+    "groupMode": "ScaleMode"
+  },
+  "isHidden": true
+}

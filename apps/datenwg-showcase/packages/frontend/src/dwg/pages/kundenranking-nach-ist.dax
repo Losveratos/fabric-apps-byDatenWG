@@ -1,0 +1,23 @@
+// Abfragen der Seite „Kundenranking nach Ist“ ohne Querfilter, zum Prüfen in der DAX-Abfrageansicht.
+// erzeugt von `dwg app page`, nicht von Hand ändern.
+
+// Kachel karten (chartkitchen)
+EVALUATE
+    SUMMARIZECOLUMNS(
+        'Produkt'[Sorte],
+        'Produkt'[Sorte Sort],
+        "actual", 'Fakten'[Umsatz AC],
+        "previousYear", 'Fakten'[Umsatz PY bis Ist],
+        "plan", 'Fakten'[Umsatz PL bis Ist]
+    )
+ORDER BY 'Produkt'[Sorte Sort]
+
+// Kachel vorlage (pnl)
+EVALUATE
+    SUMMARIZECOLUMNS(
+        'Kunde'[Kunde],
+        'Kalender'[Periode],
+        "ac", 'Fakten'[Umsatz AC],
+        "pl", 'Fakten'[Umsatz PL]
+    )
+ORDER BY 'Kunde'[Kunde], 'Kalender'[Periode]

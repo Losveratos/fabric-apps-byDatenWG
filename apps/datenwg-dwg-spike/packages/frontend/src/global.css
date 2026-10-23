@@ -1,0 +1,213 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:is(.dark *));
+
+/* IBCS notation (ChartKitchen chart builder) and runtime tokens read via var(). */
+@theme static {
+  --color-brand: #117865;
+  --color-brand-foreground: #117865;
+  --color-hover: #f4f4f1;
+
+  --ibcs-ac: #404040;
+  --ibcs-py: #a8a8a8;
+  --ibcs-paper: #ffffff;
+  --ibcs-good: #117865; /* classic kitchen teal instead of green */
+  --ibcs-bad: #c0392b;
+  --ibcs-cat: #555555;
+  --ibcs-sub: #9a9a9a;
+  --ibcs-hair: #b4b4b4;
+  --ibcs-conn: #c2c2c2;
+  --ibcs-fcink: #6f6f6f;
+  --ibcs-hilite: #1a6fb5;
+  --ibcs-track: #efeeea;
+}
+
+@theme {
+  /* MockupKitchen page and tile design */
+  --color-background: #f4f4f1; /* page */
+  --color-foreground: #0f1e2e; /* ink */
+  --color-card: #ffffff; /* tile */
+  --color-card-foreground: #0f1e2e;
+  --color-popover: #ffffff;
+  --color-popover-foreground: #0f1e2e;
+  --color-primary: #117865;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #ecebe5; /* filter panel */
+  --color-secondary-foreground: #0f1e2e;
+  --color-muted: #ecebe5;
+  --color-muted-foreground: #6b7280;
+  --color-accent: #e3f2ed;
+  --color-accent-foreground: #0f5a4c;
+  --color-warm: #c25a2d;
+  --color-warm-foreground: #ffffff;
+  --color-destructive: #c0392b;
+  --color-destructive-foreground: #ffffff;
+  --color-border: #e1dfd6;
+  --color-input: #d9d6cc;
+  --color-ring: #117865;
+  --color-good: #117865;
+  --color-bad: #c0392b;
+
+  --radius-none: 0;
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --radius-lg: 9px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+  --radius-3xl: 24px;
+  --radius-4xl: 28px;
+  --radius-5xl: 32px;
+  --radius-6xl: 40px;
+  --radius-full: 9999px;
+  --radius: 12px;
+
+  --spacing-none: 0;
+  --spacing-100-nudge: 2px;
+  --spacing-100: 4px;
+  --spacing-200-nudge: 6px;
+  --spacing-200: 8px;
+  --spacing-300-nudge: 10px;
+  --spacing-300: 12px;
+  --spacing-400: 16px;
+  --spacing-500: 20px;
+  --spacing-600: 24px;
+  --spacing-700: 28px;
+  --spacing-800: 32px;
+
+  --text-100: 10px;
+  --text-200: 12px;
+  --text-300: 14px;
+  --text-400: 16px;
+  --text-500: 20px;
+  --text-600: 24px;
+  --text-hero-700: 28px;
+  --text-hero-800: 32px;
+  --text-hero-900: 40px;
+  --text-hero-1000: 68px;
+
+  --leading-100: 14px;
+  --leading-200: 16px;
+  --leading-300: 20px;
+  --leading-400: 22px;
+  --leading-500: 28px;
+  --leading-600: 32px;
+  --leading-hero-700: 36px;
+  --leading-hero-800: 40px;
+  --leading-hero-900: 52px;
+  --leading-hero-1000: 92px;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --font-heading: 'Geist', 'Segoe UI', system-ui, sans-serif;
+  --font-base: 'Geist', 'Segoe UI', system-ui, sans-serif;
+  --font-monospace: 'JetBrains Mono', Consolas, monospace;
+  --font-numeric: 'Geist', 'Segoe UI', system-ui, sans-serif;
+
+  --icon-size-100: 12px;
+  --icon-size-200: 16px;
+  --icon-size-300: 20px;
+  --icon-size-400: 24px;
+  --icon-size-500: 28px;
+  --icon-size-600: 32px;
+  --icon-size-700: 48px;
+}
+
+@utility icon-size-* {
+  width: --value(--icon-size-*);
+  height: --value(--icon-size-*);
+}
+
+@layer base {
+  .dark {
+    --color-background: #121417;
+    --color-foreground: #e9e7e1;
+    --color-card: #1b1e22;
+    --color-card-foreground: #e9e7e1;
+    --color-popover: #22262b;
+    --color-popover-foreground: #e9e7e1;
+    --color-primary: #3aa58f;
+    --color-primary-foreground: #0d1a16;
+    --color-secondary: #22262b;
+    --color-secondary-foreground: #e9e7e1;
+    --color-muted: #22262b;
+    --color-muted-foreground: #9aa0a6;
+    --color-accent: #1f3b35;
+    --color-accent-foreground: #bfe8dc;
+    --color-border: #31353b;
+    --color-input: #3a3f45;
+    --color-ring: #3aa58f;
+    --color-good: #3aa58f;
+    --color-bad: #e4635f;
+    --color-hover: #22262b;
+
+    --ibcs-ac: #d9d9d9;
+    --ibcs-py: #6f6f6f;
+    --ibcs-paper: #1b1e22;
+    --ibcs-good: #3aa58f;
+    --ibcs-bad: #e4635f;
+    --ibcs-cat: #c4c4c4;
+    --ibcs-sub: #8a8a8a;
+    --ibcs-hair: #555555;
+    --ibcs-conn: #4a4a4a;
+    --ibcs-fcink: #a8a8a8;
+    --ibcs-hilite: #5aa0e0;
+    --ibcs-track: #2a2e33;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-base);
+  }
+  select,
+  input,
+  textarea,
+  button {
+    font-family: inherit;
+  }
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+/* MockupKitchen tile */
+.tile {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* IBCS FC hatch for HTML elements (45°, 5 px pitch) */
+.hatch {
+  background-image: repeating-linear-gradient(-45deg, var(--ibcs-ac) 0 1.7px, var(--ibcs-paper) 1.7px 3.5px);
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* SVG text in charts uses the base font, numbers tabular */
+svg text {
+  font-family: var(--font-base);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

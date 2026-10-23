@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "dwg Spike"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "cd9d1233-f25f-4ac7-a3b4-4022a069b87b"
+  }
+}

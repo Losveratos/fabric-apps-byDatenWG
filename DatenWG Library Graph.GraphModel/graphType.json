@@ -1,0 +1,668 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/graphIndex/definition/graphType/1.0.0/schema.json",
+  "nodeTypes": [
+    {
+      "primaryKeyProperties": [
+        "id"
+      ],
+      "alias": "Document",
+      "labels": [
+        "Document"
+      ],
+      "properties": [
+        {
+          "name": "id",
+          "type": "STRING"
+        },
+        {
+          "name": "title",
+          "type": "STRING"
+        },
+        {
+          "name": "source",
+          "type": "STRING"
+        },
+        {
+          "name": "published",
+          "type": "STRING"
+        },
+        {
+          "name": "url",
+          "type": "STRING"
+        },
+        {
+          "name": "coverage",
+          "type": "STRING"
+        },
+        {
+          "name": "format",
+          "type": "STRING"
+        },
+        {
+          "name": "bucket",
+          "type": "STRING"
+        },
+        {
+          "name": "n_claims",
+          "type": "INT"
+        },
+        {
+          "name": "n_segments",
+          "type": "INT"
+        }
+      ]
+    },
+    {
+      "primaryKeyProperties": [
+        "id"
+      ],
+      "alias": "Concept",
+      "labels": [
+        "Concept"
+      ],
+      "properties": [
+        {
+          "name": "id",
+          "type": "STRING"
+        },
+        {
+          "name": "name",
+          "type": "STRING"
+        },
+        {
+          "name": "kind",
+          "type": "STRING"
+        },
+        {
+          "name": "aliases",
+          "type": "STRING"
+        },
+        {
+          "name": "doc_count",
+          "type": "INT"
+        }
+      ]
+    },
+    {
+      "primaryKeyProperties": [
+        "id"
+      ],
+      "alias": "Person",
+      "labels": [
+        "Person"
+      ],
+      "properties": [
+        {
+          "name": "id",
+          "type": "STRING"
+        },
+        {
+          "name": "name",
+          "type": "STRING"
+        },
+        {
+          "name": "doc_count",
+          "type": "INT"
+        }
+      ]
+    },
+    {
+      "primaryKeyProperties": [
+        "id"
+      ],
+      "alias": "Bucket",
+      "labels": [
+        "Bucket"
+      ],
+      "properties": [
+        {
+          "name": "id",
+          "type": "STRING"
+        },
+        {
+          "name": "name",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "primaryKeyProperties": [
+        "id"
+      ],
+      "alias": "Claim",
+      "labels": [
+        "Claim"
+      ],
+      "properties": [
+        {
+          "name": "id",
+          "type": "STRING"
+        },
+        {
+          "name": "aussage",
+          "type": "STRING"
+        },
+        {
+          "name": "kind",
+          "type": "STRING"
+        },
+        {
+          "name": "doc_id",
+          "type": "STRING"
+        },
+        {
+          "name": "start_s",
+          "type": "FLOAT"
+        },
+        {
+          "name": "precision",
+          "type": "STRING"
+        },
+        {
+          "name": "anchor",
+          "type": "STRING"
+        },
+        {
+          "name": "anchor_score",
+          "type": "FLOAT"
+        }
+      ]
+    }
+  ],
+  "edgeTypes": [
+    {
+      "alias": "MENTIONS",
+      "sourceNodeType": {
+        "alias": "Document"
+      },
+      "labels": [
+        "MENTIONS"
+      ],
+      "destinationNodeType": {
+        "alias": "Concept"
+      },
+      "properties": [
+        {
+          "name": "weight",
+          "type": "FLOAT"
+        },
+        {
+          "name": "evidence",
+          "type": "STRING"
+        },
+        {
+          "name": "doc_id",
+          "type": "STRING"
+        },
+        {
+          "name": "share",
+          "type": "FLOAT"
+        },
+        {
+          "name": "segments",
+          "type": "INT"
+        },
+        {
+          "name": "role",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "alias": "MENTIONS_PERSON",
+      "sourceNodeType": {
+        "alias": "Document"
+      },
+      "labels": [
+        "MENTIONS_PERSON"
+      ],
+      "destinationNodeType": {
+        "alias": "Person"
+      },
+      "properties": [
+        {
+          "name": "weight",
+          "type": "FLOAT"
+        },
+        {
+          "name": "evidence",
+          "type": "STRING"
+        },
+        {
+          "name": "doc_id",
+          "type": "STRING"
+        },
+        {
+          "name": "share",
+          "type": "FLOAT"
+        },
+        {
+          "name": "segments",
+          "type": "INT"
+        },
+        {
+          "name": "role",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "alias": "EXPLAINS",
+      "sourceNodeType": {
+        "alias": "Document"
+      },
+      "labels": [
+        "EXPLAINS"
+      ],
+      "destinationNodeType": {
+        "alias": "Concept"
+      },
+      "properties": [
+        {
+          "name": "weight",
+          "type": "FLOAT"
+        },
+        {
+          "name": "evidence",
+          "type": "STRING"
+        },
+        {
+          "name": "doc_id",
+          "type": "STRING"
+        },
+        {
+          "name": "share",
+          "type": "FLOAT"
+        },
+        {
+          "name": "segments",
+          "type": "INT"
+        },
+        {
+          "name": "role",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "alias": "SPEAKS_IN",
+      "sourceNodeType": {
+        "alias": "Person"
+      },
+      "labels": [
+        "SPEAKS_IN"
+      ],
+      "destinationNodeType": {
+        "alias": "Document"
+      },
+      "properties": [
+        {
+          "name": "weight",
+          "type": "FLOAT"
+        },
+        {
+          "name": "evidence",
+          "type": "STRING"
+        },
+        {
+          "name": "doc_id",
+          "type": "STRING"
+        },
+        {
+          "name": "share",
+          "type": "FLOAT"
+        },
+        {
+          "name": "segments",
+          "type": "INT"
+        },
+        {
+          "name": "role",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "alias": "IN_BUCKET",
+      "sourceNodeType": {
+        "alias": "Document"
+      },
+      "labels": [
+        "IN_BUCKET"
+      ],
+      "destinationNodeType": {
+        "alias": "Bucket"
+      },
+      "properties": [
+        {
+          "name": "weight",
+          "type": "FLOAT"
+        },
+        {
+          "name": "evidence",
+          "type": "STRING"
+        },
+        {
+          "name": "doc_id",
+          "type": "STRING"
+        },
+        {
+          "name": "share",
+          "type": "FLOAT"
+        },
+        {
+          "name": "segments",
+          "type": "INT"
+        },
+        {
+          "name": "role",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "alias": "RELATES_TO",
+      "sourceNodeType": {
+        "alias": "Concept"
+      },
+      "labels": [
+        "RELATES_TO"
+      ],
+      "destinationNodeType": {
+        "alias": "Concept"
+      },
+      "properties": [
+        {
+          "name": "weight",
+          "type": "FLOAT"
+        },
+        {
+          "name": "evidence",
+          "type": "STRING"
+        },
+        {
+          "name": "doc_id",
+          "type": "STRING"
+        },
+        {
+          "name": "share",
+          "type": "FLOAT"
+        },
+        {
+          "name": "segments",
+          "type": "INT"
+        },
+        {
+          "name": "role",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "alias": "REQUIRES",
+      "sourceNodeType": {
+        "alias": "Concept"
+      },
+      "labels": [
+        "REQUIRES"
+      ],
+      "destinationNodeType": {
+        "alias": "Concept"
+      },
+      "properties": [
+        {
+          "name": "weight",
+          "type": "FLOAT"
+        },
+        {
+          "name": "evidence",
+          "type": "STRING"
+        },
+        {
+          "name": "doc_id",
+          "type": "STRING"
+        },
+        {
+          "name": "share",
+          "type": "FLOAT"
+        },
+        {
+          "name": "segments",
+          "type": "INT"
+        },
+        {
+          "name": "role",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "alias": "REPLACES",
+      "sourceNodeType": {
+        "alias": "Concept"
+      },
+      "labels": [
+        "REPLACES"
+      ],
+      "destinationNodeType": {
+        "alias": "Concept"
+      },
+      "properties": [
+        {
+          "name": "weight",
+          "type": "FLOAT"
+        },
+        {
+          "name": "evidence",
+          "type": "STRING"
+        },
+        {
+          "name": "doc_id",
+          "type": "STRING"
+        },
+        {
+          "name": "share",
+          "type": "FLOAT"
+        },
+        {
+          "name": "segments",
+          "type": "INT"
+        },
+        {
+          "name": "role",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "alias": "CONTRASTS",
+      "sourceNodeType": {
+        "alias": "Concept"
+      },
+      "labels": [
+        "CONTRASTS"
+      ],
+      "destinationNodeType": {
+        "alias": "Concept"
+      },
+      "properties": [
+        {
+          "name": "weight",
+          "type": "FLOAT"
+        },
+        {
+          "name": "evidence",
+          "type": "STRING"
+        },
+        {
+          "name": "doc_id",
+          "type": "STRING"
+        },
+        {
+          "name": "share",
+          "type": "FLOAT"
+        },
+        {
+          "name": "segments",
+          "type": "INT"
+        },
+        {
+          "name": "role",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "alias": "PART_OF",
+      "sourceNodeType": {
+        "alias": "Concept"
+      },
+      "labels": [
+        "PART_OF"
+      ],
+      "destinationNodeType": {
+        "alias": "Concept"
+      },
+      "properties": [
+        {
+          "name": "weight",
+          "type": "FLOAT"
+        },
+        {
+          "name": "evidence",
+          "type": "STRING"
+        },
+        {
+          "name": "doc_id",
+          "type": "STRING"
+        },
+        {
+          "name": "share",
+          "type": "FLOAT"
+        },
+        {
+          "name": "segments",
+          "type": "INT"
+        },
+        {
+          "name": "role",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "alias": "RECOMMENDS",
+      "sourceNodeType": {
+        "alias": "Concept"
+      },
+      "labels": [
+        "RECOMMENDS"
+      ],
+      "destinationNodeType": {
+        "alias": "Concept"
+      },
+      "properties": [
+        {
+          "name": "weight",
+          "type": "FLOAT"
+        },
+        {
+          "name": "evidence",
+          "type": "STRING"
+        },
+        {
+          "name": "doc_id",
+          "type": "STRING"
+        },
+        {
+          "name": "share",
+          "type": "FLOAT"
+        },
+        {
+          "name": "segments",
+          "type": "INT"
+        },
+        {
+          "name": "role",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "alias": "STATES",
+      "sourceNodeType": {
+        "alias": "Document"
+      },
+      "labels": [
+        "STATES"
+      ],
+      "destinationNodeType": {
+        "alias": "Claim"
+      },
+      "properties": [
+        {
+          "name": "weight",
+          "type": "FLOAT"
+        },
+        {
+          "name": "evidence",
+          "type": "STRING"
+        },
+        {
+          "name": "doc_id",
+          "type": "STRING"
+        },
+        {
+          "name": "share",
+          "type": "FLOAT"
+        },
+        {
+          "name": "segments",
+          "type": "INT"
+        },
+        {
+          "name": "role",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "alias": "ABOUT",
+      "sourceNodeType": {
+        "alias": "Claim"
+      },
+      "labels": [
+        "ABOUT"
+      ],
+      "destinationNodeType": {
+        "alias": "Concept"
+      },
+      "properties": [
+        {
+          "name": "weight",
+          "type": "FLOAT"
+        },
+        {
+          "name": "evidence",
+          "type": "STRING"
+        },
+        {
+          "name": "doc_id",
+          "type": "STRING"
+        },
+        {
+          "name": "share",
+          "type": "FLOAT"
+        },
+        {
+          "name": "segments",
+          "type": "INT"
+        },
+        {
+          "name": "role",
+          "type": "STRING"
+        }
+      ]
+    }
+  ]
+}

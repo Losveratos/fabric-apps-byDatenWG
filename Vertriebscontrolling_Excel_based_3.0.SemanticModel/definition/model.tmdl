@@ -1,0 +1,67 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	discourageImplicitMeasures
+	sourceQueryCulture: de-DE
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+/// Enhält die Anbindung der Daten und die Datentypen
+queryGroup Stage
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Core\Core Kalender'
+
+	annotation PBI_QueryGroupOrder = 0
+
+/// Enthält alle transformationen
+queryGroup Core
+
+	annotation PBI_QueryGroupOrder = 2
+
+/// Enhält die finalen Modell
+queryGroup Modell
+
+	annotation PBI_QueryGroupOrder = 3
+
+queryGroup Functions
+
+	annotation PBI_QueryGroupOrder = 4
+
+queryGroup 'Stage\Transform File from Query1'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Stage\Transform File from Query1\Helper Queries'
+
+	annotation PBI_QueryGroupOrder = 0
+
+annotation PBI_QueryOrder = ["Stage Source","Stage Forecast","Source","Min Jahr","Max Jahr","Core Kalender","Core Produkt","Core Pipeline Status","Core Status","Core Vertriebler","Core Forecast","Core Standort","Core Kunde","Core Angebote","📅Kalender","Forecast","Produkt","Pipeline Status","Status","Vertriebler","Standort","Kunde","Angebote","📶Auswahl Kennzahl","Random Values","Pipeline Source","Parameter1","Transform Sample File","Sample File","Transform File"]
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation __BNorm = 1
+
+annotation __TEdtr = 1
+
+ref table 📅Kalender
+ref table Produkt
+ref table Status
+ref table Vertriebler
+ref table Standort
+ref table Kunde
+ref table Angebote
+ref table '📶Auswahl 2'
+ref table '📶Auswahl 1'
+ref table 📶Quickinfo
+ref table '📶Time Intellegence Calculation Group'
+ref table 📶Kennzahlen
+ref table '📶Kennzahle Calculation Group'
+ref table '📶Auswahl Kennzahl'
+ref table 'Pipeline Status'
+ref table Forecast
+
+ref cultureInfo en-US
+

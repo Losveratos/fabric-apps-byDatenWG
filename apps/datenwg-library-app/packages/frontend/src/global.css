@@ -1,0 +1,237 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:is(.dark *));
+
+/* Bridged tokens — kept in `@theme static` so the CSS vars are always
+   emitted, not tree-shaken when no Tailwind utility consumes them.
+   <VegaVisual> and <DataGrid> read these at runtime via `useCssTheme()`. */
+@theme static {
+  --color-brand: #117865; /* bar/area fills, button-like brand surfaces */
+  --color-brand-foreground: #117865; /* line/point marks, branded text & emphasis */
+  --color-hover: #f4f1e8; /* row/cell hover surface in DataGrid + visuals */
+
+  /* Knowledge-graph node colours (also read from SVG via var()). */
+  --color-node-topic: #2a857a;
+  --color-node-tool: #166088;
+  --color-node-person: #b8336a;
+  --color-node-org: #5b3b7a;
+  --color-node-bucket: #b8860b;
+  --color-node-page: #4a4a4a;
+  --color-node-doc: #c25a2d;
+  --color-node-topic-foreground: #ffffff;
+  --color-node-tool-foreground: #ffffff;
+  --color-node-person-foreground: #ffffff;
+  --color-node-org-foreground: #ffffff;
+  --color-node-bucket-foreground: #ffffff;
+  --color-node-page-foreground: #ffffff;
+  --color-node-doc-foreground: #ffffff;
+  --color-line-co: #c9c3b2; /* co-occurrence edges */
+  --color-line-typed: #117865; /* evidenced edges */
+}
+
+@theme {
+  /* Colour tokens — light theme, DatenWG Knowledge Kitchen palette.
+     Usage: bg-*, text-*, border-* (e.g. bg-primary text-primary-foreground) */
+  --color-background: #fafaf5; /* warm paper */
+  --color-foreground: #1a1a1a;
+
+  --color-card: #ffffff;
+  --color-card-foreground: #1a1a1a;
+
+  --color-popover: #ffffff;
+  --color-popover-foreground: #1a1a1a;
+
+  --color-primary: #117865; /* kitchen teal */
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: #f4f1e8; /* soft sand */
+  --color-secondary-foreground: #1a1a1a;
+
+  --color-muted: #f4f1e8;
+  --color-muted-foreground: #6b6b6b;
+
+  --color-accent: #e3f2ed; /* teal tint */
+  --color-accent-foreground: #0f5a4c;
+
+  --color-warm: #c25a2d; /* kitchen accent, used for emphasis */
+  --color-warm-foreground: #ffffff;
+
+  --color-destructive: #8b2e2e;
+  --color-destructive-foreground: #ffffff;
+
+  --color-border: #e6e2d6;
+  --color-input: #e6e2d6;
+  --color-ring: #117865;
+
+  --radius-none: 0;
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-xl: 14px;
+  --radius-2xl: 18px;
+  --radius-3xl: 24px;
+  --radius-4xl: 28px;
+  --radius-5xl: 32px;
+  --radius-6xl: 40px;
+  --radius-full: 9999px;
+  --radius: 10px;
+
+  /* Spacing — 4px grid. Usage: p-*, m-*, gap-* (e.g. p-400 gap-300) */
+  --spacing-none: 0;
+  --spacing-100-nudge: 2px;
+  --spacing-100: 4px;
+  --spacing-200-nudge: 6px;
+  --spacing-200: 8px;
+  --spacing-300-nudge: 10px;
+  --spacing-300: 12px;
+  --spacing-400: 16px;
+  --spacing-500: 20px;
+  --spacing-600: 24px;
+  --spacing-700: 28px;
+  --spacing-800: 32px;
+
+  /* Font sizes — 100-based scale. Usage: text-* (e.g. text-300) */
+  --text-100: 10px;
+  --text-200: 12px;
+  --text-300: 14px;
+  --text-400: 16px;
+  --text-500: 20px;
+  --text-600: 24px;
+  --text-hero-700: 28px;
+  --text-hero-800: 32px;
+  --text-hero-900: 40px;
+  --text-hero-1000: 68px;
+
+  /* Line heights — paired with font sizes. Usage: leading-* */
+  --leading-100: 14px;
+  --leading-200: 16px;
+  --leading-300: 20px;
+  --leading-400: 22px;
+  --leading-500: 28px;
+  --leading-600: 32px;
+  --leading-hero-700: 36px;
+  --leading-hero-800: 40px;
+  --leading-hero-900: 52px;
+  --leading-hero-1000: 92px;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Font families — Geist everywhere (Kitchen tools never use serifs),
+     JetBrains Mono for tags, timestamps and metadata. */
+  --font-heading: 'Geist', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-base: 'Geist', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-monospace: 'JetBrains Mono', Consolas, 'Courier New', monospace;
+  --font-numeric: 'Geist', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Icon sizes. Usage: icon-size-* (e.g. icon-size-200) */
+  --icon-size-100: 12px;
+  --icon-size-200: 16px;
+  --icon-size-300: 20px;
+  --icon-size-400: 24px;
+  --icon-size-500: 28px;
+  --icon-size-600: 32px;
+  --icon-size-700: 48px;
+}
+
+@utility icon-size-* {
+  width: --value(--icon-size-*);
+  height: --value(--icon-size-*);
+}
+
+@layer base {
+  .dark {
+    --color-background: #15140f;
+    --color-foreground: #f1eee5;
+
+    --color-card: #1e1c17;
+    --color-card-foreground: #f1eee5;
+
+    --color-popover: #24221c;
+    --color-popover-foreground: #f1eee5;
+
+    --color-primary: #3aa58f;
+    --color-primary-foreground: #0d1a16;
+
+    --color-secondary: #26231d;
+    --color-secondary-foreground: #f1eee5;
+
+    --color-muted: #26231d;
+    --color-muted-foreground: #a8a396;
+
+    --color-accent: #1f3b35;
+    --color-accent-foreground: #bfe8dc;
+
+    --color-warm: #e07a4b;
+    --color-warm-foreground: #1a0f08;
+
+    --color-destructive: #d9534f;
+    --color-destructive-foreground: #ffffff;
+
+    --color-border: #35322a;
+    --color-input: #35322a;
+    --color-ring: #3aa58f;
+
+    --color-brand: #3aa58f;
+    --color-brand-foreground: #6fd0b8;
+    --color-hover: #26231d;
+
+    --color-node-topic: #4fb3a6;
+    --color-node-tool: #4f9bd4;
+    --color-node-person: #e0699a;
+    --color-node-org: #a07cc8;
+    --color-node-bucket: #d9b24a;
+    --color-node-page: #9a9a9a;
+    --color-node-doc: #e07a4b;
+    --color-line-co: #3f3b32;
+    --color-line-typed: #3aa58f;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+
+  select,
+  input,
+  textarea,
+  button {
+    font-family: inherit;
+  }
+
+  mark {
+    @apply rounded-sm bg-accent px-100-nudge text-accent-foreground;
+  }
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+/* Graph interaction states (SVG) */
+.node-dim {
+  opacity: 0.18;
+}
+.link-dim {
+  opacity: 0.08;
+}
+.link-hl {
+  stroke: var(--color-warm);
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

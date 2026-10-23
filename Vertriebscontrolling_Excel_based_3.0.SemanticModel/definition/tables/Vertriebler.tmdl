@@ -1,0 +1,22 @@
+table Vertriebler
+	lineageTag: 831c5488-7cca-4541-ba7e-72dea051a38f
+
+	column Vertriebler
+		dataType: string
+		lineageTag: 2256b5d3-2eac-49b1-bf31-9a65fb7aa213
+		summarizeBy: none
+		sourceColumn: Vertriebler
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Vertriebler-55cc409a-e4c9-4c7b-9602-694cbd5ef25f = m
+		mode: import
+		queryGroup: Modell
+		source =
+				let
+				    Source = #"Core Vertriebler"
+				in
+				    Source
+
+	annotation PBI_ResultType = Exception
+

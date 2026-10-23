@@ -1,0 +1,236 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "46c29da0a364a11bc4d1",
+  "position": {
+    "x": 7.2948328267477205,
+    "y": 303.951367781155,
+    "z": 6000,
+    "height": 595.74468085106378,
+    "width": 378.11550151975683,
+    "tabOrder": 19000
+  },
+  "visual": {
+    "visualType": "zebraBiCards2C860CFAA9944091B75F0DBD117F20FA",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Angebote"
+                    }
+                  },
+                  "Property": "AC"
+                }
+              },
+              "queryRef": "Angebote.AC"
+            }
+          ]
+        },
+        "PreviousYear": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Angebote"
+                    }
+                  },
+                  "Property": "PY"
+                }
+              },
+              "queryRef": "Angebote.PY"
+            }
+          ]
+        },
+        "Group": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "📶Auswahl Kennzahl"
+                    }
+                  },
+                  "Property": "Name Kennzahl"
+                }
+              },
+              "queryRef": "📶Auswahl Kennzahl.Name Kennzahl"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Angebote"
+                  }
+                },
+                "Property": "AC"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "license": [
+        {
+          "properties": {
+            "licenseKey": {
+              "expr": {
+                "Literal": {
+                  "Value": "'RoJwmlKrhHrMks8bvFsSofO0e8tFxWvPhHUd0OEOx4dSPl1rkcCFFmdc4Ii3KnqvKIX4+KpargI847ItsoytDHsiY29tcGFueSI6IkhBWkVNQUcgJiBFUFIgR21iSCIsImV4cGlyeURhdGUiOiIyMDI0LTA2LTA4Iiwibk9mVXNlcnMiOiIyMCIsImxpY2Vuc2VUeXBlIjoiUGFpZCIsInZpc3VhbFR5cGUiOiJBbGwifQ=='"
+                }
+              }
+            },
+            "licensedTo": {
+              "expr": {
+                "Literal": {
+                  "Value": "'HAZEMAG &amp; EPR GmbH'"
+                }
+              }
+            },
+            "product": {
+              "expr": {
+                "Literal": {
+                  "Value": "'All'"
+                }
+              }
+            },
+            "validUntil": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Sat Jun 08 2024'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "legend": [
+        {
+          "properties": {}
+        }
+      ],
+      "customData": [
+        {
+          "properties": {
+            "version": {
+              "expr": {
+                "Literal": {
+                  "Value": "'1.7.0.0'"
+                }
+              }
+            },
+            "dataVersion": {
+              "expr": {
+                "Literal": {
+                  "Value": "44L"
+                }
+              }
+            },
+            "gridData": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"instance\":0,\"cards\":{\"card-ccbd9ac0-d65c-5e90-8aa0-542c8d9e33d0\":{\"id\":\"card-ccbd9ac0-d65c-5e90-8aa0-542c8d9e33d0\",\"cardTitle\":\"AC\",\"cardValue\":19926856.999999978,\"cardType\":1,\"total\":19926856.999999978,\"group\":\"offene Angebote\",\"roles\":[],\"numberFormat\":null,\"decimals\":1,\"relativeDecimals\":1,\"currency\":\"None\",\"chartMax\":0,\"chartMin\":0,\"transitions\":[],\"coordinates\":{\"x\":0,\"y\":0,\"w\":4,\"h\":1},\"globalMaxMeasure\":1354915.4358765115,\"hasComments\":false,\"isNegative\":false,\"isMixed\":false},\"card-1f706cba-827f-53fa-81c7-ea4f4c6fa9bf\":{\"id\":\"card-1f706cba-827f-53fa-81c7-ea4f4c6fa9bf\",\"cardTitle\":\"AC\",\"cardValue\":14352709.850000001,\"cardType\":1,\"total\":14352709.850000001,\"group\":\"Gewichtete Angebotsmege\",\"roles\":[],\"numberFormat\":null,\"decimals\":1,\"relativeDecimals\":1,\"currency\":\"None\",\"chartMax\":0,\"chartMin\":0,\"transitions\":[],\"coordinates\":{\"x\":0,\"y\":1,\"w\":4,\"h\":1},\"globalMaxMeasure\":1354915.4358765115,\"hasComments\":false,\"isNegative\":false,\"isMixed\":false},\"card-8f34c436-a6b9-505d-a8c3-a4c7024b04f2\":{\"id\":\"card-8f34c436-a6b9-505d-a8c3-a4c7024b04f2\",\"cardTitle\":\"AC\",\"cardValue\":32356.47492767598,\"cardType\":1,\"total\":32356.47492767598,\"group\":\"Durchschnittliche Angebotshöhe\",\"roles\":[],\"numberFormat\":null,\"decimals\":1,\"relativeDecimals\":1,\"currency\":\"None\",\"chartMax\":0,\"chartMin\":0,\"transitions\":[],\"coordinates\":{\"x\":0,\"y\":2,\"w\":4,\"h\":1},\"globalMaxMeasure\":1354915.4358765115,\"hasComments\":false,\"isNegative\":false,\"isMixed\":false},\"card-705ca301-7ae9-5c29-bf0f-4c96555461d8\":{\"id\":\"card-705ca301-7ae9-5c29-bf0f-4c96555461d8\",\"cardTitle\":\"AC\",\"cardValue\":0.636933461909354,\"cardType\":1,\"total\":0.636933461909354,\"group\":\"Gewonnen Share\",\"roles\":[],\"numberFormat\":null,\"decimals\":1,\"relativeDecimals\":1,\"currency\":\"None\",\"chartMax\":0,\"chartMin\":0,\"transitions\":[],\"coordinates\":{\"x\":0,\"y\":3,\"w\":4,\"h\":1},\"globalMaxMeasure\":1354915.4358765115,\"hasComments\":false,\"isNegative\":false,\"isMixed\":false},\"card-536b69a1-9843-5295-9e9b-8c452ad04d2c\":{\"id\":\"card-536b69a1-9843-5295-9e9b-8c452ad04d2c\",\"cardTitle\":\"AC\",\"cardValue\":47180472,\"cardType\":1,\"total\":47180472,\"group\":\"Anzahl gewonnen\",\"roles\":[],\"numberFormat\":null,\"decimals\":1,\"relativeDecimals\":1,\"currency\":\"None\",\"chartMax\":0,\"chartMin\":0,\"transitions\":[],\"coordinates\":{\"x\":0,\"y\":4,\"w\":4,\"h\":1},\"globalMaxMeasure\":1354915.4358765115,\"hasComments\":false,\"isNegative\":false,\"isMixed\":false},\"card-581c5dd9-7d83-5f66-b7f7-cb8cf41c74fd\":{\"id\":\"card-581c5dd9-7d83-5f66-b7f7-cb8cf41c74fd\",\"cardTitle\":\"AC\",\"cardValue\":236,\"cardType\":1,\"total\":236,\"group\":\"Anzahl Kunden\",\"roles\":[],\"numberFormat\":null,\"decimals\":1,\"relativeDecimals\":1,\"currency\":\"None\",\"chartMax\":0,\"chartMin\":0,\"transitions\":[],\"coordinates\":{\"x\":0,\"y\":5,\"w\":4,\"h\":1},\"globalMaxMeasure\":1354915.4358765115,\"hasComments\":false,\"isNegative\":false,\"isMixed\":false},\"card-0b4fa572-ef8f-5e50-82d9-0c23fcd191fa\":{\"id\":\"card-0b4fa572-ef8f-5e50-82d9-0c23fcd191fa\",\"cardTitle\":\"AC\",\"cardValue\":133.28592092574735,\"cardType\":1,\"total\":133.28592092574735,\"group\":\"Dauer Angebotszyklus\",\"roles\":[],\"numberFormat\":null,\"decimals\":1,\"relativeDecimals\":1,\"currency\":\"None\",\"chartMax\":0,\"chartMin\":0,\"transitions\":[],\"coordinates\":{\"x\":0,\"y\":6,\"w\":4,\"h\":1},\"globalMaxMeasure\":1354915.4358765115,\"hasComments\":false,\"isNegative\":false,\"isMixed\":false},\"card-3640ffea-2e9d-5478-bd82-eb830519aa90\":{\"id\":\"card-3640ffea-2e9d-5478-bd82-eb830519aa90\",\"cardTitle\":\"AC\",\"cardValue\":0.18176274218871094,\"cardType\":1,\"total\":0.18176274218871094,\"group\":\"Premium Share\",\"roles\":[],\"numberFormat\":null,\"decimals\":1,\"relativeDecimals\":1,\"currency\":\"None\",\"chartMax\":0,\"chartMin\":0,\"transitions\":[],\"coordinates\":{\"x\":0,\"y\":7,\"w\":4,\"h\":1},\"globalMaxMeasure\":1354915.4358765115,\"hasComments\":false,\"isNegative\":false,\"isMixed\":false},\"card-cb452620-5aed-59e3-97d4-caad1698a996\":{\"id\":\"card-cb452620-5aed-59e3-97d4-caad1698a996\",\"cardTitle\":\"AC\",\"cardValue\":1321,\"cardType\":1,\"total\":1321,\"group\":\"Gewonne Angebote\",\"roles\":[],\"numberFormat\":null,\"decimals\":1,\"relativeDecimals\":1,\"currency\":\"None\",\"chartMax\":0,\"chartMin\":0,\"transitions\":[],\"coordinates\":{\"x\":0,\"y\":8,\"w\":4,\"h\":1},\"globalMaxMeasure\":1354915.4358765115,\"hasComments\":false,\"isNegative\":false,\"isMixed\":false},\"card-1fc5e8e3-e46b-59ef-9166-a8854a7ba4b2\":{\"id\":\"card-1fc5e8e3-e46b-59ef-9166-a8854a7ba4b2\",\"cardTitle\":\"AC\",\"cardValue\":284353.0889830508,\"cardType\":1,\"total\":284353.0889830508,\"group\":\"Durchschnittlicher Kundenumsatz\",\"roles\":[],\"numberFormat\":null,\"decimals\":1,\"relativeDecimals\":1,\"currency\":\"None\",\"chartMax\":0,\"chartMin\":0,\"transitions\":[],\"coordinates\":{\"x\":0,\"y\":9,\"w\":4,\"h\":1},\"globalMaxMeasure\":1354915.4358765115,\"hasComments\":false,\"isNegative\":false,\"isMixed\":false},\"card-d1a8ee2a-dc64-5219-956f-37c53b90976e\":{\"id\":\"card-d1a8ee2a-dc64-5219-956f-37c53b90976e\",\"cardTitle\":\"AC\",\"cardValue\":67107328.99999998,\"cardType\":1,\"total\":67107328.99999998,\"group\":\"Gewichtet Angebotswert\",\"roles\":[],\"numberFormat\":null,\"decimals\":1,\"relativeDecimals\":1,\"currency\":\"None\",\"chartMax\":0,\"chartMin\":0,\"transitions\":[],\"coordinates\":{\"x\":0,\"y\":10,\"w\":4,\"h\":1},\"globalMaxMeasure\":1354915.4358765115,\"hasComments\":false,\"isNegative\":false,\"isMixed\":false}},\"groups\":{}}'"
+                }
+              }
+            },
+            "migrations": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"dataMigrationVersion\":\"1.7.0.0\"}'"
+                }
+              }
+            },
+            "rowsData": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"instance\":0,\"cards\":{\"card-d1a8ee2a-dc64-5219-956f-37c53b90976e\":{\"id\":\"card-d1a8ee2a-dc64-5219-956f-37c53b90976e\",\"cardTitle\":\"AC\",\"cardValue\":574304926.2579459,\"cardType\":1,\"total\":574304926.2579459,\"group\":\"Gewichtet Angebotswert\",\"valueFormat\":\"\",\"sortScenarioAbsoluteValue\":254453026.36412382,\"sortScenarioRelativeValue\":79.55338906806305,\"role\":\"Values\",\"invertedCategories\":[],\"highlightedCategories\":[],\"highlightedCategoriesColors\":[],\"kpiDescription\":\"\",\"decimals\":1,\"relativeDecimals\":1,\"basisPointDecimals\":0,\"percentPointDecimals\":0,\"currency\":\"None\",\"chartMax\":0,\"chartMin\":0,\"coordinates\":{\"x\":null,\"y\":null,\"h\":1,\"w\":6},\"hasComments\":false,\"isNegative\":false,\"isMixed\":false},\"card-536b69a1-9843-5295-9e9b-8c452ad04d2c\":{\"id\":\"card-536b69a1-9843-5295-9e9b-8c452ad04d2c\",\"cardTitle\":\"AC\",\"cardValue\":426157403.4476221,\"cardType\":1,\"total\":426157403.4476221,\"group\":\"Anzahl gewonnen\",\"valueFormat\":\"\",\"sortScenarioAbsoluteValue\":106319250.46415418,\"sortScenarioRelativeValue\":33.24157842721463,\"role\":\"Values\",\"invertedCategories\":[],\"highlightedCategories\":[],\"highlightedCategoriesColors\":[],\"kpiDescription\":\"\",\"decimals\":1,\"relativeDecimals\":1,\"basisPointDecimals\":0,\"percentPointDecimals\":0,\"currency\":\"None\",\"chartMax\":0,\"chartMin\":0,\"coordinates\":{\"x\":null,\"y\":null,\"h\":1,\"w\":6},\"hasComments\":false,\"isNegative\":false,\"isMixed\":false},\"card-ccbd9ac0-d65c-5e90-8aa0-542c8d9e33d0\":{\"id\":\"card-ccbd9ac0-d65c-5e90-8aa0-542c8d9e33d0\",\"cardTitle\":\"AC\",\"cardValue\":148147522.8103241,\"cardType\":1,\"total\":148147522.8103241,\"group\":\"offene Angebote\",\"valueFormat\":\"\",\"sortScenarioAbsoluteValue\":148133775.89997008,\"sortScenarioRelativeValue\":1077578.6855749935,\"role\":\"Values\",\"invertedCategories\":[],\"highlightedCategories\":[],\"highlightedCategoriesColors\":[],\"kpiDescription\":\"\",\"decimals\":1,\"relativeDecimals\":1,\"basisPointDecimals\":0,\"percentPointDecimals\":0,\"currency\":\"None\",\"chartMax\":0,\"chartMin\":0,\"coordinates\":{\"x\":null,\"y\":null,\"h\":1,\"w\":6},\"hasComments\":false,\"isNegative\":false,\"isMixed\":false},\"card-1f706cba-827f-53fa-81c7-ea4f4c6fa9bf\":{\"id\":\"card-1f706cba-827f-53fa-81c7-ea4f4c6fa9bf\",\"cardTitle\":\"AC\",\"cardValue\":96207453.46999985,\"cardType\":1,\"total\":96207453.46999985,\"group\":\"Gewichtete Angebotsmege\",\"valueFormat\":\"\",\"sortScenarioAbsoluteValue\":49350260.56999983,\"sortScenarioRelativeValue\":105.32056556465167,\"role\":\"Values\",\"invertedCategories\":[],\"highlightedCategories\":[],\"highlightedCategoriesColors\":[],\"kpiDescription\":\"\",\"decimals\":1,\"relativeDecimals\":1,\"basisPointDecimals\":0,\"percentPointDecimals\":0,\"currency\":\"None\",\"chartMax\":0,\"chartMin\":0,\"coordinates\":{\"x\":null,\"y\":null,\"h\":1,\"w\":6},\"hasComments\":false,\"isNegative\":false,\"isMixed\":false},\"card-1fc5e8e3-e46b-59ef-9166-a8854a7ba4b2\":{\"id\":\"card-1fc5e8e3-e46b-59ef-9166-a8854a7ba4b2\",\"cardTitle\":\"AC\",\"cardValue\":2433495.4502455336,\"cardType\":1,\"total\":2433495.4502455336,\"group\":\"Durchschnittlicher Kundenumsatz\",\"valueFormat\":\"\",\"sortScenarioAbsoluteValue\":888317.1898889053,\"sortScenarioRelativeValue\":57.48962515715701,\"role\":\"Values\",\"invertedCategories\":[],\"highlightedCategories\":[],\"highlightedCategoriesColors\":[],\"kpiDescription\":\"\",\"decimals\":1,\"relativeDecimals\":1,\"basisPointDecimals\":0,\"percentPointDecimals\":0,\"currency\":\"None\",\"chartMax\":0,\"chartMin\":0,\"coordinates\":{\"x\":null,\"y\":null,\"h\":1,\"w\":6},\"hasComments\":false,\"isNegative\":false,\"isMixed\":false},\"card-8f34c436-a6b9-505d-a8c3-a4c7024b04f2\":{\"id\":\"card-8f34c436-a6b9-505d-a8c3-a4c7024b04f2\",\"cardTitle\":\"AC\",\"cardValue\":39558.12964994806,\"cardType\":1,\"total\":39558.12964994806,\"group\":\"Durchschnittliche Angebotshöhe\",\"valueFormat\":\"\",\"sortScenarioAbsoluteValue\":3804.5079314345276,\"sortScenarioRelativeValue\":10.640902231911573,\"role\":\"Values\",\"invertedCategories\":[],\"highlightedCategories\":[],\"highlightedCategoriesColors\":[],\"kpiDescription\":\"\",\"decimals\":1,\"relativeDecimals\":1,\"basisPointDecimals\":0,\"percentPointDecimals\":0,\"currency\":\"None\",\"chartMax\":0,\"chartMin\":0,\"coordinates\":{\"x\":null,\"y\":null,\"h\":1,\"w\":6},\"hasComments\":false,\"isNegative\":false,\"isMixed\":false},\"card-cb452620-5aed-59e3-97d4-caad1698a996\":{\"id\":\"card-cb452620-5aed-59e3-97d4-caad1698a996\",\"cardTitle\":\"AC\",\"cardValue\":9247,\"cardType\":1,\"total\":9247,\"group\":\"Gewonne Angebote\",\"valueFormat\":\"\",\"sortScenarioAbsoluteValue\":2058,\"sortScenarioRelativeValue\":28.627069133398248,\"role\":\"Values\",\"invertedCategories\":[],\"highlightedCategories\":[],\"highlightedCategoriesColors\":[],\"kpiDescription\":\"\",\"decimals\":1,\"relativeDecimals\":1,\"basisPointDecimals\":0,\"percentPointDecimals\":0,\"currency\":\"None\",\"chartMax\":0,\"chartMin\":0,\"coordinates\":{\"x\":null,\"y\":null,\"h\":1,\"w\":6},\"hasComments\":false,\"isNegative\":false,\"isMixed\":false},\"card-581c5dd9-7d83-5f66-b7f7-cb8cf41c74fd\":{\"id\":\"card-581c5dd9-7d83-5f66-b7f7-cb8cf41c74fd\",\"cardTitle\":\"AC\",\"cardValue\":236,\"cardType\":1,\"total\":236,\"group\":\"Anzahl Kunden\",\"valueFormat\":\"\",\"sortScenarioAbsoluteValue\":29,\"sortScenarioRelativeValue\":14.009661835748794,\"role\":\"Values\",\"invertedCategories\":[],\"highlightedCategories\":[],\"highlightedCategoriesColors\":[],\"kpiDescription\":\"\",\"decimals\":1,\"relativeDecimals\":1,\"basisPointDecimals\":0,\"percentPointDecimals\":0,\"currency\":\"None\",\"chartMax\":0,\"chartMin\":0,\"coordinates\":{\"x\":null,\"y\":null,\"h\":1,\"w\":6},\"hasComments\":false,\"isNegative\":false,\"isMixed\":false},\"card-0b4fa572-ef8f-5e50-82d9-0c23fcd191fa\":{\"id\":\"card-0b4fa572-ef8f-5e50-82d9-0c23fcd191fa\",\"cardTitle\":\"AC\",\"cardValue\":133.28592092574735,\"cardType\":1,\"total\":133.28592092574735,\"group\":\"Dauer Angebotszyklus\",\"valueFormat\":\"\",\"sortScenarioAbsoluteValue\":7.868080550160499,\"sortScenarioRelativeValue\":6.273493887789872,\"role\":\"Values\",\"invertedCategories\":[],\"highlightedCategories\":[],\"highlightedCategoriesColors\":[],\"kpiDescription\":\"\",\"decimals\":1,\"relativeDecimals\":1,\"basisPointDecimals\":0,\"percentPointDecimals\":0,\"currency\":\"None\",\"chartMax\":0,\"chartMin\":0,\"coordinates\":{\"x\":null,\"y\":null,\"h\":1,\"w\":6},\"hasComments\":false,\"isNegative\":false,\"isMixed\":false},\"card-705ca301-7ae9-5c29-bf0f-4c96555461d8\":{\"id\":\"card-705ca301-7ae9-5c29-bf0f-4c96555461d8\",\"cardTitle\":\"AC\",\"cardValue\":0.636933461909354,\"cardType\":1,\"total\":0.636933461909354,\"group\":\"Gewonnen Share\",\"valueFormat\":\"\",\"sortScenarioAbsoluteValue\":-0.16666591211255533,\"sortScenarioRelativeValue\":-20.739925577394906,\"role\":\"Values\",\"invertedCategories\":[],\"highlightedCategories\":[],\"highlightedCategoriesColors\":[],\"kpiDescription\":\"\",\"decimals\":1,\"relativeDecimals\":1,\"basisPointDecimals\":0,\"percentPointDecimals\":0,\"currency\":\"None\",\"chartMax\":0,\"chartMin\":0,\"coordinates\":{\"x\":null,\"y\":null,\"h\":1,\"w\":6},\"hasComments\":false,\"isNegative\":false,\"isMixed\":false},\"card-3640ffea-2e9d-5478-bd82-eb830519aa90\":{\"id\":\"card-3640ffea-2e9d-5478-bd82-eb830519aa90\",\"cardTitle\":\"AC\",\"cardValue\":0.17997076538538878,\"cardType\":1,\"total\":0.17997076538538878,\"group\":\"Premium Share\",\"valueFormat\":\"\",\"sortScenarioAbsoluteValue\":-0.011512293129207013,\"sortScenarioRelativeValue\":-6.012173201385066,\"role\":\"Values\",\"invertedCategories\":[],\"highlightedCategories\":[],\"highlightedCategoriesColors\":[],\"kpiDescription\":\"\",\"decimals\":1,\"relativeDecimals\":1,\"basisPointDecimals\":0,\"percentPointDecimals\":0,\"currency\":\"None\",\"chartMax\":0,\"chartMin\":0,\"coordinates\":{\"x\":null,\"y\":null,\"h\":1,\"w\":6},\"hasComments\":false,\"isNegative\":false,\"isMixed\":false}},\"groups\":{}}'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "layoutPreset": {
+              "expr": {
+                "Literal": {
+                  "Value": "'rows-layout'"
+                }
+              }
+            },
+            "cardSort": {
+              "expr": {
+                "Literal": {
+                  "Value": "'custom-sort'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "card": [
+        {
+          "properties": {
+            "suppressChart": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "cardPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "design": [
+        {
+          "properties": {
+            "style": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            },
+            "positiveColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 3,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

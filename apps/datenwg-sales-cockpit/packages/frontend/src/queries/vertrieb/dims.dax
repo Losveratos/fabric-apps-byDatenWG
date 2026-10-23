@@ -1,0 +1,6 @@
+// Dimensionen: Produkte (ID, Gruppe, Typ) und Standorte (Stadt, Bundesland).
+EVALUATE
+UNION (
+    SELECTCOLUMNS ( Produkt, "art", "produkt", "key", FORMAT ( Produkt[Produkt ID], "0" ), "a", Produkt[Produkt Gruppe], "b", Produkt[Produkt Typ] ),
+    SELECTCOLUMNS ( Standort, "art", "stadt", "key", Standort[Stadt], "a", TRIM ( Standort[Bundesland] ), "b", Standort[Land] )
+)

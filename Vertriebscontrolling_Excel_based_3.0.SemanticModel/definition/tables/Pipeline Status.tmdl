@@ -1,0 +1,44 @@
+table 'Pipeline Status'
+	lineageTag: c1f4ac5f-ff61-4f28-98a0-7245ff5ac9ea
+
+	column 'Pipeline Status'
+		dataType: dateTime
+		formatString: yyyy-mm
+		lineageTag: 80f8e22b-d541-4daa-ab94-d13c68eda152
+		summarizeBy: none
+		sourceColumn: Pipeline Status
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Sort Order'
+		dataType: int64
+		formatString: 0
+		lineageTag: 64ee4b86-c1ce-4f39-b480-97f6eb9ec81d
+		summarizeBy: none
+		sourceColumn: Sort Order
+
+		annotation SummarizationSetBy = Automatic
+
+	column Custom
+		dataType: string
+		lineageTag: 243ad83d-7219-491c-9c75-3d25c787ed5b
+		summarizeBy: none
+		sourceColumn: Custom
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Pipeline Status-ddeda417-019d-46fc-80d0-fefe794bb2a2' = m
+		mode: import
+		queryGroup: Modell
+		source =
+				let
+				    Source = #"Core Pipeline Status"
+				in
+				    Source
+
+	annotation PBI_ResultType = Table
+

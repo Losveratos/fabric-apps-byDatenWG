@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Vertriebscontrolling_Excel_based_3.0"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "aeceb3b2-b44c-95b0-4155-4e205502fef3"
+  }
+}

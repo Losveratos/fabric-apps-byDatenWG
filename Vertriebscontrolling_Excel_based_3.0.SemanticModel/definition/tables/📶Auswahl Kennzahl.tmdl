@@ -1,0 +1,39 @@
+table '📶Auswahl Kennzahl'
+	lineageTag: fd259612-e333-4598-b078-c9d7c947d637
+
+	column 'Name Kennzahl'
+		dataType: string
+		lineageTag: 47aed7a3-6aec-4395-89c0-2e12c15ec5f4
+		summarizeBy: none
+		sourceColumn: Name Kennzahl
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ID Kennzahl'
+		dataType: int64
+		formatString: 0
+		lineageTag: 5bfbc225-2909-4629-a2bf-6215fbcd0bac
+		summarizeBy: sum
+		sourceColumn: ID Kennzahl
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Einheit Kennzahl'
+		dataType: string
+		lineageTag: 16230b40-97e0-4705-b94b-aa0cdc3aaec1
+		summarizeBy: none
+		sourceColumn: Einheit Kennzahl
+
+		annotation SummarizationSetBy = Automatic
+
+	partition '📶Auswahl Kennzahl-4e50f975-ef3b-49f0-956e-0c4fd7bd9b58' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("ZZBNDoIwEEavQrpmIf67JGJcmBiCcSNhUXGgRBiS0obIwbyAF3MqEWtYzKbv5fs6E8dsD22RCgXK8TGHa62aFqRiLvNodueIJa4lwWBVkAMZUxr/ePlYgZapaFKBhVIl+T9ZvJ7C2DMrc2RL56DxBqirhquOzLll11kGOASarIXVTP+r8R8vLexjx0Xp5L2FRFZj2pfT+9pioYSq0JVzElya1A1NGG3tUhygN7FowDVt9D1A97iXujGOOWvAkuQN", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"Name Kennzahl" = _t, #"ID Kennzahl" = _t, #"Einheit Kennzahl" = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Name Kennzahl", type text}, {"ID Kennzahl", Int64.Type}, {"Einheit Kennzahl", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

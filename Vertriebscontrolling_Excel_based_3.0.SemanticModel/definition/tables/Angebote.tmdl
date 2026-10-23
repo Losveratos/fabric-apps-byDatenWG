@@ -1,0 +1,383 @@
+table Angebote
+	lineageTag: 91a3c161-e643-4925-8f8f-31c6bdf7e8b2
+
+	measure '€ Value Angebot' =
+			SUM('Angebote'[Angebotssumme])
+			// Basis Kennzahol für den Angeobtswert
+		formatString: #,0
+		displayFolder: Basis Kennzahlen\Euro
+		lineageTag: 4382f7ef-5bdb-4188-a874-d52b42d894d3
+
+		changedProperty = FormatString
+
+	measure '# Angebots Menge total' = SUM('Angebote'[Menge])
+		formatString: 0
+		displayFolder: Basis Kennzahlen\Mengen
+		lineageTag: a176ee53-42b1-4958-9994-512272b47955
+
+	measure '€ Gewichte Angbotswert' = SUMX('Angebote','Angebote'[€ Value Angebot]*'Angebote'[Warscheinlichkeit]/100)
+		displayFolder: Basis Kennzahlen\Euro
+		lineageTag: 4b519e81-b99f-4107-9d91-1093189f8670
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '€ Gewichte Angbotsmenge' = SUMX('Angebote',[# Angebots Menge total]*'Angebote'[Warscheinlichkeit]/100)
+		displayFolder: Basis Kennzahlen\Euro
+		lineageTag: eadc7f95-8f3e-475d-8e1e-e6ba612b2c25
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '# Anzahl  Angebote' = COUNTROWS('Angebote')
+		formatString: 0
+		displayFolder: Basis Kennzahlen\Mengen
+		lineageTag: d9cdd94a-c738-40ff-a858-b9723e27d368
+
+	measure '# Anzahl Kunden' = DISTINCTCOUNT('Angebote'[Kunde])
+		formatString: 0
+		displayFolder: Basis Kennzahlen\Mengen
+		lineageTag: 2d838320-b95b-4a3d-b98b-e33eb5230760
+
+	measure '€ Value Angebot YTD' = TOTALYTD([€ Value Angebot],'📅Kalender'[Date])
+		formatString: 0
+		displayFolder: Time Intellegence
+		lineageTag: 7480ac9c-6fcc-4a71-b0d6-80851c80a3c6
+
+	measure '€ Value Angebot PY YTD' = CALCULATE([€ Value Angebot YTD],DATEADD('📅Kalender'[Date],-1,YEAR))
+		formatString: 0
+		displayFolder: Time Intellegence
+		lineageTag: bb60f4e4-a661-4381-acd7-e837a1e44b61
+
+	measure '€ Value Angebot PY' = CALCULATE([€ Value Angebot],DATEADD('📅Kalender'[Date],-1,YEAR))
+		formatString: #,0
+		displayFolder: Time Intellegence
+		lineageTag: 24165af6-2de7-4626-a5b8-e8757f4ad5b0
+
+		changedProperty = FormatString
+
+	measure '€ Gewichteter Angebots Wert YTD' = TOTALYTD([€ Gewichte Angbotswert],'📅Kalender'[Date])
+		displayFolder: Time Intellegence
+		lineageTag: b3fc5fb9-9bec-450d-93ea-cb14dcd1c4a2
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure AC = ```
+			var _selection = SELECTEDVALUE('📶Auswahl Kennzahl'[ID Kennzahl])
+			               var _Switch   = SWITCH(_selection,1,[€ Gewichte Angbotswert],
+			                                                  2,[€ Gewichte Angbotsmenge],
+			                                                  3,[€ Durschnittliche Angebotshöhe],
+			                                                  4,[€ Durchschnittlicher Kundenumsatz],
+			                                                  5,[€ Offene Angebote],
+			                                                  6,[#Angebote gewonnen],
+			                                                  7,[€ Gewonne Angebote],
+			                                                  8,[# Anzahl Kunden],
+			                                                  9,[% Premium Produkte],
+			                                                  10,[% Anteil gewonnen Angebote],
+			                                                  11,[# Angebots Cycle in Tagen],[€ Gewichte Angbotswert])
+			
+			               return _Switch                                   
+			```
+		displayFolder: Dynamische Kennzahlen
+		lineageTag: d64e92cc-16b4-4a04-941d-85036c9a99c9
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '€ Durschnittliche Angebotshöhe' = DIVIDE([€ Gewichte Angbotswert],[# Anzahl  Angebote],0)
+		displayFolder: Basis Kennzahlen\Euro
+		lineageTag: e4496e19-9a1a-4b81-9769-eade60bfaeda
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '€ Durchschnittlicher Kundenumsatz' = DIVIDE([€ Gewichte Angbotswert],[# Anzahl Kunden])
+		displayFolder: Basis Kennzahlen\Euro
+		lineageTag: 0d4c968b-afaa-4ae8-bdc5-3d47d01a016a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '% Premium Produkte' =
+			var _total = [€ Gewichte Angbotswert]
+			                     var _premium = CALCULATE([€ Gewichte Angbotswert],Produkt[Produkt Typ]="Luxus")
+			                     var _result = DIVIDE(_premium,_total)
+			                    Return _result
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		displayFolder: Basis Kennzahlen\Shares und Prozente
+		lineageTag: 8b2f59fc-672a-4785-9380-96b58633043f
+
+		changedProperty = FormatString
+
+	measure '#Angebote gewonnen' = CALCULATE('Angebote'[# Anzahl  Angebote],'Status'[Status]="gewonnen")
+		formatString: 0
+		displayFolder: Basis Kennzahlen\Mengen
+		lineageTag: 0f91c861-3042-4dc1-87e7-cc8072a6f26a
+
+	measure '% Anteil gewonnen Angebote' = DIVIDE([#Angebote gewonnen],'Angebote'[# Anzahl  Angebote])
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		displayFolder: Basis Kennzahlen\Shares und Prozente
+		lineageTag: 5b65db85-66ec-4a8b-8206-e2ad63383004
+
+		changedProperty = FormatString
+
+	measure '€ Offene Angebote' = CALCULATE([€ Gewichte Angbotswert],'Status'[Status]="offen")
+		displayFolder: Basis Kennzahlen\Euro
+		lineageTag: a33ad991-23ca-4508-b81c-f41ae6cafac1
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '€ Gewonne Angebote' = CALCULATE([€ Gewichte Angbotswert],'Status'[Status]="gewonnen")
+		formatString: #,0
+		displayFolder: Basis Kennzahlen\Euro
+		lineageTag: 2f3dd19d-061b-46c0-9a3e-0e30db61dc33
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure '# Angebots Cycle in Tagen' = DIVIDE(SUM('Angebote'[Dauer Angebot in Tage]),COUNTROWS('Angebote'))
+		displayFolder: Basis Kennzahlen\Dauer
+		lineageTag: 7a9b8f35-980b-4692-8863-9e4a95800d7c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure PY = CALCULATE([AC],DATEADD('📅Kalender'[Date],-1,YEAR))
+		displayFolder: Dynamische Kennzahlen
+		lineageTag: 9d57ea3c-f7ca-41e3-9154-a7b32b86f452
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'AC YTD' = TOTALYTD([AC],'📅Kalender'[Date])
+		displayFolder: Dynamische Kennzahlen
+		lineageTag: 985d5e9a-7b48-4465-9bed-1dbc79adfdff
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'PY YTD' = TOTALYTD([PY],'📅Kalender'[Date])
+		displayFolder: Dynamische Kennzahlen
+		lineageTag: 00ab45d1-d373-4ec6-a114-604f70208acf
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Abweichung AC zu PY' = [AC]-[PY]
+		displayFolder: Dynamische Kennzahlen
+		lineageTag: 64c41ded-2efa-44ce-b496-58fc48642f89
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Anzeige Button aktiviert' = ```
+			SELECTEDVALUE('📶Auswahl Kennzahl'[Name Kennzahl])&" in "&SELECTEDVALUE('📶Auswahl Kennzahl'[Einheit Kennzahl])&" | "&SELECTEDVALUE('📅Kalender'[Year])  
+			```
+		displayFolder: Buttons
+		lineageTag: 418d0e1c-dfb3-4dc0-8f21-d57bd210d587
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Anzeige Button aktiviert Auswahl' = ```
+			"Auswahl Bestättignen für  "& SELECTEDVALUE('📶Auswahl Kennzahl'[Name Kennzahl])&" in "&SELECTEDVALUE('📶Auswahl Kennzahl'[Einheit Kennzahl])&" | "&SELECTEDVALUE('📅Kalender'[Year])  
+			```
+		displayFolder: Buttons
+		lineageTag: f7f3883b-a5eb-4136-9666-df37945da1a0
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'AC Pipline' =
+			var _pipestatus = SELECTEDVALUE('Pipeline Status'[Sort Order],0)
+			             var _result = CALCULATE([AC],KEEPFILTERS('Pipeline Status'[Sort Order]=_pipestatus))
+			
+			             Return _result
+		lineageTag: ee665630-50e3-499b-962f-512689c8f84e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'AC Last Pipline' =
+			var _pipestatus = SELECTEDVALUE('Pipeline Status'[Sort Order],0)+1
+			             var _result = CALCULATE([AC],KEEPFILTERS('Pipeline Status'[Sort Order]=_pipestatus))
+			
+			             Return _result
+		lineageTag: c1212c43-470d-48d5-8463-0382eeb3df2c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Gewonne Angebote PY' = CALCULATE([€ Gewonne Angebote],DATEADD('📅Kalender'[Date],-1,YEAR))
+		lineageTag: d1bcbeda-5599-4413-8c8e-d2894747f615
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: c119ed77-231d-4835-a7cb-56f3345a12cc
+		summarizeBy: count
+		sourceColumn: ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Kunde
+		dataType: string
+		isHidden
+		lineageTag: ba0c9cd0-fdd0-4195-a57e-d4350473c0fb
+		summarizeBy: none
+		sourceColumn: Kunde
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Produkt ID'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 4529f02e-b828-47d9-be23-504428274590
+		summarizeBy: none
+		sourceColumn: Produkt ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Warscheinlichkeit
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 47fefdc0-1877-4caa-a5a8-49e8cf3fa063
+		summarizeBy: sum
+		sourceColumn: Warscheinlichkeit
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Angebotssumme
+		dataType: double
+		isHidden
+		formatString: 0
+		lineageTag: 0f258de0-59b8-4abc-8add-0f485ce210a8
+		summarizeBy: sum
+		sourceColumn: Angebotssumme
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Menge
+		dataType: double
+		isHidden
+		formatString: 0
+		lineageTag: 90374e49-5df2-490c-b9f3-720da47b9bd8
+		summarizeBy: sum
+		sourceColumn: Menge
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Abschluss Datum'
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 85e0b26d-7930-4bf6-81a4-8848866f64f2
+		summarizeBy: none
+		sourceColumn: Abschluss Datum
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Vertriebler
+		dataType: string
+		isHidden
+		lineageTag: 58171381-01f2-4e79-b80e-9518341b095f
+		summarizeBy: none
+		sourceColumn: Vertriebler
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Stadt
+		dataType: string
+		isHidden
+		lineageTag: 2316aff4-aa97-4424-bb49-1a5c847a352d
+		summarizeBy: none
+		sourceColumn: Stadt
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Status ID'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 99ff11a1-20d3-496e-a3d4-e4eafc8979a7
+		summarizeBy: none
+		sourceColumn: Status ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Topic
+		dataType: string
+		isHidden
+		lineageTag: cb30d38d-a260-46f6-ace6-b4916f3a668f
+		summarizeBy: none
+		sourceColumn: Topic
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Anlage Angbot'
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 539bb8c5-b80c-4fe3-bb33-518065f1d002
+		summarizeBy: none
+		sourceColumn: Anlage Angbot
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Dauer Angebot in Tage'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 61c05542-7125-418a-bee0-0957c4edd0a1
+		summarizeBy: sum
+		sourceColumn: Dauer Angebot in Tage
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pipeline Status'
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 07856496-ac89-4ae0-811a-9062ee1b3426
+		summarizeBy: none
+		sourceColumn: Pipeline Status
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition Angebote-4fb96043-5192-4ac5-ba23-234c42f1dd4f = m
+		mode: import
+		queryGroup: Modell
+		source =
+				let
+				    Source = #"Core Angebote"
+				in
+				    Source
+
+	annotation PBI_ResultType = Exception
+

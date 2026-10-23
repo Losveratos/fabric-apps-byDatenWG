@@ -1,0 +1,425 @@
+table 📅Kalender
+	lineageTag: 2c34cf27-52e0-4850-a762-42f8b63d8616
+	dataCategory: Time
+
+	column Date
+		dataType: dateTime
+		isKey
+		formatString: Long Date
+		displayFolder: Beschreibende Werte
+		lineageTag: da94b973-b8a2-4504-9f02-a70339c86109
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Year
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: b4eff18d-130f-4438-a5bc-4c125f82a43f
+		summarizeBy: sum
+		sourceColumn: Year
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Start of Year'
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 41aa779a-bfde-460d-8a7c-9ec710144491
+		summarizeBy: none
+		sourceColumn: Start of Year
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'End of Year'
+		dataType: dateTime
+		formatString: Long Date
+		displayFolder: End of Dates
+		lineageTag: b0866fc7-1f05-434d-9523-7649c4a45734
+		summarizeBy: none
+		sourceColumn: End of Year
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Month
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: e70b704a-d6dc-439b-bd97-d5f9a5b22c15
+		summarizeBy: sum
+		sourceColumn: Month
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Start of Month'
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 71040b09-28ab-4d10-955e-1a77da4abdd6
+		summarizeBy: none
+		sourceColumn: Start of Month
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'End of Month'
+		dataType: dateTime
+		formatString: yyyy-mm
+		displayFolder: End of Dates
+		lineageTag: 830094ac-6bb6-4308-b591-8212b80c2b1e
+		summarizeBy: none
+		sourceColumn: End of Month
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Days in Month'
+		dataType: int64
+		formatString: 0
+		displayFolder: Beschreibende Werte
+		lineageTag: 171602dd-4046-4790-85ad-9c5a9e5bef0b
+		summarizeBy: sum
+		sourceColumn: Days in Month
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Day
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 4368b18a-7cb9-48d7-bd82-d6d872113e03
+		summarizeBy: sum
+		sourceColumn: Day
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day Name'
+		dataType: string
+		displayFolder: Beschreibende Werte
+		lineageTag: 7fd203a2-dcca-4167-a28f-ce86f1ad06c8
+		summarizeBy: none
+		sourceColumn: Day Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of Week'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 3bfb9071-7d24-4288-8670-e8d46b8fd1dd
+		summarizeBy: sum
+		sourceColumn: Day of Week
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of Year'
+		dataType: int64
+		formatString: 0
+		displayFolder: Beschreibende Werte
+		lineageTag: 3683016c-b659-40a8-9c5f-91e299a4dae4
+		summarizeBy: sum
+		sourceColumn: Day of Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Name'
+		dataType: string
+		displayFolder: Beschreibende Werte
+		lineageTag: f585ab3c-a089-4324-8dad-2a8544130913
+		summarizeBy: none
+		sourceColumn: Month Name
+		sortByColumn: Month
+
+		changedProperty = SortByColumn
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 64cd91e9-f56b-42a1-9dea-691dafbac62b
+		summarizeBy: sum
+		sourceColumn: Quarter
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Start of Quarter'
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 31577a30-4c09-433f-b513-b4afcf907d8b
+		summarizeBy: none
+		sourceColumn: Start of Quarter
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'End of Quarter'
+		dataType: dateTime
+		formatString: Long Date
+		displayFolder: End of Dates
+		lineageTag: 6e1bc6e7-ec97-4981-86c6-393dc828cc59
+		summarizeBy: none
+		sourceColumn: End of Quarter
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Week of Year'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 73dff615-6009-4b58-ba67-2196d5d4200a
+		summarizeBy: sum
+		sourceColumn: Week of Year
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Week of Month'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: b3ca7560-3b23-4e56-8462-f9f3e55f05ca
+		summarizeBy: sum
+		sourceColumn: Week of Month
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Start of Week'
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 6b5d91b3-ceba-4d11-9b06-26db26a1d7fb
+		summarizeBy: none
+		sourceColumn: Start of Week
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'End of Week'
+		dataType: dateTime
+		formatString: Long Date
+		displayFolder: End of Dates
+		lineageTag: 3a00a125-d3b1-4d10-90ab-a0c237174659
+		summarizeBy: none
+		sourceColumn: End of Week
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Fiscal Year'
+		dataType: int64
+		formatString: 0
+		displayFolder: Fiscal Datumswerte
+		lineageTag: b4fd2fec-2300-419b-9a9d-15ff508f872f
+		summarizeBy: sum
+		sourceColumn: Fiscal Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Quarter'
+		dataType: int64
+		formatString: 0
+		displayFolder: Fiscal Datumswerte
+		lineageTag: 437de586-60db-4cb7-be51-0d66f8de4305
+		summarizeBy: sum
+		sourceColumn: Fiscal Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Month'
+		dataType: int64
+		formatString: 0
+		displayFolder: Fiscal Datumswerte
+		lineageTag: 635b3235-0019-47df-a0f2-eb6ea19046b4
+		summarizeBy: sum
+		sourceColumn: Fiscal Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day Offset'
+		dataType: int64
+		formatString: 0
+		displayFolder: Offset Werte
+		lineageTag: 1ad3f285-9ba4-4879-9e27-99913231c27c
+		summarizeBy: sum
+		sourceColumn: Day Offset
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Offset'
+		dataType: int64
+		formatString: 0
+		displayFolder: Offset Werte
+		lineageTag: e8de12c3-fcf6-4ea7-af2e-0d65a5301452
+		summarizeBy: sum
+		sourceColumn: Month Offset
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year Offset'
+		dataType: int64
+		isHidden
+		formatString: 0
+		displayFolder: Offset Werte
+		lineageTag: 6684d327-d086-4a17-9035-70fc3ab26d5e
+		summarizeBy: sum
+		sourceColumn: Year Offset
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quarter Offset'
+		dataType: int64
+		formatString: 0
+		displayFolder: Offset Werte
+		lineageTag: 97aec697-b51e-408a-af64-e1b73b6cc371
+		summarizeBy: sum
+		sourceColumn: Quarter Offset
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year-Month
+		dataType: string
+		displayFolder: Beschreibende Werte
+		lineageTag: 0c1e6e71-b7d2-4b49-93f6-7205bc1fcf3b
+		summarizeBy: none
+		sourceColumn: Year-Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year-Month Code'
+		dataType: int64
+		formatString: 0
+		displayFolder: Beschreibende Werte
+		lineageTag: e7336c16-0b0e-486d-8cc2-248b86b2d106
+		summarizeBy: count
+		sourceColumn: Year-Month Code
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Datum mit Starttag'
+		displayFolder: 📅Hierachien für Datumswerte
+		lineageTag: 3163f4c1-28ce-4022-87bc-d3f99dfb3485
+
+		level 'Start of Year'
+			lineageTag: f7ae567d-26c1-4ca0-b3b5-14ad9fa0ef62
+			column: 'Start of Year'
+
+		level 'Start of Quarter'
+			lineageTag: bde40c71-fd87-4ddc-a5f7-38320bb30c2d
+			column: 'Start of Quarter'
+
+		level 'Week of Month'
+			lineageTag: 698ab763-02a1-48d5-bbc9-9853793bdda5
+			column: 'Week of Month'
+
+		level 'Start of Week'
+			lineageTag: a859493f-52fa-41ec-8c8e-dd8d33da2b20
+			column: 'Start of Week'
+
+		level Date
+			lineageTag: 74419864-41a6-425c-9feb-a53e0d8fb8da
+			column: Date
+
+	hierarchy 'Year Hierarchie'
+		displayFolder: 📅Hierachien für Datumswerte
+		lineageTag: 69ac0957-7805-4c9f-9b50-4864b6e8da88
+
+		level Year
+			lineageTag: 4d700e99-c8c0-4cef-baff-6db8fbbb2ed0
+			column: Year
+
+		level Quarter
+			lineageTag: 33d6dd4a-9b52-40cc-89eb-2bb4f1730c21
+			column: Quarter
+
+		level 'Month Name'
+			lineageTag: f402ffa3-ba3c-40a7-b4d9-8992b71ce197
+			column: 'Month Name'
+
+		level Day
+			lineageTag: 28d2a512-2c72-4633-99d4-7879c5d5e304
+			column: Day
+
+	hierarchy 'wochen Bassiert'
+		displayFolder: 📅Hierachien für Datumswerte
+		lineageTag: f5ffe3cc-9739-44b7-9d19-5711f7a2e041
+
+		level 'Week of Year'
+			lineageTag: c62932c5-edde-4831-a125-4f70df5ac572
+			column: 'Week of Year'
+
+		level 'Start of Week'
+			lineageTag: e7228ad7-66e0-4cde-849f-8b6eaa4eb402
+			column: 'Start of Week'
+
+		level 'Week of Month'
+			lineageTag: 2392f044-9476-4cae-8464-f96106fed47e
+			column: 'Week of Month'
+
+		level 'Day Name'
+			lineageTag: a592aa4c-4136-4762-a20e-12fdae734ab7
+			column: 'Day Name'
+
+	partition 📅Kalender-cc33bcb5-18dc-47b3-a405-8b5fc4dcb73e = m
+		mode: import
+		queryGroup: Modell
+		source =
+				let
+				    Source = #"Core Kalender"
+				in
+				    Source
+
+	annotation PBI_ResultType = Exception
+

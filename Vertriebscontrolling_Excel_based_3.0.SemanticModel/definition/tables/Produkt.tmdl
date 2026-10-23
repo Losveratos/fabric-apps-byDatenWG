@@ -1,0 +1,39 @@
+table Produkt
+	lineageTag: 5229d89d-eb45-4cc6-ab40-7f070f36e127
+
+	column 'Produkt Gruppe'
+		dataType: string
+		lineageTag: 4130c6ac-7613-48bf-8d01-aafc5676589f
+		summarizeBy: none
+		sourceColumn: Produkt Gruppe
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Produkt Typ'
+		dataType: string
+		lineageTag: 0d3f23c3-c920-4854-a771-d2a2374065df
+		summarizeBy: none
+		sourceColumn: Produkt Typ
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Produkt ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: 7bbbbf70-b187-490a-a2ca-b34e2d4003de
+		summarizeBy: none
+		sourceColumn: Produkt ID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Produkt-ca64a9c0-1043-472d-9d6f-2155de81e5be = m
+		mode: import
+		queryGroup: Modell
+		source =
+				let
+				    Source = #"Core Produkt"
+				in
+				    Source
+
+	annotation PBI_ResultType = Exception
+

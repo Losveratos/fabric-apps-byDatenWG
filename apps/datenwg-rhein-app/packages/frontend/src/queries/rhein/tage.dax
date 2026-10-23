@@ -1,0 +1,9 @@
+// Every daily discharge value at Cologne (about 76,400 rows).
+// Years, months, epochs and reference values are derived in the browser.
+EVALUATE
+SELECTCOLUMNS(
+    fact_abfluss_tag,
+    "d", fact_abfluss_tag[datum],
+    "q", fact_abfluss_tag[abfluss_m3s],
+    "q7", fact_abfluss_tag[abfluss_7t_mittel_m3s]
+)

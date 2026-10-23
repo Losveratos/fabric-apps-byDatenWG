@@ -1,0 +1,52 @@
+table 📶Quickinfo
+	lineageTag: a347699d-4211-4dbe-84c2-e5734eab0f25
+
+	column Quickinfo
+		lineageTag: d83591d4-d9e7-440c-8f40-0b4738130571
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Quickinfo Reihenfolge'
+
+		relatedColumnDetails
+			groupByColumn: 'Quickinfo Felder'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quickinfo Felder'
+		isHidden
+		lineageTag: 004e31ad-ce90-46a7-a3ee-07774281c6e9
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Quickinfo Reihenfolge'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quickinfo Reihenfolge'
+		isHidden
+		formatString: 0
+		lineageTag: 3e4a1124-b578-43d0-9aff-d1e11ed35ee9
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 📶Quickinfo-0a4f6551-54fb-49ee-bc28-6040c078bdb4 = calculated
+		mode: import
+		source =
+				{
+				    ("Kunde", NAMEOF('Kunde'[Kunde]), 0),
+				    ("Bundesland", NAMEOF('Standort'[Bundesland]), 1),
+				    ("Stadt", NAMEOF('Standort'[Stadt]), 2),
+				    ("Vertriebler", NAMEOF('Vertriebler'[Vertriebler]), 3),
+				    ("Produkt Gruppe", NAMEOF('Produkt'[Produkt Gruppe]), 4),
+				    ("Produkt Typ", NAMEOF('Produkt'[Produkt Typ]), 5)
+				}
+
+	annotation PBI_Id = 23aba36d87f042a2b7192cb1571d1063
+

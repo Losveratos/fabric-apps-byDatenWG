@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "ChartKitchen byDatenWG Demo"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "236bf3b4-895c-a44a-4a2f-07f9d1337455"
+  }
+}

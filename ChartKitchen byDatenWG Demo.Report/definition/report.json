@@ -1,0 +1,314 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.3.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "Fluent2-CY26SU05",
+      "reportVersionAtImport": {
+        "visual": "2.9.0",
+        "report": "3.3.0",
+        "page": "2.3.1"
+      },
+      "type": "SharedResources"
+    },
+    "customTheme": {
+      "name": "Daten-WG_Report_Theme_v15952172096437888.json",
+      "reportVersionAtImport": {
+        "visual": "2.11.0",
+        "report": "3.4.0",
+        "page": "2.3.1"
+      },
+      "type": "RegisteredResources"
+    }
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "cf3f9cf098828efdfe3a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Sales Demo"
+              }
+            },
+            "Property": "Scenario"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "9fcc0f6001e679a91c9c",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Calender"
+                  }
+                },
+                "Hierarchy": "Classic Date Hierachy"
+              }
+            },
+            "Level": "Year"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "c",
+              "Entity": "Calender",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "c"
+                          }
+                        },
+                        "Property": "Year"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "2026L"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              },
+              "Annotations": {
+                "filterExpressionMetadata": {
+                  "expressions": [
+                    {
+                      "HierarchyLevel": {
+                        "Expression": {
+                          "Hierarchy": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "Calender"
+                              }
+                            },
+                            "Hierarchy": "Classic Date Hierachy"
+                          }
+                        },
+                        "Level": "Year"
+                      }
+                    }
+                  ],
+                  "decomposedIdentities": {
+                    "values": [
+                      [
+                        {
+                          "0": [
+                            {
+                              "Literal": {
+                                "Value": "2026L"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    ],
+                    "columns": [
+                      {
+                        "value": {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "Calender"
+                              }
+                            },
+                            "Property": "Year"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "valueMap": [
+                    {
+                      "0": "2026"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
+  },
+  "objects": {
+    "section": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Top'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "expanded": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "publicCustomVisuals": [
+    "BusinessFlowF39DAE8D57A743EF89F5C3809DEE2B67",
+    "waterfall6C9ED82ABD1F44C4A0D590CE01EB5EE7",
+    "ZebraBITablesBAE31B370F254F808553548EFB35BFA5"
+  ],
+  "resourcePackages": [
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "Fluent2-CY26SU05",
+          "path": "BaseThemes/Fluent2-CY26SU05.json",
+          "type": "BaseTheme"
+        }
+      ]
+    },
+    {
+      "name": "ibcsCategoryWaterfallBAE285BF79C941AB800EB2EA9D6324D8",
+      "type": "CustomVisual",
+      "items": [
+        {
+          "name": "ibcsCategoryWaterfallBAE285BF79C941AB800EB2EA9D6324D8.pbiviz.json",
+          "path": "ibcsCategoryWaterfallBAE285BF79C941AB800EB2EA9D6324D8.pbiviz.json",
+          "type": "CustomVisualMetadata"
+        }
+      ]
+    },
+    {
+      "name": "ibcsIntegratedWaterfall5A32A252CCE440AD8829B8312943CFED",
+      "type": "CustomVisual",
+      "items": [
+        {
+          "name": "ibcsIntegratedWaterfall5A32A252CCE440AD8829B8312943CFED.pbiviz.json",
+          "path": "ibcsIntegratedWaterfall5A32A252CCE440AD8829B8312943CFED.pbiviz.json",
+          "type": "CustomVisualMetadata"
+        }
+      ]
+    },
+    {
+      "name": "dataKitchenGanttD7C41F0A93E24B6BA1F3C5E8A20D9B44",
+      "type": "CustomVisual",
+      "items": [
+        {
+          "name": "dataKitchenGanttD7C41F0A93E24B6BA1F3C5E8A20D9B44.pbiviz.json",
+          "path": "dataKitchenGanttD7C41F0A93E24B6BA1F3C5E8A20D9B44.pbiviz.json",
+          "type": "CustomVisualMetadata"
+        }
+      ]
+    },
+    {
+      "name": "ibcsKpiCard2771CF65D0C343A19EAB34E43D7B8682",
+      "type": "CustomVisual",
+      "items": [
+        {
+          "name": "resources/ibcsKpiCard2771CF65D0C343A19EAB34E43D7B8682.pbiviz.json",
+          "path": "ibcsKpiCard2771CF65D0C343A19EAB34E43D7B8682.pbiviz.json",
+          "type": "CustomVisualMetadata"
+        }
+      ]
+    },
+    {
+      "name": "ibcsInspiredChartDeckE73997CF4C7D44978F8112A4E5FA0B4D",
+      "type": "CustomVisual",
+      "items": [
+        {
+          "name": "resources/ibcsInspiredChartDeckE73997CF4C7D44978F8112A4E5FA0B4D.pbiviz.json",
+          "path": "ibcsInspiredChartDeckE73997CF4C7D44978F8112A4E5FA0B4D.pbiviz.json",
+          "type": "CustomVisualMetadata"
+        }
+      ]
+    },
+    {
+      "name": "comicPie3D0A1B2C3D4E5F60718293A4B5C6D7E8F",
+      "type": "CustomVisual",
+      "items": [
+        {
+          "name": "comicPie3D0A1B2C3D4E5F60718293A4B5C6D7E8F.pbiviz.json",
+          "path": "comicPie3D0A1B2C3D4E5F60718293A4B5C6D7E8F.pbiviz.json",
+          "type": "CustomVisualMetadata"
+        }
+      ]
+    },
+    {
+      "name": "chartKitchenByDatenWGD9DE0F7AD44D41058672C6FBF6F5A18D",
+      "type": "CustomVisual",
+      "items": [
+        {
+          "name": "resources/chartKitchenByDatenWGD9DE0F7AD44D41058672C6FBF6F5A18D.pbiviz.json",
+          "path": "chartKitchenByDatenWGD9DE0F7AD44D41058672C6FBF6F5A18D.pbiviz.json",
+          "type": "CustomVisualMetadata"
+        }
+      ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "Daten-WG_Report_Theme_v15952172096437888.json",
+          "path": "Daten-WG_Report_Theme_v15952172096437888.json",
+          "type": "CustomTheme"
+        },
+        {
+          "name": "Image_(1)1712975558281733.avif",
+          "path": "Image_(1)1712975558281733.avif",
+          "type": "Image"
+        }
+      ]
+    },
+    {
+      "name": "pnlByDatenWG3F9A7D2C51E64B08A1C4E7F0B92D6358",
+      "type": "CustomVisual",
+      "items": [
+        {
+          "name": "pnlByDatenWG3F9A7D2C51E64B08A1C4E7F0B92D6358.pbiviz.json",
+          "path": "pnlByDatenWG3F9A7D2C51E64B08A1C4E7F0B92D6358.pbiviz.json",
+          "type": "CustomVisualMetadata"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "useStylableVisualContainerHeader": true,
+    "exportDataMode": "AllowSummarized",
+    "defaultDrillFilterOtherVisuals": true,
+    "allowChangeFilterTypes": true,
+    "useEnhancedTooltips": true,
+    "useDefaultAggregateDisplayName": true
+  }
+}

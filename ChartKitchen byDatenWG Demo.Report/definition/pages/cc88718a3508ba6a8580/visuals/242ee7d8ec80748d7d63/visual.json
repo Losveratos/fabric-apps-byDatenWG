@@ -1,0 +1,306 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "242ee7d8ec80748d7d63",
+  "position": {
+    "x": 44,
+    "y": 126,
+    "z": 10,
+    "height": 878,
+    "width": 1527,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "pnlByDatenWG3F9A7D2C51E64B08A1C4E7F0B92D6358",
+    "query": {
+      "queryState": {
+        "levels": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim-konten"
+                    }
+                  },
+                  "Property": "L1"
+                }
+              },
+              "queryRef": "dim-konten.L1",
+              "nativeQueryRef": "L1",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim-konten"
+                    }
+                  },
+                  "Property": "L2"
+                }
+              },
+              "queryRef": "dim-konten.L2",
+              "nativeQueryRef": "L2",
+              "active": false
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim-konten"
+                    }
+                  },
+                  "Property": "L3"
+                }
+              },
+              "queryRef": "dim-konten.L3",
+              "nativeQueryRef": "L3",
+              "active": false
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim-konten"
+                    }
+                  },
+                  "Property": "L4"
+                }
+              },
+              "queryRef": "dim-konten.L4",
+              "nativeQueryRef": "L4",
+              "active": false
+            }
+          ]
+        },
+        "ac": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact-guv"
+                    }
+                  },
+                  "Property": "GuV AC"
+                }
+              },
+              "queryRef": "fact-guv.GuV AC",
+              "nativeQueryRef": "GuV AC"
+            }
+          ]
+        },
+        "py": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact-guv"
+                    }
+                  },
+                  "Property": "GuV PY"
+                }
+              },
+              "queryRef": "fact-guv.GuV PY",
+              "nativeQueryRef": "GuV PY"
+            }
+          ]
+        },
+        "pl": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact-guv"
+                    }
+                  },
+                  "Property": "GuV PL"
+                }
+              },
+              "queryRef": "fact-guv.GuV PL",
+              "nativeQueryRef": "GuV PL"
+            }
+          ]
+        },
+        "fc": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact-guv"
+                    }
+                  },
+                  "Property": "GuV FC"
+                }
+              },
+              "queryRef": "fact-guv.GuV FC",
+              "nativeQueryRef": "GuV FC"
+            }
+          ]
+        },
+        "rowType": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim-konten"
+                    }
+                  },
+                  "Property": "RowType"
+                }
+              },
+              "queryRef": "dim-konten.RowType",
+              "nativeQueryRef": "RowType",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'GuV-Statement (P&L byDatenWG)'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13.5D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10.5D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#E1DFD6'"
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

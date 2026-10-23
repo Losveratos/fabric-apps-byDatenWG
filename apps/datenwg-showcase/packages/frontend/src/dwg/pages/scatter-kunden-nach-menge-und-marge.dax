@@ -1,0 +1,26 @@
+// Abfragen der Seite „Scatter Kunden nach Menge und Marge“ ohne Querfilter, zum Prüfen in der DAX-Abfrageansicht.
+// erzeugt von `dwg app page`, nicht von Hand ändern.
+
+// Kachel karten (chartkitchen)
+EVALUATE
+    SUMMARIZECOLUMNS(
+        'Produkt'[Sorte],
+        'Produkt'[Sorte Sort],
+        TREATAS({TRUE()}, 'Kalender'[Ist]),
+        "actual", 'Fakten'[DB AC],
+        "previousYear", 'Fakten'[DB PY bis Ist],
+        "plan", 'Fakten'[DB PL bis Ist]
+    )
+ORDER BY 'Produkt'[Sorte Sort]
+
+// Kachel vorlage (chartkitchen)
+EVALUATE
+    SUMMARIZECOLUMNS(
+        'Kunde'[Kunde],
+        TREATAS({TRUE()}, 'Kalender'[Ist]),
+        "actual", 'Fakten'[DB-Marge % AC],
+        "previousYear", 'Fakten'[DB-Marge % PY],
+        "xValue", 'Fakten'[Absatz hl AC],
+        "xPrevious", 'Fakten'[Absatz hl PY]
+    )
+ORDER BY 'Kunde'[Kunde]

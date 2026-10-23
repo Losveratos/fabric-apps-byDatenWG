@@ -1,0 +1,83 @@
+// Abfragen der Seite „dwg Spike“ ohne Querfilter, zum Prüfen in der DAX-Abfrageansicht.
+// erzeugt von `dwg app page`, nicht von Hand ändern.
+
+// Kachel kpis (chartkitchen)
+EVALUATE
+    SUMMARIZECOLUMNS(
+        'Sales Demo'[KPI],
+        TREATAS({2026}, 'Calender'[Year]),
+        "actual", 'Sales Demo'[AC],
+        "previousYear", 'Sales Demo'[PY],
+        "plan", 'Sales Demo'[PL]
+    )
+ORDER BY 'Sales Demo'[KPI]
+
+// Kachel umsatz (chartkitchen)
+EVALUATE
+    SUMMARIZECOLUMNS(
+        'Calender'[Month Name Short],
+        'Calender'[Month],
+        TREATAS({2026}, 'Calender'[Year]),
+        "actual", 'Sales Demo'[AC],
+        "previousYear", 'Sales Demo'[PY],
+        "plan", 'Sales Demo'[PL],
+        "forecast", 'Sales Demo'[FC]
+    )
+ORDER BY 'Calender'[Month]
+
+// Kachel laender (chartkitchen)
+EVALUATE
+    SUMMARIZECOLUMNS(
+        'Sales Demo'[Country],
+        TREATAS({2026}, 'Calender'[Year]),
+        "actual", 'Sales Demo'[AC],
+        "plan", 'Sales Demo'[PL]
+    )
+ORDER BY 'Sales Demo'[Country]
+
+// Kachel guv (pnl)
+EVALUATE
+    ADDMISSINGITEMS(
+        'dim-konten'[AccountID],
+        'dim-konten'[Name],
+        'dim-konten'[L1],
+        'dim-konten'[L2],
+        'dim-konten'[L3],
+        'dim-konten'[SortOrder],
+        'dim-konten'[RowType],
+        'dim-konten'[FormulaDef],
+        'dim-konten'[SignConvention],
+        'dim-konten'[DisplayInvert],
+        'dim-konten'[VarianceInvert],
+    SUMMARIZECOLUMNS(
+        'dim-konten'[AccountID],
+        'dim-konten'[Name],
+        'dim-konten'[L1],
+        'dim-konten'[L2],
+        'dim-konten'[L3],
+        'dim-konten'[SortOrder],
+        'dim-konten'[RowType],
+        'dim-konten'[FormulaDef],
+        'dim-konten'[SignConvention],
+        'dim-konten'[DisplayInvert],
+        'dim-konten'[VarianceInvert],
+        TREATAS({2026}, 'Calender'[Year]),
+        "ac", 'fact-guv'[GuV AC],
+        "py", 'fact-guv'[GuV PY],
+        "pl", 'fact-guv'[GuV PL],
+        "fcFy", 'fact-guv'[GuV FC FY],
+        "plFy", 'fact-guv'[GuV PL FY]
+    ),
+        'dim-konten'[AccountID],
+        'dim-konten'[Name],
+        'dim-konten'[L1],
+        'dim-konten'[L2],
+        'dim-konten'[L3],
+        'dim-konten'[SortOrder],
+        'dim-konten'[RowType],
+        'dim-konten'[FormulaDef],
+        'dim-konten'[SignConvention],
+        'dim-konten'[DisplayInvert],
+        'dim-konten'[VarianceInvert]
+    )
+ORDER BY 'dim-konten'[AccountID], 'dim-konten'[Name], 'dim-konten'[L1], 'dim-konten'[L2], 'dim-konten'[L3], 'dim-konten'[SortOrder], 'dim-konten'[RowType], 'dim-konten'[FormulaDef], 'dim-konten'[SignConvention], 'dim-konten'[DisplayInvert], 'dim-konten'[VarianceInvert]

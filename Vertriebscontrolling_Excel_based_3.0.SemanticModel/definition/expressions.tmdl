@@ -1,0 +1,387 @@
+expression Source = "C:\dwg-demo\Vertriebscontrolling\CRM Source\" meta [IsParameterQuery=true, Type="Any", IsParameterQueryRequired=true]
+	lineageTag: a724638d-3a27-4bc8-aba0-6f44c92ec2af
+	queryGroup: Stage
+
+	annotation PBI_ResultType = Text
+
+expression 'Core Kalender' =
+		let
+		    // configurations start
+		    Today=Date.From(DateTime.LocalNow()), // today's date
+		    FromYear = #"Min Jahr", // set the start year of the date dimension. dates start from 1st of January of this year
+		    ToYear=#"Max Jahr", // set the end year of the date dimension. dates end at 31st of December of this year
+		    StartofFiscalYear=7, // set the month number that is start of the financial year. example; if fiscal year start is July, value is 7
+		    firstDayofWeek=Day.Monday, // set the week's start day, values: Day.Monday, Day.Sunday....
+		    // configuration end
+		    FromDate=#date(FromYear,1,1),
+		    ToDate=#date(ToYear,12,31),
+		    Source=List.Dates(
+		        FromDate,
+		        Duration.Days(ToDate-FromDate)+1,
+		        #duration(1,0,0,0)
+		    ),
+		    #"Converted to Table" = Table.FromList(Source, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+		    #"Renamed Columns" = Table.RenameColumns(#"Converted to Table",{{"Column1", "Date"}}),
+		    #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns",{{"Date", type date}}),
+		    #"Inserted Year" = Table.AddColumn(#"Changed Type", "Year", each Date.Year([Date]), Int64.Type),
+		    #"Inserted Start of Year" = Table.AddColumn(#"Inserted Year", "Start of Year", each Date.StartOfYear([Date]), type date),
+		    #"Inserted End of Year" = Table.AddColumn(#"Inserted Start of Year", "End of Year", each Date.EndOfYear([Date]), type date),
+		    #"Inserted Month" = Table.AddColumn(#"Inserted End of Year", "Month", each Date.Month([Date]), Int64.Type),
+		    #"Inserted Start of Month" = Table.AddColumn(#"Inserted Month", "Start of Month", each Date.StartOfMonth([Date]), type date),
+		    #"Inserted End of Month" = Table.AddColumn(#"Inserted Start of Month", "End of Month", each Date.EndOfMonth([Date]), type date),
+		    #"Inserted Days in Month" = Table.AddColumn(#"Inserted End of Month", "Days in Month", each Date.DaysInMonth([Date]), Int64.Type),
+		    #"Inserted Day" = Table.AddColumn(#"Inserted Days in Month", "Day", each Date.Day([Date]), Int64.Type),
+		    #"Inserted Day Name" = Table.AddColumn(#"Inserted Day", "Day Name", each Date.DayOfWeekName([Date]), type text),
+		    #"Inserted Day of Week" = Table.AddColumn(#"Inserted Day Name", "Day of Week", each Date.DayOfWeek([Date],firstDayofWeek), Int64.Type),
+		    #"Inserted Day of Year" = Table.AddColumn(#"Inserted Day of Week", "Day of Year", each Date.DayOfYear([Date]), Int64.Type),
+		    #"Inserted Month Name" = Table.AddColumn(#"Inserted Day of Year", "Month Name", each Date.MonthName([Date]), type text),
+		    #"Inserted Quarter" = Table.AddColumn(#"Inserted Month Name", "Quarter", each Date.QuarterOfYear([Date]), Int64.Type),
+		    #"Inserted Start of Quarter" = Table.AddColumn(#"Inserted Quarter", "Start of Quarter", each Date.StartOfQuarter([Date]), type date),
+		    #"Inserted End of Quarter" = Table.AddColumn(#"Inserted Start of Quarter", "End of Quarter", each Date.EndOfQuarter([Date]), type date),
+		    #"Inserted Week of Year" = Table.AddColumn(#"Inserted End of Quarter", "Week of Year", each Date.WeekOfYear([Date],firstDayofWeek), Int64.Type),
+		    #"Inserted Week of Month" = Table.AddColumn(#"Inserted Week of Year", "Week of Month", each Date.WeekOfMonth([Date],firstDayofWeek), Int64.Type),
+		    #"Inserted Start of Week" = Table.AddColumn(#"Inserted Week of Month", "Start of Week", each Date.StartOfWeek([Date],firstDayofWeek), type date),
+		    #"Inserted End of Week" = Table.AddColumn(#"Inserted Start of Week", "End of Week", each Date.EndOfWeek([Date],firstDayofWeek), type date),
+		    FiscalMonthBaseIndex=13-StartofFiscalYear,
+		    adjustedFiscalMonthBaseIndex=if(FiscalMonthBaseIndex>=12 or FiscalMonthBaseIndex<0) then 0 else FiscalMonthBaseIndex,
+		    #"Added Custom" = Table.AddColumn(#"Inserted End of Week", "FiscalBaseDate", each Date.AddMonths([Date],adjustedFiscalMonthBaseIndex)),
+		    #"Changed Type1" = Table.TransformColumnTypes(#"Added Custom",{{"FiscalBaseDate", type date}}),
+		    #"Inserted Year1" = Table.AddColumn(#"Changed Type1", "Year.1", each Date.Year([FiscalBaseDate]), Int64.Type),
+		    #"Renamed Columns1" = Table.RenameColumns(#"Inserted Year1",{{"Year.1", "Fiscal Year"}}),
+		    #"Inserted Quarter1" = Table.AddColumn(#"Renamed Columns1", "Quarter.1", each Date.QuarterOfYear([FiscalBaseDate]), Int64.Type),
+		    #"Renamed Columns2" = Table.RenameColumns(#"Inserted Quarter1",{{"Quarter.1", "Fiscal Quarter"}}),
+		    #"Inserted Month1" = Table.AddColumn(#"Renamed Columns2", "Month.1", each Date.Month([FiscalBaseDate]), Int64.Type),
+		    #"Renamed Columns3" = Table.RenameColumns(#"Inserted Month1",{{"Month.1", "Fiscal Month"}}),
+		    #"Removed Columns" = Table.RemoveColumns(#"Renamed Columns3",{"FiscalBaseDate"}),
+		    #"Inserted Age" = Table.AddColumn(#"Removed Columns", "Age", each [Date]-Today, type duration),
+		    #"Extracted Days" = Table.TransformColumns(#"Inserted Age",{{"Age", Duration.Days, Int64.Type}}),
+		    #"Renamed Columns4" = Table.RenameColumns(#"Extracted Days",{{"Age", "Day Offset"}}),
+		    #"Added Custom1" = Table.AddColumn(#"Renamed Columns4", "Month Offset", each (([Year]-Date.Year(Today))*12)
+		+([Month]-Date.Month(Today))),
+		    #"Changed Type2" = Table.TransformColumnTypes(#"Added Custom1",{{"Month Offset", Int64.Type}}),
+		    #"Added Custom2" = Table.AddColumn(#"Changed Type2", "Year Offset", each [Year]-Date.Year(Today)),
+		    #"Changed Type3" = Table.TransformColumnTypes(#"Added Custom2",{{"Year Offset", Int64.Type}}),
+		    #"Added Custom3" = Table.AddColumn(#"Changed Type3", "Quarter Offset", each (([Year]-Date.Year(Today))*4)
+		+([Quarter]-Date.QuarterOfYear(Today))),
+		    #"Changed Type4" = Table.TransformColumnTypes(#"Added Custom3",{{"Quarter Offset", Int64.Type}}),
+		    #"Added Custom4" = Table.AddColumn(#"Changed Type4", "Year-Month", each Date.ToText([Date],"MMM yyyy")),
+		    #"Added Custom5" = Table.AddColumn(#"Added Custom4", "Year-Month Code", each Date.ToText([Date],"yyyyMM")),
+		    #"Changed Type5" = Table.TransformColumnTypes(#"Added Custom5",{{"Year-Month", type text}, {"Year-Month Code", Int64.Type}})
+		in
+		    #"Changed Type5"
+	lineageTag: 22a26efa-9d8f-4eb0-98ac-20ef41b0ac0f
+	queryGroup: 'Core\Core Kalender'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression 'Core Produkt' =
+		let
+		    Source = #"Stage Source",
+		    #"Removed Other Columns" = Table.SelectColumns(Source,{"ID", "Produkt Gruppe", "Produkt Typ"}),
+		    #"Removed Columns" = Table.RemoveColumns(#"Removed Other Columns",{"ID"}),
+		    #"Removed Duplicates" = Table.Distinct(#"Removed Columns"),
+		    #"Added Index" = Table.AddIndexColumn(#"Removed Duplicates", "Index", 0, 1, Int64.Type),
+		    #"Renamed Columns" = Table.RenameColumns(#"Added Index",{{"Index", "Produkt ID"}})
+		in
+		    #"Renamed Columns"
+	lineageTag: a64dba05-5070-4365-b253-26d580173698
+	queryGroup: Core
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression 'Core Status' =
+		let
+		    Source = #"Stage Source",
+		    #"Removed Other Columns" = Table.SelectColumns(Source,{"Status", "Bewertung", "Warscheinlichkeit"}),
+		    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns"),
+		    #"Added Index" = Table.AddIndexColumn(#"Removed Duplicates", "Index", 0, 1, Int64.Type),
+		    #"Renamed Columns" = Table.RenameColumns(#"Added Index",{{"Index", "ID Status"}}),
+		    #"Reordered Columns" = Table.ReorderColumns(#"Renamed Columns",{"ID Status", "Status", "Bewertung", "Warscheinlichkeit"})
+		in
+		    #"Reordered Columns"
+	lineageTag: 3dd8a969-d122-48ac-a3d4-8b95672d4166
+	queryGroup: Core
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression 'Core Vertriebler' =
+		let
+		    Source = #"Stage Source",
+		    #"Removed Other Columns" = Table.SelectColumns(Source,{"ID", "Vertriebler"}),
+		    #"Removed Columns" = Table.RemoveColumns(#"Removed Other Columns",{"ID"}),
+		    #"Removed Duplicates" = Table.Distinct(#"Removed Columns")
+		in
+		    #"Removed Duplicates"
+	lineageTag: 6257bdfa-cf17-4673-8b6b-0c01f9159c0a
+	queryGroup: Core
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression 'Core Standort' =
+		let
+		    Source = #"Stage Source",
+		    #"Removed Other Columns" = Table.SelectColumns(Source,{"Land", "Bundesland", "Stadt"}),
+		    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns"),
+		    #"Filtered Rows" = Table.SelectRows(#"Removed Duplicates", each true)
+		in
+		    #"Filtered Rows"
+	lineageTag: fc5e601a-096b-489c-bc0e-fd9952eb67ef
+	queryGroup: Core
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression 'Core Kunde' =
+		let
+		    Source = #"Stage Source",
+		    #"Removed Other Columns" = Table.SelectColumns(Source,{"Kunde"}),
+		    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns"),
+		    #"Changed Type" = Table.TransformColumnTypes(#"Removed Duplicates",{{"Kunde", type text}})
+		in
+		    #"Changed Type"
+	lineageTag: 33adce3f-177c-4984-b9fe-efe5faec8425
+	queryGroup: Core
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression 'Core Angebote' =
+		let
+		    Source = #"Pipeline Source",
+		    #"Merged Queries" = Table.NestedJoin(Source, {"Status", "Bewertung", "Warscheinlichkeit"}, #"Core Status", {"Status", "Bewertung", "Warscheinlichkeit"}, "Core Status", JoinKind.LeftOuter),
+		    #"Expanded {0}" = Table.ExpandTableColumn(#"Merged Queries", "Core Status", {"ID Status"}, {"Core Status.ID Status"}),
+		    #"Removed Columns1" = Table.RemoveColumns(#"Expanded {0}",{"Status", "Bewertung", "Land", "Bundesland"}),
+		    #"Merged Queries1" = Table.NestedJoin(#"Removed Columns1", {"Produkt Typ", "Produkt Gruppe"}, #"Core Produkt", {"Produkt Typ", "Produkt Gruppe"}, "Core Produkt", JoinKind.LeftOuter),
+		    #"Expanded {0}1" = Table.ExpandTableColumn(#"Merged Queries1", "Core Produkt", {"Produkt ID"}, {"Produkt ID"}),
+		    #"Removed Columns2" = Table.RemoveColumns(#"Expanded {0}1",{"Produkt Typ", "Produkt Gruppe"}),
+		    #"Reordered Columns" = Table.ReorderColumns(#"Removed Columns2",{"ID", "Kunde", "Produkt ID", "Warscheinlichkeit", "Angebotssumme", "Menge", "Abschluss Datum", "Vertriebler", "Stadt"}),
+		    #"Renamed Columns" = Table.RenameColumns(#"Reordered Columns",{{"Core Status.ID Status", "Status ID"}}),
+		    #"Filtered Rows" = Table.SelectRows(#"Renamed Columns", each [Abschluss Datum] > #date(2017, 12, 31)),
+		    #"Added Custom" = Table.AddColumn(#"Filtered Rows", "Dauer Angebot", each [Abschluss Datum]-[Anlage Angbot]),
+		    #"Changed Type" = Table.TransformColumnTypes(#"Added Custom",{{"Dauer Angebot", type duration}}),
+		    #"Changed Type1" = Table.TransformColumnTypes(#"Changed Type",{{"Dauer Angebot", Int64.Type}}),
+		    #"Renamed Columns1" = Table.RenameColumns(#"Changed Type1",{{"Dauer Angebot", "Dauer Angebot in Tage"}}),
+		    #"Added Conditional Column" = Table.AddColumn(#"Renamed Columns1", "Custom", each if [Pipeline Status] <= [Abschluss Datum] then 0 else 1),
+		    #"Renamed Columns2" = Table.RenameColumns(#"Added Conditional Column",{{"Custom", "Up to Change"}}),
+		    #"Changed Type2" = Table.TransformColumnTypes(#"Renamed Columns2",{{"Up to Change", type number}}),
+		    #"Invoked Custom Function" = Table.AddColumn(#"Changed Type2", "Random Values", each #"Random Values"(1, 50, 200, 100)),
+		    #"Expanded Random Values" = Table.ExpandListColumn(#"Invoked Custom Function", "Random Values"),
+		    #"Added Custom1" = Table.AddColumn(#"Expanded Random Values", "Custom", each if [Up to Change] = 1 then [Angebotssumme]*[Random Values] else [Angebotssumme]),
+		    #"Reordered Columns1" = Table.ReorderColumns(#"Added Custom1",{"Pipeline Status", "ID", "Topic", "Kunde", "Produkt ID", "Warscheinlichkeit", "Custom", "Angebotssumme", "Anlage Angbot", "Menge", "Abschluss Datum", "Vertriebler", "Status ID", "Stadt", "Dauer Angebot in Tage", "Up to Change", "Random Values"}),
+		    #"Removed Columns" = Table.RemoveColumns(#"Reordered Columns1",{"Angebotssumme"}),
+		    #"Renamed Columns3" = Table.RenameColumns(#"Removed Columns",{{"Custom", "Angebotssumme"}}),
+		    #"Changed Type3" = Table.TransformColumnTypes(#"Renamed Columns3",{{"Angebotssumme", type number}}),
+		    #"Removed Columns3" = Table.RemoveColumns(#"Changed Type3",{"Random Values", "Up to Change"})
+		in
+		    #"Removed Columns3"
+	lineageTag: c170e968-221b-4875-a5af-c3f8e6410fac
+	queryGroup: Core
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression 'Stage Source' =
+		let
+		    Source = Excel.Workbook(File.Contents(Source & "20230331_SalesListe.xlsx"), null, true),
+		    Tabelle1_Table = Source{[Item="Tabelle1",Kind="Table"]}[Data],
+		    #"Changed Type" = Table.TransformColumnTypes(Tabelle1_Table,{{"ID", Int64.Type}, {"Topic", type text}, {"Kunde", type text}, {"Status", type text}, {"Bewertung", type text}, {"Warscheinlichkeit", Int64.Type}, {"Angebotssumme", Int64.Type}, {"Menge", Int64.Type}, {"Abschluss Datum", type date}, {"Vertriebler", type text}, {"Land", type text}, {"Stadt", type text}, {"Bundesland", type text}, {"Produkt Gruppe", type text}, {"Produkt Typ", type text}, {"Anlage Angbot", type date}})
+		in
+		    #"Changed Type"
+	lineageTag: a3e79af2-5f63-4c2d-9645-0ac335ddc3f8
+	queryGroup: Stage
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression 'Min Jahr' =
+		let
+		    Source = #"Stage Source",
+		    #"Removed Other Columns" = Table.SelectColumns(Source,{"Abschluss Datum"}),
+		    #"Inserted Year" = Table.AddColumn(#"Removed Other Columns", "Jahr", each Date.Year([Abschluss Datum]), Int64.Type),
+		    #"Removed Columns" = Table.RemoveColumns(#"Inserted Year",{"Abschluss Datum"}),
+		    #"Calculated Minimum" = List.Min(#"Removed Columns"[Jahr])-1
+		in
+		    #"Calculated Minimum"
+	lineageTag: fbc51efa-9603-4c42-89da-3688b530acbf
+	queryGroup: 'Core\Core Kalender'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Number
+
+expression 'Max Jahr' =
+		let
+		    Source = #"Stage Source",
+		    #"Removed Other Columns" = Table.SelectColumns(Source,{"Abschluss Datum"}),
+		    #"Inserted Year" = Table.AddColumn(#"Removed Other Columns", "Jahr", each Date.Year([Abschluss Datum]), Int64.Type),
+		    #"Removed Columns" = Table.RemoveColumns(#"Inserted Year",{"Abschluss Datum"}),
+		    #"Calculated Minimum" = List.Max(#"Removed Columns"[Jahr])
+		in
+		    #"Calculated Minimum"
+	lineageTag: 67836b97-6df7-4456-b6d7-b7225e66f65b
+	queryGroup: 'Core\Core Kalender'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Number
+
+expression 'Core Pipeline Status' =
+		let
+		    Source = #"Pipeline Source",
+		    #"Removed Other Columns" = Table.SelectColumns(Source,{"Pipeline Status"}),
+		    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns"),
+		    #"Sorted Rows" = Table.Sort(#"Removed Duplicates",{{"Pipeline Status", Order.Descending}}),
+		    #"Added Index" = Table.AddIndexColumn(#"Sorted Rows", "Index", 0, 1, Int64.Type),
+		    #"Renamed Columns" = Table.RenameColumns(#"Added Index",{{"Index", "Sort Order"}}),
+		    #"Added Conditional Column" = Table.AddColumn(#"Renamed Columns", "Custom", each if [Sort Order] = 0 then "Current Status" else if [Sort Order] = 1 then "Last Status" else "other"),
+		    #"Changed Type" = Table.TransformColumnTypes(#"Added Conditional Column",{{"Custom", type text}})
+		in
+		    #"Changed Type"
+	lineageTag: cd8158a9-9598-4a97-9c52-cdfeb6bac123
+	queryGroup: Core
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression 'Random Values' = ```
+		let
+		    Source = (Factor as number, //factor to multiply your Data
+		  rangestart as number,// Start of the Range for the random Numbers
+		  rangeend as number,  // End of the Range for the random Numbers
+		  rangedivde as number  // Divdie Number e.g (Range from 95 to 105 / 100 ->> expected value between 0.95 and 1.05)
+		 ) => 
+		let
+		        Source = List.Generate(() =>Factor , each _ > 0, each _ - 1), 
+		        // Generates the list for the muliplication of the Data 
+		
+		        #"Converted to Table" = Table.FromList(Source, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+		        #"Changed Type" = Table.TransformColumnTypes(#"Converted to Table",{{"Column1", type number}}),
+		        #"Added Custom" = Table.AddColumn(#"Changed Type", "Range", each Number.RandomBetween(rangestart, rangeend)/rangedivde),
+		        // generates the new Random number 
+		
+		        #"Changed Type1" = Table.TransformColumnTypes(#"Added Custom",{{"Range", type number}}),
+		        #"Removed Columns" = Table.RemoveColumns(#"Changed Type1",{"Column1"}),
+		       Values = #"Removed Columns"[Range]
+		       //generates a list from the Tabel
+		    
+		    in
+		     Values
+		in
+		    Source
+		```
+	lineageTag: 29a0babc-d497-406c-ae59-b9282f89aabf
+	queryGroup: Functions
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Function
+
+expression 'Pipeline Source' =
+		let
+		    Source = Folder.Files(Source),
+		    #"Filtered Rows" = Table.SelectRows(Source, each Text.Contains([Name], "SalesL")),
+		    #"Filtered Hidden Files1" = Table.SelectRows(#"Filtered Rows", each [Attributes]?[Hidden]? <> true),
+		    #"Invoke Custom Function1" = Table.AddColumn(#"Filtered Hidden Files1", "Transform File", each #"Transform File"([Content])),
+		    #"Renamed Columns1" = Table.RenameColumns(#"Invoke Custom Function1", {"Name", "Source.Name"}),
+		    #"Removed Other Columns1" = Table.SelectColumns(#"Renamed Columns1", {"Source.Name", "Transform File"}),
+		    #"Expanded Table Column1" = Table.ExpandTableColumn(#"Removed Other Columns1", "Transform File", Table.ColumnNames(#"Transform File"(#"Sample File"))),
+		    #"Changed Type" = Table.TransformColumnTypes(#"Expanded Table Column1",{{"Source.Name", type text}, {"ID", Int64.Type}, {"Topic", type text}, {"Kunde", type text}, {"Status", type text}, {"Bewertung", type text}, {"Warscheinlichkeit", Int64.Type}, {"Angebotssumme", type number}, {"Menge", type number}, {"Anlage Angbot", type date}, {"Abschluss Datum", type date}, {"Vertriebler", type text}, {"Land", type text}, {"Stadt", type text}, {"Bundesland", type text}, {"Produkt Gruppe", type text}, {"Produkt Typ", type text}}),
+		    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"Source.Name", "Pipeline Status"}}),
+		    #"Replaced Value" = Table.ReplaceValue(#"Renamed Columns","_SalesListe.xlsx","",Replacer.ReplaceText,{"Pipeline Status"}),
+		    #"Changed Type1" = Table.TransformColumnTypes(#"Replaced Value",{{"Pipeline Status", type date}})
+		in
+		    #"Changed Type1"
+	lineageTag: ca4b9f47-d69c-4a83-b4d5-6191ba8f98c7
+	queryGroup: Stage
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression Parameter1 = #"Sample File" meta [IsParameterQuery=true, BinaryIdentifier=#"Sample File", Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: a8929e10-2e01-42c4-8c53-d05e8c4caed6
+	queryGroup: 'Stage\Transform File from Query1\Helper Queries'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transform Sample File' =
+		let
+		    Source = Excel.Workbook(Parameter1, null, true),
+		    Tabelle1_Table = Source{[Item="Tabelle1",Kind="Table"]}[Data]
+		in
+		    Tabelle1_Table
+	lineageTag: 331e1bff-3c73-4428-962d-91ec7bc46d16
+	queryGroup: 'Stage\Transform File from Query1'
+
+	annotation PBI_ResultType = Table
+
+expression 'Sample File' =
+		let
+		    Source = Folder.Files(Source),
+		    #"Filtered Rows" = Table.SelectRows(Source, each Text.Contains([Name], "SalesL")),
+		    Navigation1 = #"Filtered Rows"{0}[Content]
+		in
+		    Navigation1
+	lineageTag: d80e2da3-d033-4c53-97d1-91c588ff7835
+	queryGroup: 'Stage\Transform File from Query1\Helper Queries'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transform File' =
+		let
+		    Source = (Parameter1 as binary) => let
+		    Source = Excel.Workbook(Parameter1, null, true),
+		    Tabelle1_Table = Source{[Item="Tabelle1",Kind="Table"]}[Data]
+		in
+		    Tabelle1_Table
+		in
+		    Source
+	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transform Sample File""}" ]
+	lineageTag: 39844d83-4f72-4707-a544-cce5c185ad39
+	queryGroup: 'Stage\Transform File from Query1\Helper Queries'
+
+	annotation PBI_ResultType = Function
+
+expression 'Stage Forecast' =
+		let
+		    Source = Excel.Workbook(File.Contents(Source & "Forecast.xlsx"), null, true),
+		    #"FC Ffor Power BI_Sheet" = Source{[Item="FC Ffor Power BI",Kind="Sheet"]}[Data],
+		    #"Promoted Headers" = Table.PromoteHeaders(#"FC Ffor Power BI_Sheet", [PromoteAllScalars=true]),
+		    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Topic", type text}, {"Kunde", type text}, {"Angebotssumme", type number}, {"Menge", Int64.Type}, {"Abschluss Datum", type date}, {"Vertriebler", type text}, {"Land", type text}, {"Stadt", type text}, {"Bundesland", type text}, {"Produkt Gruppe", type text}, {"Produkt Typ", type text}, {"FC Vorhersage", Int64.Type}})
+		in
+		    #"Changed Type"
+	lineageTag: fbdaf23d-db2b-42a5-8d6f-08ba22b697f9
+	queryGroup: Stage
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression 'Core Forecast' =
+		let
+		    Source = #"Stage Forecast",
+		    #"Merged Queries" = Table.NestedJoin(Source, {"Produkt Gruppe", "Produkt Typ"}, #"Core Produkt", {"Produkt Gruppe", "Produkt Typ"}, "Core Produkt", JoinKind.LeftOuter),
+		    #"Expanded Core Produkt" = Table.ExpandTableColumn(#"Merged Queries", "Core Produkt", {"Produkt ID"}, {"Core Produkt.Produkt ID"}),
+		    #"Removed Columns" = Table.RemoveColumns(#"Expanded Core Produkt",{"Bundesland", "Land", "Produkt Gruppe", "Produkt Typ"})
+		in
+		    #"Removed Columns"
+	lineageTag: fb70bdbe-2c3e-41a4-86b4-7c03109e3b7e
+	queryGroup: Core
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

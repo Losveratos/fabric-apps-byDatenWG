@@ -1,0 +1,25 @@
+// Abfragen der Seite „Ergebnisbrücke EBIT Vorjahr zu Ist“ ohne Querfilter, zum Prüfen in der DAX-Abfrageansicht.
+// erzeugt von `dwg app page`, nicht von Hand ändern.
+
+// Kachel karten (chartkitchen)
+EVALUATE
+    SUMMARIZECOLUMNS(
+        'Kunde'[Kanal],
+        'Kunde'[Kanal Sort],
+        TREATAS({TRUE()}, 'Kalender'[Ist]),
+        "actual", 'Fakten'[DB AC],
+        "previousYear", 'Fakten'[DB PY bis Ist],
+        "plan", 'Fakten'[DB PL bis Ist]
+    )
+ORDER BY 'Kunde'[Kanal Sort]
+
+// Kachel vorlage (chartkitchen)
+EVALUATE
+    SUMMARIZECOLUMNS(
+        'Konto'[L1],
+        'Konto'[L1 Sort],
+        TREATAS({TRUE()}, 'Kalender'[Ist]),
+        "actual", 'Fakten'[GuV ± AC],
+        "previousYear", 'Fakten'[GuV ± PY]
+    )
+ORDER BY 'Konto'[L1 Sort]

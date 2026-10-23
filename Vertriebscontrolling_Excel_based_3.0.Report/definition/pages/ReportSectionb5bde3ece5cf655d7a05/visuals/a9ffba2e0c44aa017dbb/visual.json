@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "a9ffba2e0c44aa017dbb",
+  "position": {
+    "x": 7.7811550151975686,
+    "y": 11.671732522796352,
+    "z": 2000,
+    "height": 86.565349544072959,
+    "width": 1272.2188449848024,
+    "tabOrder": 3000
+  },
+  "visualGroup": {
+    "displayName": "Haeder",
+    "groupMode": "ScaleMode"
+  }
+}

@@ -1,0 +1,305 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "a7e631af79bdadab3a58",
+  "position": {
+    "x": 50,
+    "y": 248,
+    "width": 1512,
+    "height": 785,
+    "z": 1000,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "ibcsInspiredChartDeckE73997CF4C7D44978F8112A4E5FA0B4D",
+    "query": {
+      "queryState": {
+        "category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "guv_wasserfall_demo"
+                    }
+                  },
+                  "Property": "Position"
+                }
+              },
+              "queryRef": "guv_wasserfall_demo.Position",
+              "nativeQueryRef": "Position",
+              "active": true
+            }
+          ]
+        },
+        "actual": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "guv_wasserfall_demo"
+                        }
+                      },
+                      "Property": "AC"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(guv_wasserfall_demo.AC)",
+              "nativeQueryRef": "Summe von AC"
+            }
+          ]
+        },
+        "previousYear": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "guv_wasserfall_demo"
+                        }
+                      },
+                      "Property": "PY"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(guv_wasserfall_demo.PY)",
+              "nativeQueryRef": "Summe von PY"
+            }
+          ]
+        },
+        "plan": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "guv_wasserfall_demo"
+                        }
+                      },
+                      "Property": "PL"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(guv_wasserfall_demo.PL)",
+              "nativeQueryRef": "Summe von PL"
+            }
+          ]
+        },
+        "rowType": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "guv_wasserfall_demo"
+                    }
+                  },
+                  "Property": "Typ"
+                }
+              },
+              "queryRef": "guv_wasserfall_demo.Typ",
+              "nativeQueryRef": "Typ"
+            }
+          ]
+        },
+        "forecast": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "guv_wasserfall_demo"
+                        }
+                      },
+                      "Property": "PY"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(guv_wasserfall_demo.PY)",
+              "nativeQueryRef": "Summe von PY"
+            }
+          ]
+        },
+        "multiples": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "guv_wasserfall_demo"
+                    }
+                  },
+                  "Property": "Company"
+                }
+              },
+              "queryRef": "guv_wasserfall_demo.Company",
+              "nativeQueryRef": "Company"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "chart": [
+        {
+          "properties": {
+            "orientation": {
+              "expr": {
+                "Literal": {
+                  "Value": "'pnl'"
+                }
+              }
+            },
+            "pnlView": {
+              "expr": {
+                "Literal": {
+                  "Value": "'ac'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "labels": [
+        {
+          "properties": {
+            "fontPreset": {
+              "expr": {
+                "Literal": {
+                  "Value": "'fullhd'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "65f86017494526b47474",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "guv_wasserfall_demo"
+              }
+            },
+            "Property": "Position"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "01518685dee5d3823d60",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "guv_wasserfall_demo"
+                  }
+                },
+                "Property": "AC"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "d5710020a550a0612a90",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "guv_wasserfall_demo"
+                  }
+                },
+                "Property": "PY"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "bbb250717100a6e97579",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "guv_wasserfall_demo"
+                  }
+                },
+                "Property": "PL"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "9a5768ae0789843c45b1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "guv_wasserfall_demo"
+              }
+            },
+            "Property": "Typ"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "3653d7c62b0073580723",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "guv_wasserfall_demo"
+              }
+            },
+            "Property": "Company"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

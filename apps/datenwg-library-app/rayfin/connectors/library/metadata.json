@@ -1,0 +1,1320 @@
+{
+  "source": "library",
+  "connector": "fabric-sqlanalytics",
+  "connectionString": "<your-sql-endpoint>.datawarehouse.fabric.microsoft.com",
+  "discoveredAt": "2026-10-02T17:32:25.572Z",
+  "schemas": [
+    {
+      "schemaName": "dbo",
+      "tables": [
+        {
+          "tableName": "documents",
+          "columns": [
+            {
+              "columnName": "id",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "source_type",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "title",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "url",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "lang",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "published",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "author",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "duration_s",
+              "dataType": "float",
+              "isNullable": true,
+              "precision": 53
+            },
+            {
+              "columnName": "meta",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            }
+          ]
+        },
+        {
+          "tableName": "e_about",
+          "columns": [
+            {
+              "columnName": "src",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "dst",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "weight",
+              "dataType": "float",
+              "isNullable": true,
+              "precision": 53
+            },
+            {
+              "columnName": "evidence",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "doc_id",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "share",
+              "dataType": "float",
+              "isNullable": true,
+              "precision": 53
+            },
+            {
+              "columnName": "segments",
+              "dataType": "bigint",
+              "isNullable": true,
+              "precision": 19,
+              "scale": 0
+            },
+            {
+              "columnName": "role",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            }
+          ]
+        },
+        {
+          "tableName": "e_contrasts",
+          "columns": [
+            {
+              "columnName": "src",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "dst",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "weight",
+              "dataType": "float",
+              "isNullable": true,
+              "precision": 53
+            },
+            {
+              "columnName": "evidence",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "doc_id",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "share",
+              "dataType": "float",
+              "isNullable": true,
+              "precision": 53
+            },
+            {
+              "columnName": "segments",
+              "dataType": "bigint",
+              "isNullable": true,
+              "precision": 19,
+              "scale": 0
+            },
+            {
+              "columnName": "role",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            }
+          ]
+        },
+        {
+          "tableName": "e_explains",
+          "columns": [
+            {
+              "columnName": "src",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "dst",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "weight",
+              "dataType": "float",
+              "isNullable": true,
+              "precision": 53
+            },
+            {
+              "columnName": "evidence",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "doc_id",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "share",
+              "dataType": "float",
+              "isNullable": true,
+              "precision": 53
+            },
+            {
+              "columnName": "segments",
+              "dataType": "bigint",
+              "isNullable": true,
+              "precision": 19,
+              "scale": 0
+            },
+            {
+              "columnName": "role",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            }
+          ]
+        },
+        {
+          "tableName": "e_in_bucket",
+          "columns": [
+            {
+              "columnName": "src",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "dst",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "weight",
+              "dataType": "float",
+              "isNullable": true,
+              "precision": 53
+            },
+            {
+              "columnName": "evidence",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "doc_id",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "share",
+              "dataType": "float",
+              "isNullable": true,
+              "precision": 53
+            },
+            {
+              "columnName": "segments",
+              "dataType": "bigint",
+              "isNullable": true,
+              "precision": 19,
+              "scale": 0
+            },
+            {
+              "columnName": "role",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            }
+          ]
+        },
+        {
+          "tableName": "e_mentions",
+          "columns": [
+            {
+              "columnName": "src",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "dst",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "weight",
+              "dataType": "float",
+              "isNullable": true,
+              "precision": 53
+            },
+            {
+              "columnName": "evidence",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "doc_id",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "share",
+              "dataType": "float",
+              "isNullable": true,
+              "precision": 53
+            },
+            {
+              "columnName": "segments",
+              "dataType": "bigint",
+              "isNullable": true,
+              "precision": 19,
+              "scale": 0
+            },
+            {
+              "columnName": "role",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            }
+          ]
+        },
+        {
+          "tableName": "e_mentions_person",
+          "columns": [
+            {
+              "columnName": "src",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "dst",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "weight",
+              "dataType": "float",
+              "isNullable": true,
+              "precision": 53
+            },
+            {
+              "columnName": "evidence",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "doc_id",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "share",
+              "dataType": "float",
+              "isNullable": true,
+              "precision": 53
+            },
+            {
+              "columnName": "segments",
+              "dataType": "bigint",
+              "isNullable": true,
+              "precision": 19,
+              "scale": 0
+            },
+            {
+              "columnName": "role",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            }
+          ]
+        },
+        {
+          "tableName": "e_part_of",
+          "columns": [
+            {
+              "columnName": "src",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "dst",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "weight",
+              "dataType": "float",
+              "isNullable": true,
+              "precision": 53
+            },
+            {
+              "columnName": "evidence",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "doc_id",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "share",
+              "dataType": "float",
+              "isNullable": true,
+              "precision": 53
+            },
+            {
+              "columnName": "segments",
+              "dataType": "bigint",
+              "isNullable": true,
+              "precision": 19,
+              "scale": 0
+            },
+            {
+              "columnName": "role",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            }
+          ]
+        },
+        {
+          "tableName": "e_recommends",
+          "columns": [
+            {
+              "columnName": "src",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "dst",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "weight",
+              "dataType": "float",
+              "isNullable": true,
+              "precision": 53
+            },
+            {
+              "columnName": "evidence",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "doc_id",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "share",
+              "dataType": "float",
+              "isNullable": true,
+              "precision": 53
+            },
+            {
+              "columnName": "segments",
+              "dataType": "bigint",
+              "isNullable": true,
+              "precision": 19,
+              "scale": 0
+            },
+            {
+              "columnName": "role",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            }
+          ]
+        },
+        {
+          "tableName": "e_relates_to",
+          "columns": [
+            {
+              "columnName": "src",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "dst",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "weight",
+              "dataType": "float",
+              "isNullable": true,
+              "precision": 53
+            },
+            {
+              "columnName": "evidence",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "doc_id",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "share",
+              "dataType": "float",
+              "isNullable": true,
+              "precision": 53
+            },
+            {
+              "columnName": "segments",
+              "dataType": "bigint",
+              "isNullable": true,
+              "precision": 19,
+              "scale": 0
+            },
+            {
+              "columnName": "role",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            }
+          ]
+        },
+        {
+          "tableName": "e_replaces",
+          "columns": [
+            {
+              "columnName": "src",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "dst",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "weight",
+              "dataType": "float",
+              "isNullable": true,
+              "precision": 53
+            },
+            {
+              "columnName": "evidence",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "doc_id",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "share",
+              "dataType": "float",
+              "isNullable": true,
+              "precision": 53
+            },
+            {
+              "columnName": "segments",
+              "dataType": "bigint",
+              "isNullable": true,
+              "precision": 19,
+              "scale": 0
+            },
+            {
+              "columnName": "role",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            }
+          ]
+        },
+        {
+          "tableName": "e_requires",
+          "columns": [
+            {
+              "columnName": "src",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "dst",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "weight",
+              "dataType": "float",
+              "isNullable": true,
+              "precision": 53
+            },
+            {
+              "columnName": "evidence",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "doc_id",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "share",
+              "dataType": "float",
+              "isNullable": true,
+              "precision": 53
+            },
+            {
+              "columnName": "segments",
+              "dataType": "bigint",
+              "isNullable": true,
+              "precision": 19,
+              "scale": 0
+            },
+            {
+              "columnName": "role",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            }
+          ]
+        },
+        {
+          "tableName": "e_speaks_in",
+          "columns": [
+            {
+              "columnName": "src",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "dst",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "weight",
+              "dataType": "float",
+              "isNullable": true,
+              "precision": 53
+            },
+            {
+              "columnName": "evidence",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "doc_id",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "share",
+              "dataType": "float",
+              "isNullable": true,
+              "precision": 53
+            },
+            {
+              "columnName": "segments",
+              "dataType": "bigint",
+              "isNullable": true,
+              "precision": 19,
+              "scale": 0
+            },
+            {
+              "columnName": "role",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            }
+          ]
+        },
+        {
+          "tableName": "e_states",
+          "columns": [
+            {
+              "columnName": "src",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "dst",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "weight",
+              "dataType": "float",
+              "isNullable": true,
+              "precision": 53
+            },
+            {
+              "columnName": "evidence",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "doc_id",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "share",
+              "dataType": "float",
+              "isNullable": true,
+              "precision": 53
+            },
+            {
+              "columnName": "segments",
+              "dataType": "bigint",
+              "isNullable": true,
+              "precision": 19,
+              "scale": 0
+            },
+            {
+              "columnName": "role",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            }
+          ]
+        },
+        {
+          "tableName": "edges",
+          "columns": [
+            {
+              "columnName": "src",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "dst",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "type",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "weight",
+              "dataType": "float",
+              "isNullable": true,
+              "precision": 53
+            },
+            {
+              "columnName": "evidence",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "source",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "props",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            }
+          ]
+        },
+        {
+          "tableName": "graph_edges",
+          "columns": [
+            {
+              "columnName": "src",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "dst",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "type",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "weight",
+              "dataType": "float",
+              "isNullable": true,
+              "precision": 53
+            },
+            {
+              "columnName": "evidence",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "doc_id",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "share",
+              "dataType": "float",
+              "isNullable": true,
+              "precision": 53
+            },
+            {
+              "columnName": "segments",
+              "dataType": "bigint",
+              "isNullable": true,
+              "precision": 19,
+              "scale": 0
+            },
+            {
+              "columnName": "role",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "src_type",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "dst_type",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            }
+          ]
+        },
+        {
+          "tableName": "graph_nodes",
+          "columns": [
+            {
+              "columnName": "id",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "type",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "name",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "source",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "published",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "url",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "coverage",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "n_claims",
+              "dataType": "bigint",
+              "isNullable": true,
+              "precision": 19,
+              "scale": 0
+            },
+            {
+              "columnName": "n_segments",
+              "dataType": "bigint",
+              "isNullable": true,
+              "precision": 19,
+              "scale": 0
+            },
+            {
+              "columnName": "doc_count",
+              "dataType": "bigint",
+              "isNullable": true,
+              "precision": 19,
+              "scale": 0
+            },
+            {
+              "columnName": "format",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "bucket",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "kind",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "doc_id",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "start_s",
+              "dataType": "float",
+              "isNullable": true,
+              "precision": 53
+            },
+            {
+              "columnName": "aliases",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "lang",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            }
+          ]
+        },
+        {
+          "tableName": "n_bucket",
+          "columns": [
+            {
+              "columnName": "id",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "name",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            }
+          ]
+        },
+        {
+          "tableName": "n_claim",
+          "columns": [
+            {
+              "columnName": "id",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "text",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "kind",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "doc_id",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "start_s",
+              "dataType": "float",
+              "isNullable": true,
+              "precision": 53
+            },
+            {
+              "columnName": "precision",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "anchor",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "anchor_score",
+              "dataType": "float",
+              "isNullable": true,
+              "precision": 53
+            }
+          ]
+        },
+        {
+          "tableName": "n_concept",
+          "columns": [
+            {
+              "columnName": "id",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "name",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "kind",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "aliases",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "doc_count",
+              "dataType": "bigint",
+              "isNullable": true,
+              "precision": 19,
+              "scale": 0
+            }
+          ]
+        },
+        {
+          "tableName": "n_document",
+          "columns": [
+            {
+              "columnName": "id",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "title",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "source",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "published",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "url",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "coverage",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "format",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "bucket",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "n_claims",
+              "dataType": "bigint",
+              "isNullable": true,
+              "precision": 19,
+              "scale": 0
+            },
+            {
+              "columnName": "n_segments",
+              "dataType": "bigint",
+              "isNullable": true,
+              "precision": 19,
+              "scale": 0
+            }
+          ]
+        },
+        {
+          "tableName": "n_person",
+          "columns": [
+            {
+              "columnName": "id",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "name",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "doc_count",
+              "dataType": "bigint",
+              "isNullable": true,
+              "precision": 19,
+              "scale": 0
+            }
+          ]
+        },
+        {
+          "tableName": "nodes",
+          "columns": [
+            {
+              "columnName": "id",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "type",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "name",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "aliases",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "description",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "source",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "props",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            }
+          ]
+        },
+        {
+          "tableName": "segments",
+          "columns": [
+            {
+              "columnName": "id",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "doc_id",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "ordinal",
+              "dataType": "bigint",
+              "isNullable": true,
+              "precision": 19,
+              "scale": 0
+            },
+            {
+              "columnName": "text",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "kind",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "heading",
+              "dataType": "varchar",
+              "isNullable": true,
+              "maxLength": 8000
+            },
+            {
+              "columnName": "start_s",
+              "dataType": "float",
+              "isNullable": true,
+              "precision": 53
+            },
+            {
+              "columnName": "end_s",
+              "dataType": "float",
+              "isNullable": true,
+              "precision": 53
+            },
+            {
+              "columnName": "char_start",
+              "dataType": "float",
+              "isNullable": true,
+              "precision": 53
+            },
+            {
+              "columnName": "char_end",
+              "dataType": "float",
+              "isNullable": true,
+              "precision": 53
+            },
+            {
+              "columnName": "speaker",
+              "dataType": "int",
+              "isNullable": true,
+              "precision": 10,
+              "scale": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

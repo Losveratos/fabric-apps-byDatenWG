@@ -1,0 +1,25 @@
+// Abfragen der Seite „Gestapelte Balken je Region“ ohne Querfilter, zum Prüfen in der DAX-Abfrageansicht.
+// erzeugt von `dwg app page`, nicht von Hand ändern.
+
+// Kachel karten (chartkitchen)
+EVALUATE
+    SUMMARIZECOLUMNS(
+        'Produkt'[Sorte],
+        'Produkt'[Sorte Sort],
+        TREATAS({TRUE()}, 'Kalender'[Ist]),
+        "actual", 'Fakten'[Umsatz AC],
+        "previousYear", 'Fakten'[Umsatz PY bis Ist],
+        "plan", 'Fakten'[Umsatz PL bis Ist]
+    )
+ORDER BY 'Produkt'[Sorte Sort]
+
+// Kachel vorlage (chartkitchen)
+EVALUATE
+    SUMMARIZECOLUMNS(
+        'Kunde'[Region],
+        'Kunde'[Kanal],
+        'Kunde'[Kanal Sort],
+        TREATAS({TRUE()}, 'Kalender'[Ist]),
+        "actual", 'Fakten'[Umsatz AC]
+    )
+ORDER BY 'Kunde'[Region], 'Kunde'[Kanal Sort]

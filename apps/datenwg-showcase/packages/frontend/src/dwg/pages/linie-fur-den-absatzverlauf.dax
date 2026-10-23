@@ -1,0 +1,25 @@
+// Abfragen der Seite „Linie für den Absatzverlauf“ ohne Querfilter, zum Prüfen in der DAX-Abfrageansicht.
+// erzeugt von `dwg app page`, nicht von Hand ändern.
+
+// Kachel karten (chartkitchen)
+EVALUATE
+    SUMMARIZECOLUMNS(
+        'Produkt'[Sorte],
+        'Produkt'[Sorte Sort],
+        "actual", 'Fakten'[Absatz hl AC],
+        "previousYear", 'Fakten'[Absatz hl PY bis Ist],
+        "plan", 'Fakten'[Absatz hl PL bis Ist]
+    )
+ORDER BY 'Produkt'[Sorte Sort]
+
+// Kachel vorlage (chartkitchen)
+EVALUATE
+    SUMMARIZECOLUMNS(
+        'Kalender'[Monatsname],
+        'Kalender'[Monat],
+        "actual", 'Fakten'[Absatz hl AC],
+        "previousYear", 'Fakten'[Absatz hl PY],
+        "plan", 'Fakten'[Absatz hl PL],
+        "forecast", 'Fakten'[Absatz hl FC]
+    )
+ORDER BY 'Kalender'[Monat]

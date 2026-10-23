@@ -1,0 +1,24 @@
+// Abfragen der Seite „Gestapelte Säulen“ ohne Querfilter, zum Prüfen in der DAX-Abfrageansicht.
+// erzeugt von `dwg app page`, nicht von Hand ändern.
+
+// Kachel karten (chartkitchen)
+EVALUATE
+    SUMMARIZECOLUMNS(
+        'Kunde'[Kanal],
+        'Kunde'[Kanal Sort],
+        "actual", 'Fakten'[Absatz hl AC],
+        "previousYear", 'Fakten'[Absatz hl PY bis Ist],
+        "plan", 'Fakten'[Absatz hl PL bis Ist]
+    )
+ORDER BY 'Kunde'[Kanal Sort]
+
+// Kachel vorlage (chartkitchen)
+EVALUATE
+    SUMMARIZECOLUMNS(
+        'Kalender'[Monatsname],
+        'Produkt'[Sorte],
+        'Kalender'[Monat],
+        'Produkt'[Sorte Sort],
+        "actual", 'Fakten'[Absatz hl AC]
+    )
+ORDER BY 'Kalender'[Monat], 'Produkt'[Sorte Sort]

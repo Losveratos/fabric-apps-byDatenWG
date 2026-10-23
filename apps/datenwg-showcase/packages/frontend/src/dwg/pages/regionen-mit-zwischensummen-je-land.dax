@@ -1,0 +1,25 @@
+// Abfragen der Seite „Regionen mit Zwischensummen je Land“ ohne Querfilter, zum Prüfen in der DAX-Abfrageansicht.
+// erzeugt von `dwg app page`, nicht von Hand ändern.
+
+// Kachel karten (chartkitchen)
+EVALUATE
+    SUMMARIZECOLUMNS(
+        'Produkt'[Sorte],
+        'Produkt'[Sorte Sort],
+        "actual", 'Fakten'[Umsatz AC],
+        "previousYear", 'Fakten'[Umsatz PY bis Ist],
+        "plan", 'Fakten'[Umsatz PL bis Ist]
+    )
+ORDER BY 'Produkt'[Sorte Sort]
+
+// Kachel vorlage (pnl)
+EVALUATE
+    SUMMARIZECOLUMNS(
+        'Kunde'[Land],
+        'Kunde'[Region],
+        'Kalender'[Periode],
+        "ac", 'Fakten'[Umsatz AC],
+        "py", 'Fakten'[Umsatz PY],
+        "pl", 'Fakten'[Umsatz PL]
+    )
+ORDER BY 'Kunde'[Land], 'Kunde'[Region], 'Kalender'[Periode]

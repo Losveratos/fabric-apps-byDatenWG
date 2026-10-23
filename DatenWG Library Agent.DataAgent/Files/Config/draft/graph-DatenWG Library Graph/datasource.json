@@ -1,0 +1,156 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/dataAgent/definition/dataSource/1.0.0/schema.json",
+  "artifactId": "00000000-0000-0000-0000-000000000000",
+  "workspaceId": "00000000-0000-0000-0000-000000000000",
+  "dataSourceInstructions": "Knoten: Document(id,title,source,published,url,coverage,format,bucket,n_claims,n_segments), Concept(id,name,kind,aliases,doc_count), Person(id,name,doc_count), Bucket(id,name), Claim(id,aussage,kind,doc_id,start_s,precision,anchor,anchor_score). Der Text einer Kernaussage heisst im Graphen 'aussage', nicht 'text'. 'precision' ist ein reserviertes Wort und braucht Backticks: k.`precision`. Knoten immer ueber die id ansprechen ({id: 'tool:direct-lake'}), nicht ueber den Namen, weil Literale mit Umlaut nicht zuverlaessig treffen; sonst CONTAINS verwenden. Richtungen: (Person)-[:SPEAKS_IN]->(Document), (Document)-[:MENTIONS|EXPLAINS]->(Concept), (Document)-[:STATES]->(Claim), (Claim)-[:ABOUT]->(Concept), (Document)-[:IN_BUCKET]->(Bucket). RELATES_TO ist ungerichtete Ko-Vorkommens-Heuristik ohne Beleg.",
+  "displayName": "DatenWG Library Graph",
+  "type": "graph",
+  "userDescription": "Derselbe Bestand als Graph: Document, Concept, Person, Bucket und Claim als Knoten, dazu MENTIONS, EXPLAINS, SPEAKS_IN, IN_BUCKET, STATES, ABOUT, RELATES_TO und die typisierten Beziehungen REQUIRES, REPLACES, CONTRASTS, PART_OF, RECOMMENDS. Gut fuer Wege ueber mehrere Schritte und Fragen nach Zusammenhaengen.",
+  "metadata": null,
+  "elements": [
+    {
+      "id": "Document",
+      "is_selected": true,
+      "display_name": "Document",
+      "type": "graph.nodeType",
+      "description": "Document",
+      "children": []
+    },
+    {
+      "id": "Concept",
+      "is_selected": true,
+      "display_name": "Concept",
+      "type": "graph.nodeType",
+      "description": "Concept",
+      "children": []
+    },
+    {
+      "id": "Person",
+      "is_selected": true,
+      "display_name": "Person",
+      "type": "graph.nodeType",
+      "description": "Person",
+      "children": []
+    },
+    {
+      "id": "Bucket",
+      "is_selected": true,
+      "display_name": "Bucket",
+      "type": "graph.nodeType",
+      "description": "Bucket",
+      "children": []
+    },
+    {
+      "id": "Claim",
+      "is_selected": true,
+      "display_name": "Claim",
+      "type": "graph.nodeType",
+      "description": "Claim",
+      "children": []
+    },
+    {
+      "id": "MENTIONS",
+      "is_selected": true,
+      "display_name": "MENTIONS",
+      "type": "graph.edgeType",
+      "description": "MENTIONS",
+      "children": []
+    },
+    {
+      "id": "MENTIONS_PERSON",
+      "is_selected": true,
+      "display_name": "MENTIONS_PERSON",
+      "type": "graph.edgeType",
+      "description": "MENTIONS_PERSON",
+      "children": []
+    },
+    {
+      "id": "EXPLAINS",
+      "is_selected": true,
+      "display_name": "EXPLAINS",
+      "type": "graph.edgeType",
+      "description": "EXPLAINS",
+      "children": []
+    },
+    {
+      "id": "SPEAKS_IN",
+      "is_selected": true,
+      "display_name": "SPEAKS_IN",
+      "type": "graph.edgeType",
+      "description": "SPEAKS_IN",
+      "children": []
+    },
+    {
+      "id": "IN_BUCKET",
+      "is_selected": true,
+      "display_name": "IN_BUCKET",
+      "type": "graph.edgeType",
+      "description": "IN_BUCKET",
+      "children": []
+    },
+    {
+      "id": "RELATES_TO",
+      "is_selected": true,
+      "display_name": "RELATES_TO",
+      "type": "graph.edgeType",
+      "description": "RELATES_TO",
+      "children": []
+    },
+    {
+      "id": "REQUIRES",
+      "is_selected": true,
+      "display_name": "REQUIRES",
+      "type": "graph.edgeType",
+      "description": "REQUIRES",
+      "children": []
+    },
+    {
+      "id": "REPLACES",
+      "is_selected": true,
+      "display_name": "REPLACES",
+      "type": "graph.edgeType",
+      "description": "REPLACES",
+      "children": []
+    },
+    {
+      "id": "CONTRASTS",
+      "is_selected": true,
+      "display_name": "CONTRASTS",
+      "type": "graph.edgeType",
+      "description": "CONTRASTS",
+      "children": []
+    },
+    {
+      "id": "PART_OF",
+      "is_selected": true,
+      "display_name": "PART_OF",
+      "type": "graph.edgeType",
+      "description": "PART_OF",
+      "children": []
+    },
+    {
+      "id": "RECOMMENDS",
+      "is_selected": true,
+      "display_name": "RECOMMENDS",
+      "type": "graph.edgeType",
+      "description": "RECOMMENDS",
+      "children": []
+    },
+    {
+      "id": "STATES",
+      "is_selected": true,
+      "display_name": "STATES",
+      "type": "graph.edgeType",
+      "description": "STATES",
+      "children": []
+    },
+    {
+      "id": "ABOUT",
+      "is_selected": true,
+      "display_name": "ABOUT",
+      "type": "graph.edgeType",
+      "description": "ABOUT",
+      "children": []
+    }
+  ]
+}

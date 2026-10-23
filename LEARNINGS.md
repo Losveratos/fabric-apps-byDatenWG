@@ -74,7 +74,8 @@ Deployed apps only know Fabric SSO; `connector invoke --transport deployed` does
   `DemoPfad`); without a gateway it cannot refresh in the service from a local folder. P&L values are stored positive, signs come from `SignConvention` of the account dimension; every one of
   the 5,000 accounts has fact rows, also totals and formula rows (with 0), so filter tiles on L1. Measures [AC] and
   [PY YTD] are known to be off; prefer the GuV and scenario measures.
-- **Vertriebscontrolling_Excel_based_3.0:** imports Excel demo data (parameter `Source`). The offers table stacks seven
+- **Vertriebscontrolling_Excel_based_3.0:** imports the Excel demo data from `data/vertriebscontrolling/` (parameter
+  `Source`). The offers table stacks seven
   monthly snapshots: always filter `RELATED('Pipeline Status'[Sort Order]) = 0`, otherwise everything counts seven
   times. Few „lost“ offers after 2022, so the win rate is not meaningful there.
 - **DatenWGLibrary lakehouse:** `fabric-sqlanalytics` connector with keyless entities; load tables with `.first(-1)`.

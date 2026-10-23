@@ -1,0 +1,209 @@
+Abnahmewerte / Soll-Werte — ChartKitchen byDatenWG (merged)
+Erzeugt von generate_merged_demo.py, Seed 20260824. Alle Betraege in mEUR.
+
+====================================================================================================
+1) GuV — Konzern-P&L je Jahr (Levels-Modus, SignConvention angewandt)
+====================================================================================================
+
+--- Geschaeftsjahr 2024 ---
+Zeile                                    AC           PY           PL           FC
+Net revenue                          2634.5       2456.5       2791.5       2634.5
+Cost of goods sold                  -1785.4      -1593.2      -1884.8      -1785.4
+Gross profit                          849.1        863.4        906.7        849.1
+Operating expenses                   -530.7       -482.0       -555.0       -530.7
+Other operating result                 17.7         16.0         17.7         17.7
+EBITDA                                336.1        397.3        369.3        336.1
+Depreciation & amortization          -129.4       -121.2       -131.9       -129.4
+EBIT                                  206.7        276.1        237.4        206.7
+Financial result                      -36.7        -32.2        -36.3        -36.7
+EBT                                   170.0        243.9        201.1        170.0
+Income taxes                          -83.4        -76.0        -86.6        -83.4
+Net income                             86.6        168.0        114.6         86.6
+EBITDA-Marge % (AC/PY/PL)             12.8%        16.2%        13.2%
+
+--- Geschaeftsjahr 2025 ---
+Zeile                                    AC           PY           PL           FC
+Net revenue                          2932.8       2634.5       3025.8       2932.8
+Cost of goods sold                  -1939.1      -1785.4      -2020.9      -1939.1
+Gross profit                          993.7        849.1       1004.8        993.7
+Operating expenses                   -578.4       -530.7       -590.8       -578.4
+Other operating result                 18.6         17.7         17.9         18.6
+EBITDA                                433.9        336.1        431.9        433.9
+Depreciation & amortization          -137.8       -129.4       -138.4       -137.8
+EBIT                                  296.0        206.7        293.5        296.0
+Financial result                      -39.6        -36.7        -37.5        -39.6
+EBT                                   256.5        170.0        256.0        256.5
+Income taxes                          -89.5        -83.4        -91.0        -89.5
+Net income                            167.0         86.6        165.1        167.0
+EBITDA-Marge % (AC/PY/PL)             14.8%        12.8%        14.3%
+
+--- Geschaeftsjahr 2026 ---
+Zeile                                    AC           PY           PL           FC
+Net revenue                          2173.3       2932.8       3267.0       3367.1
+Cost of goods sold                  -1421.6      -1939.1      -2153.8      -2202.4
+Gross profit                          751.8        993.7       1113.2       1164.7
+Operating expenses                   -409.9       -578.4       -629.2       -635.1
+Other operating result                 14.4         18.6         18.2         22.3
+EBITDA                                356.2        433.9        502.2        551.9
+Depreciation & amortization           -94.2       -137.8       -145.2       -146.0
+EBIT                                  262.0        296.0        357.0        405.9
+Financial result                      -29.8        -39.6        -38.7        -46.1
+EBT                                   232.2        256.5        318.2        359.8
+Income taxes                          -59.7        -89.5        -95.6        -92.5
+Net income                            172.5        167.0        222.6        267.3
+EBITDA-Marge % (AC/PY/PL)             16.4%        14.8%        15.4%
+(AC 2026 endet mit 2026-08 — YTG-Luecke, FC fuellt 09-12 auf.)
+
+--- Abnahmefenster 2026-01 .. 2026-06 (Seitenfilter des Custom Visuals) ---
+Zeile                                    AC           PY           PL   Alt-Datensatz AC
+Net revenue                          1679.3       1445.7       1630.8         1664.6
+Cost of goods sold                  -1094.3       -967.5      -1075.1        -1081.4
+Gross profit                          584.9        478.2        555.7          583.2
+Operating expenses                   -317.0       -289.9       -314.1         -316.7
+Other operating result                 10.8          9.0          9.1           10.9
+EBITDA                                278.8        197.3        250.7          277.4
+Depreciation & amortization           -72.9        -68.5        -72.5          -72.9
+EBIT                                  205.9        128.8        178.2          204.5
+Financial result                      -23.2        -19.8        -19.3          -23.2
+EBT                                   182.8        108.9        158.9          181.3
+Income taxes                          -46.2        -44.7        -47.7          -46.3
+Net income                            136.5         64.2        111.1          135.0
+EBITDA-Marge %                        16.6% (AC)         15.4% (PL)
+
+--- Segment-Story (Net revenue AC/PL, 2026-01..06) ---
+Industrial Automation    AC     634.0  PL     622.1  AC/PL  101.9% (+1.9%)
+Energy Systems           AC     480.0  PL     438.5  AC/PL  109.5% (+9.5%)
+Mobility Solutions       AC     331.0  PL     356.4  AC/PL   92.9% (-7.1%)
+Digital Services         AC     234.2  PL     213.8  AC/PL  109.5% (+9.5%)
+
+====================================================================================================
+2) Sales — Summen je Szenario und Jahr
+====================================================================================================
+Szen.    Jahr      Revenue         Cost       Profit   Units Sold    Marketing
+AC       2023       127.58        90.72        36.86       305388         9.58
+AC       2024       131.54        98.17        33.37       318452         9.92
+AC       2025       148.83       104.86        43.97       353824        11.34
+AC       2026       117.69        81.13        36.56       263572        10.76
+PL1      2023       129.46        89.83        39.63       311269         9.47
+PL1      2024       132.41        90.89        41.53       324081         9.76
+PL1      2025       140.00        94.60        45.40       342274        10.44
+PL1      2026       161.23       106.19        55.04       371059        12.37
+PL2      2023       135.17        93.79        41.38       324975         9.89
+PL2      2024       138.25        94.89        43.36       338342        10.19
+PL2      2025       146.18        98.78        47.40       357374        10.91
+PL2      2026       168.34       110.87        57.47       387446        12.92
+FC1      2023       127.57        90.72        36.86       305388         9.58
+FC1      2024       131.51        98.14        33.37       318399         9.91
+FC1      2025       148.84       104.87        43.97       353832        11.34
+FC1      2026       160.44       105.67        54.77       369228        12.31
+FC2      2023       127.60        90.73        36.87       305499         9.58
+FC2      2024       131.55        98.18        33.37       318522         9.92
+FC2      2025       148.79       104.84        43.96       353733        11.34
+FC2      2026       160.94       107.20        53.74       367664        13.08
+FC3      2023       127.57        90.71        36.86       305348         9.58
+FC3      2024       131.53        98.17        33.37       318400         9.92
+FC3      2025       148.81       104.85        43.96       353779        11.34
+FC3      2026       179.30       121.60        57.70       402235        15.50
+(AC 2026 nur Jan-Aug. Werte in mEUR, Units Sold in Stueck.)
+
+--- Sales AC je Region und Jahr (Revenue, mEUR) ---
+Region           2023       2024       2025      2026*
+EMEA            52.58      54.21      59.28      49.98
+Americas        33.80      33.95      38.65      29.53
+APAC            41.21      43.38      50.90      38.19
+
+--- Sales AC je Kategorie und Jahr (Revenue, mEUR) ---
+Category                 2023       2024       2025      2026*
+Electronics             65.31      69.52      76.46      53.57
+Home Appliances         27.94      25.01      25.40      17.11
+Industrial IoT          22.82      24.64      32.49      35.21
+Services                11.51      12.38      14.49      11.81
+
+====================================================================================================
+3) Klima-Stern
+====================================================================================================
+Orte: 60   Jahre: 1850-2025   Faktzeilen: 10560
+Mittlere Anomalie je Dekade (K):
+  1850er  -0.419
+  1860er  -0.543
+  1870er  -0.413
+  1880er  -0.541
+  1890er  -0.580
+  1900er  -0.580
+  1910er  -0.578
+  1920er  -0.316
+  1930er  -0.102
+  1940er  +0.029
+  1950er  -0.075
+  1960er  -0.133
+  1970er  -0.124
+  1980er  +0.194
+  1990er  +0.489
+  2000er  +0.826
+  2010er  +1.161
+  2020er  +1.581
+
+====================================================================================================
+4) Selbstpruefung der 10 Storys + Integritaet
+====================================================================================================
+[OK  ]  1 Produkt-Launch Neuro Hub ab 2025-07
+        Rev 2025-06 = 0 (=0), 2025 (H2) = 3.97 mEUR, 2026 (Jan-Aug) = 13.88 mEUR, Faktor 3.50x
+[OK  ]  2 Lieferketten-Schock 2024-Q3/Q4 (COGS-Quote)
+        COGS-Quote 2024-Q2 56.23% -> 2024-Q4 66.84% (+18.9% rel.), Erholung 2025-Q2 56.80%
+[OK  ]  3 Auslaufprodukt Coffee Machine
+        Menge Jan-Aug: 2023 23603 -> 2026 13134 (-44.4%), Rabattquote 7.2% -> 15.1%
+[OK  ]  4 Turnaround Brasilien
+        Profit 2023 -0.59 mEUR, 2024 -0.31 mEUR; Rev ab 2025-Q3 AC 8.72 vs PL1 6.97 mEUR (+25.2%)
+[OK  ]  5 Mid-Year-Konsolidierung (M&A-Luecke)
+        35 Konten (Entity 3140): AC/PL leer 2024-01..2025-03, ab 2025-04 belegt, PY leer bis 2026-03
+[OK  ]  6 Marketing-Push EMEA 2026-H1
+        Marketing-Quote EMEA H1: 7.44% -> 11.88% (+60% = der Push); absolut 1.97 -> 4.44 mEUR (+125%, zusaetzlich getrieben vom Neuro-Hub-Ramp); Revenue-Echo AC/PL1 1.084 (Jan/Feb) -> 1.241 (Mrz-Aug, 2 Monate Verzug)
+[OK  ]  7 Qualitaetsvorfall 2025-11/12
+        Retourenquote 2.48% -> 8.46% (3.4x); CSAT 84.0 -> 70.8 (-13.1 Pkt.), 2026-04 wieder 82.4
+[OK  ]  8 Mobility Solutions unter Plan, ES+DS kompensieren
+        AC/PL 2026-H1: Mobility 92.9% (-7.1%), Energy 109.5% (+9.5%), Digital 109.5% (+9.5%)
+[OK  ]  9 Energiepreis-Kopplung Segment-COGS <-> Klimareihe
+        Pearson r je Segment: Industrial Automation 0.87, Energy Systems 0.92, Mobility Solutions 0.92, Digital Services 0.84
+[OK  ] 10 YTG-Luecke 2026 (AC endet 2026-08, FC fuellt, PL laeuft durch)
+        GuV 2026-09..12: AC leer, FC 93.8 mEUR, PL 77.9 mEUR; Sales: keine AC-Zeilen nach 2026-08
+[OK  ] 11 Profit = Revenue - Cost (zeilenweise, 2 NK)
+        0 Abweichungen in 61344 Zeilen
+[OK  ] 12 Cost = COGS + Discount + Marketing Spend (zeilenweise, 2 NK)
+        0 Abweichungen in 61344 Zeilen
+[OK  ] 13 Abnahmewerte 2026-H1 in Groessenordnung des Alt-Datensatzes
+        Net revenue 1679.3 (Soll 1664.6, +0.9%), EBITDA 278.8 (Soll 277.4, +0.5%), Net income 136.5 (Soll 135.0, +1.1%)
+[OK  ] 14 SortOrder == DataView-Index im Fenster 2026-01..2026-06
+        30000 Zeilen im Fenster, 0 Abweichungen (SortOrder = 6 x Zeilenposition)
+[OK  ] 15 Formel-/KPI-/Separator-/Knotenzeilen bleiben im DataView (0-Werte)
+        384 Zeilen (5 Formula, 3 KPI, 2 Separator, 374 Subtotal) x 36 Monate mit 0
+[OK  ] 16 Ruhende Konten / Orphans / Kommentar-Konten erhalten
+        115 ruhende Konten (ueberall 0), 3 Orphans, 3 Kommentar-Konten
+[OK  ] 17 Kein BOM in irgendeiner Datei
+        dim-konten.csv ok, fact-guv.csv ok, sales-fact.csv ok, dim-produkt.csv ok, dim-markt.csv ok, dim-szenario.csv ok, dim-kpi.csv ok, dim-ort.csv ok, fact-klima.csv ok, dim-jahr.csv ok, gantt.csv ok, guv-wasserfall.csv ok
+[OK  ] 18 Alle Fremdschluessel aufloesbar
+        fact-guv.AccountID (5000) -> dim-konten; sales-fact Product/Country/Scenario -> dims; fact-klima.OrtID -> dim-ort; fact-klima.Jahr -> dim-jahr; dim-markt.KlimaOrt -> dim-ort.Ort
+[OK  ] 19 Dim-Schluessel eindeutig
+        dim-konten.AccountID 5000 ok, dim-produkt.Product 12 ok, dim-markt.Country 18 ok, dim-szenario.Scenario 6 ok, dim-kpi.KPI 11 ok, dim-ort.OrtID 60 ok, dim-ort.Ort 60 ok, dim-jahr.Jahr 176 ok
+[OK  ] 20 dim-kpi enthaelt exakt die 11 entpivotierten Spalten
+        Revenue, Cost, COGS, Profit, Units Sold, Discount, Marketing Spend, Orders, Returned Units, New Customers, Customer Satisfaction
+[OK  ] 21 Kein Komma als Dezimaltrennzeichen in Zahlenspalten
+        geprueft: fact-guv.csv(6 Sp.), sales-fact.csv(11 Sp.), dim-produkt.csv(1 Sp.), dim-markt.csv(2 Sp.), dim-szenario.csv(1 Sp.), dim-kpi.csv(1 Sp.), dim-ort.csv(3 Sp.), fact-klima.csv(4 Sp.), dim-jahr.csv(1 Sp.), gantt.csv(1 Sp.), guv-wasserfall.csv(4 Sp.)
+[OK  ] 22 gantt.csv Datumsspalten im ISO-Format
+        0 Abweichungen
+
+====================================================================================================
+5) Dateien
+====================================================================================================
+Datei                      Zeilen  Spalten        Bytes
+dim-konten.csv               5000       16       819903
+fact-guv.csv               180000        9     12128311
+sales-fact.csv              61344       17      7610521
+dim-produkt.csv                12        8          983
+dim-markt.csv                  18        8         1079
+dim-szenario.csv                6        6          275
+dim-kpi.csv                    11        6          459
+dim-ort.csv                    60        8         3126
+fact-klima.csv              10560        5       304798
+dim-jahr.csv                  176        4         6411
+gantt.csv                      27       11         2316
+guv-wasserfall.csv             13        6          497

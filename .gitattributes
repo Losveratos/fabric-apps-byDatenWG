@@ -5,3 +5,5 @@
 *.parquet binary
 *.zip binary
 *.ico binary
+*.csv -text
+data/**/*.txt -text

@@ -1,0 +1,61 @@
+OrtID;Ort;Land;Region;Breitengrad;Laengengrad;MittelC_1961_1990;Klimazone
+O001;Reykjavík;IS;Europa;64.13;-21.9;4.3;Subpolar
+O002;Helsinki;FI;Europa;60.17;24.94;5;Subpolar
+O003;Oslo;NO;Europa;59.91;10.75;5.7;Subpolar
+O004;Stockholm;SE;Europa;59.33;18.07;6.6;Subpolar
+O005;Sankt Petersburg;RU;Europa;59.94;30.31;4.4;Subpolar
+O006;Riga;LV;Europa;56.95;24.11;6.2;Subpolar
+O007;Kopenhagen;DK;Europa;55.68;12.57;8;Subpolar
+O008;Moskau;RU;Europa;55.75;37.62;4.6;Subpolar
+O009;Dublin;IE;Europa;53.35;-6.26;9.4;Gemäßigt
+O010;Hamburg;DE;Europa;53.55;9.99;8.6;Gemäßigt
+O011;Amsterdam;NL;Europa;52.37;4.9;9.3;Gemäßigt
+O012;Berlin;DE;Europa;52.52;13.4;9;Gemäßigt
+O013;Warschau;PL;Europa;52.23;21.01;7.8;Gemäßigt
+O014;London;GB;Europa;51.51;-0.13;10.5;Gemäßigt
+O015;Köln;DE;Europa;50.94;6.96;9.9;Gemäßigt
+O016;Prag;CZ;Europa;50.09;14.42;8.4;Gemäßigt
+O017;Paris;FR;Europa;48.86;2.35;11.2;Gemäßigt
+O018;Wien;AT;Europa;48.21;16.37;9.8;Gemäßigt
+O019;München;DE;Europa;48.14;11.58;8.1;Gemäßigt
+O020;Budapest;HU;Europa;47.5;19.04;10.6;Gemäßigt
+O021;Zürich;CH;Europa;47.38;8.54;8.5;Gemäßigt
+O022;Mailand;IT;Europa;45.46;9.19;12.5;Gemäßigt
+O023;Bukarest;RO;Europa;44.43;26.1;10.8;Gemäßigt
+O024;Marseille;FR;Europa;43.3;5.37;14.5;Gemäßigt
+O025;Rom;IT;Europa;41.9;12.5;15.4;Gemäßigt
+O026;Barcelona;ES;Europa;41.39;2.17;15.6;Gemäßigt
+O027;Istanbul;TR;Europa;41.01;28.98;13.9;Gemäßigt
+O028;Madrid;ES;Europa;40.42;-3.7;14.1;Gemäßigt
+O029;Athen;GR;Europa;37.98;23.73;17.6;Gemäßigt
+O030;Lissabon;PT;Europa;38.72;-9.14;16.4;Gemäßigt
+O031;Anchorage;US;Welt;61.22;-149.9;2.2;Subpolar
+O032;Moskau (Welt);RU;Welt;55.75;37.62;4.6;Subpolar
+O033;Berlin (Welt);DE;Welt;52.52;13.4;9;Gemäßigt
+O034;London (Welt);GB;Welt;51.51;-0.13;10.5;Gemäßigt
+O035;Toronto;CA;Welt;43.65;-79.38;7.4;Gemäßigt
+O036;New York;US;Welt;40.71;-74.01;12.6;Gemäßigt
+O037;Peking;CN;Welt;39.9;116.41;11.8;Gemäßigt
+O038;Seoul;KR;Welt;37.57;126.98;12.1;Gemäßigt
+O039;Tokio;JP;Welt;35.69;139.69;15.6;Gemäßigt
+O040;Los Angeles;US;Welt;34.05;-118.24;17.6;Subtropisch
+O041;Schanghai;CN;Welt;31.23;121.47;15.8;Subtropisch
+O042;Kairo;EG;Welt;30.04;31.24;21.4;Subtropisch
+O043;Neu-Delhi;IN;Welt;28.61;77.21;25;Subtropisch
+O044;Riad;SA;Welt;24.71;46.68;25.7;Subtropisch
+O045;Mexiko-Stadt;MX;Welt;19.43;-99.13;15.9;Tropisch
+O046;Mumbai;IN;Welt;19.08;72.88;27.2;Tropisch
+O047;Bangkok;TH;Welt;13.76;100.5;27.8;Tropisch
+O048;Lagos;NG;Welt;6.52;3.38;26.8;Tropisch
+O049;Singapur;SG;Welt;1.35;103.82;26.8;Tropisch
+O050;Nairobi;KE;Welt;-1.29;36.82;19;Tropisch
+O051;Jakarta;ID;Welt;-6.21;106.85;26.9;Tropisch
+O052;Lima;PE;Welt;-12.05;-77.04;19.2;Tropisch
+O053;São Paulo;BR;Welt;-23.55;-46.63;19;Subtropisch
+O054;Johannesburg;ZA;Welt;-26.2;28.05;15.5;Subtropisch
+O055;Santiago de Chile;CL;Welt;-33.45;-70.67;14;Subtropisch
+O056;Sydney;AU;Welt;-33.87;151.21;17.7;Subtropisch
+O057;Kapstadt;ZA;Welt;-33.92;18.42;16.5;Subtropisch
+O058;Buenos Aires;AR;Welt;-34.61;-58.38;17.4;Subtropisch
+O059;Auckland;NZ;Welt;-36.85;174.76;15.1;Gemäßigt
+O060;Melbourne;AU;Welt;-37.81;144.96;14.9;Gemäßigt

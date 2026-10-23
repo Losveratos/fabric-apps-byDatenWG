@@ -1,0 +1,13 @@
+Product;ProduktID;Category;Produktlinie;Einfuehrung;Zielmarge_pct;Lebenszyklus;Farbe
+Smartphone X;P01;Electronics;Consumer Mobile;2019-03-01;24.0;Reife;#4E79A7
+Laptop Pro;P02;Electronics;Computing;2018-09-01;22.0;Reife;#59A14F
+Wireless Earbuds;P03;Electronics;Audio;2021-05-01;28.0;Wachstum;#76B7B2
+Smart Watch;P04;Electronics;Wearables;2020-11-01;26.0;Wachstum;#8CD17D
+Coffee Machine;P05;Home Appliances;Kitchen;2016-02-01;20.0;Auslauf;#B07AA1
+Robot Vacuum;P06;Home Appliances;Cleaning;2019-08-01;23.0;Reife;#F28E2B
+Air Purifier;P07;Home Appliances;Air Care;2022-01-01;25.0;Wachstum;#FFBE7D
+Sensor Gateway;P08;Industrial IoT;Industrial Sensing;2020-04-01;30.0;Reife;#4E6E9E
+Neuro Hub;P09;Industrial IoT;Industrial Edge;2025-07-01;34.0;Launch;#E15759
+Edge Controller;P10;Industrial IoT;Industrial Edge;2021-10-01;29.0;Wachstum;#FF9D9A
+Cloud Subscription;P11;Services;Cloud;2021-01-01;45.0;Wachstum;#79706E
+Support Plan;P12;Services;Service;2017-06-01;42.0;Reife;#BAB0AC

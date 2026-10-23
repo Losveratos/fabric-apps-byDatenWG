@@ -1,0 +1,16 @@
+Abnahmewerte YTD Jan-Jun 2026 (mEUR), alle Monate ohne Filter
+Net revenue                  AC    1664.6  PY    1493.8  PL    1617.5  FC_FY    3348.8  PL_FY    3253.7
+Cost of goods sold           AC   -1081.4  PY    -994.9  PL   -1064.0  FC_FY   -2177.2  PL_FY   -2142.7
+Gross profit                 AC     583.2  PY     498.9  PL     553.5  FC_FY    1171.6  PL_FY    1111.0
+Operating expenses           AC    -316.7  PY    -294.9  PL    -314.1  FC_FY    -634.0  PL_FY    -629.2
+Other operating result       AC      10.9  PY       8.9  PL       9.1  FC_FY      21.6  PL_FY      18.1
+EBITDA                       AC     277.4  PY     212.9  PL     248.5  FC_FY     559.2  PL_FY     500.0
+Depreciation & amortization  AC     -72.9  PY     -69.1  PL     -72.5  FC_FY    -146.1  PL_FY    -145.2
+EBIT                         AC     204.5  PY     143.8  PL     176.0  FC_FY     413.1  PL_FY     354.8
+Financial result             AC     -23.2  PY     -18.7  PL     -19.3  FC_FY     -46.6  PL_FY     -38.7
+EBT                          AC     181.3  PY     125.1  PL     156.7  FC_FY     366.4  PL_FY     316.1
+Income taxes                 AC     -46.3  PY     -45.4  PL     -47.7  FC_FY     -93.1  PL_FY     -95.6
+Net income                   AC     135.0  PY      79.7  PL     109.0  FC_FY     273.3  PL_FY     220.5
+Gross margin %               AC   35.0 %   PL   34.2 %
+EBITDA margin %              AC   16.7 %   PL   15.4 %
+Net margin %                 AC    8.1 %   PL    6.7 %

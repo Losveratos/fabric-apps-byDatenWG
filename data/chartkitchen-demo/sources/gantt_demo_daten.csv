@@ -1,0 +1,28 @@
+﻿id;typ;phase_id;phase;name;start;ende;fortschritt_pct;status;verantwortlich;abhaengigkeiten
+ko;Phase;;;Konzept & Analyse;;;;;;
+anf;Aufgabe;ko;Konzept & Analyse;Anforderungsworkshops;05.01.2026;16.01.2026;100;Fertig;Lena;
+sta;Aufgabe;ko;Konzept & Analyse;Stakeholder-Interviews;12.01.2026;23.01.2026;100;Fertig;Jonas;
+lh;Aufgabe;ko;Konzept & Analyse;Lastenheft;19.01.2026;30.01.2026;100;Fertig;Lena;"anf;sta"
+kpi;Aufgabe;ko;Konzept & Analyse;KPI-Katalog;26.01.2026;06.02.2026;100;Fertig;Aylin;anf
+fk;Meilenstein;ko;Konzept & Analyse;Freigabe Konzept;09.02.2026;;;;Lena;"lh;kpi"
+dp;Phase;;;Datenplattform;;;;;;
+arch;Aufgabe;dp;Datenplattform;Architektur-Design;10.02.2026;20.02.2026;100;Fertig;Mika;fk
+dwh;Aufgabe;dp;Datenplattform;DWH-Aufbau;23.02.2026;27.03.2026;90;In Arbeit;Mika;arch
+etl;Aufgabe;dp;Datenplattform;ETL-Strecken;09.03.2026;24.04.2026;70;In Arbeit;Sara;arch
+api;Aufgabe;dp;Datenplattform;Quellsystem-APIs;23.03.2026;17.04.2026;55;Blockiert;Jonas;arch
+dq;Aufgabe;dp;Datenplattform;Datenqualitäts-Checks;13.04.2026;08.05.2026;40;In Arbeit;Sara;etl
+mp;Meilenstein;dp;Datenplattform;Plattform steht;15.05.2026;;;;Mika;"dwh;dq;api"
+bv;Phase;;;Berichte & Visuals;;;;;;
+sem;Aufgabe;bv;Berichte & Visuals;Semantisches Modell;04.05.2026;29.05.2026;65;In Arbeit;Mika;dwh
+dash;Aufgabe;bv;Berichte & Visuals;Management-Dashboard;01.06.2026;03.07.2026;35;In Arbeit;Aylin;sem
+dv;Aufgabe;bv;Berichte & Visuals;Deneb-Visuals;15.06.2026;17.07.2026;15;In Arbeit;Aylin;sem
+ssvc;Aufgabe;bv;Berichte & Visuals;Self-Service-Berichte;06.07.2026;31.07.2026;0;Offen;Jonas;sem
+uat;Aufgabe;bv;Berichte & Visuals;Fach-Review Berichte;03.08.2026;14.08.2026;0;Offen;Lena;"dash;dv;ssvc"
+mb;Meilenstein;bv;Berichte & Visuals;Berichte abgenommen;17.08.2026;;;;Lena;uat
+ro;Phase;;;Rollout & Betrieb;;;;;;
+tq;Aufgabe;ro;Rollout & Betrieb;Test & QA;17.08.2026;04.09.2026;0;Offen;Sara;"mb;mp"
+schu;Aufgabe;ro;Rollout & Betrieb;Schulungen;07.09.2026;18.09.2026;0;Offen;Lena;tq
+doku;Aufgabe;ro;Rollout & Betrieb;Dokumentation;07.09.2026;25.09.2026;0;Offen;Jonas;tq
+pilot;Aufgabe;ro;Rollout & Betrieb;Pilotbetrieb;21.09.2026;02.10.2026;0;Offen;Team;schu
+gl;Meilenstein;ro;Rollout & Betrieb;Go-Live;05.10.2026;;;;Team;"pilot;doku"
+hyp;Aufgabe;ro;Rollout & Betrieb;Hypercare;05.10.2026;30.10.2026;0;Offen;Team;gl

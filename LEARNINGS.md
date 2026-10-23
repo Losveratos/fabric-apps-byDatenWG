@@ -70,8 +70,8 @@ Deployed apps only know Fabric SSO; `connector invoke --transport deployed` does
   TMDL skeleton via Python (`entity` partitions, `mode: directLake`, `Sql.Database(<host>, <sql endpoint id>)`,
   `schemaName: dbo`), measures via `te script`, then `fab import` and a refresh. Lakehouse column names without spaces;
   display names via `sourceColumn`. Actuals until August 2026, plan and forecast for the full years.
-- **ChartKitchen byDatenWG Demo:** imports CSV demo data from a local folder (parameter `DemoPfad`); the data is not in
-  this repo yet. P&L values are stored positive, signs come from `SignConvention` of the account dimension; every one of
+- **ChartKitchen byDatenWG Demo:** imports the CSV demo data from `data/chartkitchen-demo/merged/` (parameter
+  `DemoPfad`); without a gateway it cannot refresh in the service from a local folder. P&L values are stored positive, signs come from `SignConvention` of the account dimension; every one of
   the 5,000 accounts has fact rows, also totals and formula rows (with 0), so filter tiles on L1. Measures [AC] and
   [PY YTD] are known to be off; prefer the GuV and scenario measures.
 - **Vertriebscontrolling_Excel_based_3.0:** imports Excel demo data (parameter `Source`). The offers table stacks seven

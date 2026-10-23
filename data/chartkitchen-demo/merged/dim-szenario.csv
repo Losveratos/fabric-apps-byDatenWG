@@ -1,0 +1,7 @@
+Scenario;Szenario_Name;Szenario_Kurz;IBCS;Typ;Sortierung
+AC;Ist;Ist;AC;Ist;1
+PL1;Budget (verabschiedet);Plan1;PL;Plan;2
+PL2;Ambitionsplan;Plan2;PL;Plan;3
+FC1;Forecast Q4 Vorjahr;FC1;FC;Forecast;4
+FC2;Forecast Q1;FC2;FC;Forecast;5
+FC3;Forecast August;FC3;FC;Forecast;6

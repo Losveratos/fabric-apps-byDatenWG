@@ -1,0 +1,19 @@
+Country;Region;ISO2;Waehrung;Breitengrad;Laengengrad;KlimaOrt;Marktreife
+Germany;EMEA;DE;EUR;52.52;13.4;Berlin;Kernmarkt
+France;EMEA;FR;EUR;48.86;2.35;Paris;Kernmarkt
+United Kingdom;EMEA;GB;GBP;51.51;-0.13;London;Kernmarkt
+Italy;EMEA;IT;EUR;45.46;9.19;Mailand;Wachstumsmarkt
+Spain;EMEA;ES;EUR;40.42;-3.7;Madrid;Wachstumsmarkt
+Netherlands;EMEA;NL;EUR;52.37;4.9;Amsterdam;Wachstumsmarkt
+Poland;EMEA;PL;PLN;52.23;21.01;Warschau;Aufbaumarkt
+USA;Americas;US;USD;40.71;-74.01;New York;Kernmarkt
+Canada;Americas;CA;CAD;43.65;-79.38;Toronto;Wachstumsmarkt
+Brazil;Americas;BR;BRL;-23.55;-46.63;São Paulo;Aufbaumarkt
+Mexico;Americas;MX;MXN;19.43;-99.13;Mexiko-Stadt;Aufbaumarkt
+Argentina;Americas;AR;ARS;-34.61;-58.38;Buenos Aires;Aufbaumarkt
+China;APAC;CN;CNY;31.23;121.47;Schanghai;Wachstumsmarkt
+Japan;APAC;JP;JPY;35.69;139.69;Tokio;Kernmarkt
+India;APAC;IN;INR;19.08;72.88;Mumbai;Wachstumsmarkt
+Australia;APAC;AU;AUD;-33.87;151.21;Sydney;Wachstumsmarkt
+South Korea;APAC;KR;KRW;37.57;126.98;Seoul;Wachstumsmarkt
+Singapore;APAC;SG;SGD;1.35;103.82;Singapur;Aufbaumarkt

@@ -1,0 +1,12 @@
+KPI;KPI_Gruppe;Einheit;Format;HoeherIstBesser;Sortierung
+Revenue;Ergebnis;EUR;0.00;true;1
+Cost;Ergebnis;EUR;0.00;false;2
+COGS;Kosten;EUR;0.00;false;3
+Profit;Ergebnis;EUR;0.00;true;4
+Units Sold;Menge;Stueck;0;true;5
+Discount;Kosten;EUR;0.00;false;6
+Marketing Spend;Kosten;EUR;0.00;false;7
+Orders;Menge;Anzahl;0;true;8
+Returned Units;Qualitaet;Stueck;0;false;9
+New Customers;Kunde;Anzahl;0;true;10
+Customer Satisfaction;Qualitaet;Punkte;0.0;true;11
